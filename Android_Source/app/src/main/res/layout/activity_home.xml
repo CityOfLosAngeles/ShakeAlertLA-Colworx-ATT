@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg"
+    android:orientation="vertical"
+    tools:context=".UserInterface.Activities.HomeActivity">
+
+    <View
+        android:id="@+id/ticker"
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:background="@color/colorPrimaryDark" />
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="60dp"-->
+    <!--android:background="@color/colorPrimary">-->
+    <!--<TextView-->
+    <!--android:id="@+id/title"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="HOME"-->
+    <!--android:textSize="20sp"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textStyle="bold"-->
+    <!--android:layout_centerInParent="true"/>-->
+    <!--</RelativeLayout>-->
+    <!--<android.support.design.widget.TabLayout-->
+    <!--android:id="@+id/sliding_tabs"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/colorPrimary"-->
+    <!--style="@style/MyCustomTabLayout"-->
+    <!--app:tabMode="fixed" />-->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimary"
+        app:itemIconTint="@drawable/menu_selector"
+        app:itemTextColor="@drawable/menu_selector"
+        app:menu="@menu/navigation" />
+</LinearLayout>

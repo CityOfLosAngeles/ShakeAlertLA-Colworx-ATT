@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".UserInterface.Fragments.HomeFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/waves">
+
+        <TextView
+            android:id="@+id/header"
+            style="@style/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="20dp"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:text="@string/shakealertla"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="17dp"
+            android:src="@drawable/mayar" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:src="@mipmap/warning"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/be_Prepared1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/header"
+                        android:focusable="true"
+                        android:fontFamily="@font/sf_ui_bold"
+                        android:gravity="start"
+                        android:text="@string/be_batter_prepared"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/be_Prepared"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/header"
+                        android:focusable="true"
+                        android:fontFamily="@font/sf_ui_light"
+                        android:gravity="start"
+                        android:text="@string/get_your_kit_ready"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+
+    <!--<android.support.v7.widget.CardView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_margin="10dp"-->
+    <!--app:cardElevation="5dp">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="vertical">-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2.1">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="15dp">
+
+                    <com.app.shakealertla.Utils.SquareButton
+                        android:id="@+id/prepare"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@mipmap/prepare_box"
+                        android:gravity="center_vertical"
+                        android:padding="15dp">
+
+                        <ImageView
+                            android:id="@+id/prepareImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/prepare" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/prepareImage"
+                            android:layout_marginTop="20dp"
+                            android:gravity="start"
+                            android:minLines="2"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:paddingBottom="3dp"
+                            android:text="@string/prepare_for_an_earthquake"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </com.app.shakealertla.Utils.SquareButton>
+                </android.support.v7.widget.CardView>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="15dp">
+
+                    <com.app.shakealertla.Utils.SquareButton
+                        android:id="@+id/understanding"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@mipmap/understand_box"
+                        android:gravity="center_vertical"
+                        android:padding="15dp">
+
+                        <ImageView
+                            android:id="@+id/understandImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/understand" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/understandImage"
+                            android:layout_marginTop="20dp"
+                            android:gravity="start"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:paddingBottom="3dp"
+                            android:text="@string/understand_earthquake_alerts"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </com.app.shakealertla.Utils.SquareButton>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2.1">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="15dp">
+
+                    <com.app.shakealertla.Utils.SquareButton
+                        android:id="@+id/seeing"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@mipmap/view_box"
+                        android:gravity="center_vertical"
+                        android:padding="15dp">
+
+                        <ImageView
+                            android:id="@+id/se"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/view" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/se"
+                            android:layout_marginTop="20dp"
+                            android:minLines="2"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:paddingBottom="3dp"
+                            android:text="@string/view_recent_earthquakes"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </com.app.shakealertla.Utils.SquareButton>
+                </android.support.v7.widget.CardView>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="15dp">
+
+                    <com.app.shakealertla.Utils.SquareButton
+                        android:id="@+id/recovering"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@mipmap/recover_box"
+                        android:gravity="center_vertical"
+                        android:padding="15dp">
+
+                        <ImageView
+                            android:id="@+id/re"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/recover" />
+
+                        <TextView
+                            android:id="@+id/recover"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/re"
+                            android:layout_marginTop="20dp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:paddingBottom="3dp"
+                            android:text="@string/recover_from_an_earthquake"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </com.app.shakealertla.Utils.SquareButton>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/aboutSLA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/sf_ui_medium"
+                    android:gravity="center"
+                    android:text="@string/about_shakealertla"
+                    android:textColor="@color/blue_A700"
+                    android:textSize="14sp" />
+
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:id="@+id/terms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/sf_ui_medium"
+                    android:gravity="center"
+                    android:text="@string/terms_of_use"
+                    android:textColor="@color/blue_A700"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <!--</LinearLayout>-->
+    <!--</android.support.v7.widget.CardView>-->
+
+
+</LinearLayout>

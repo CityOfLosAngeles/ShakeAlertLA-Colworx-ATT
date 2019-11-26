@@ -1,0 +1,173 @@
+/* 
+  Localizable.strings
+  cityofLA
+
+  Created by Sam Sidd on 03/10/2018.
+  Copyright © 2018 CityOfLa. All rights reserved.
+*/
+
+//Onboarding 0 :
+"0title" = "Welcome to ShakeAlertLA!";
+"0desc"  = "The ShakeAlert™ earthquake early warning system sends messages that an earthquake has been detected and may affect you.";
+
+//Onboarding 1:
+"1title" = "Get prepared before shaking";
+"1desc"  = "You may receive the alert before, during, or after shaking. Take protective action as soon as you receive an alert or feel or hear an earthquake. Drop, cover, and hold on.";
+
+//Onboarding 2:
+"2title" = "Works only in LA";
+"2desc"  = "The early warning function of this app only works in Los Angeles County, California.\nTo get alerts this app does not need to be open. However, you must set the phone's location services to always on for ShakeAlertLA.";
+
+//Onboarding 3:
+"3title" = "Be alert just before shaking";
+"3desc"  = "ShakeAlert is NOT a prediction that an earthquake will occur. It signals that an earthquake has started and you may feel shaking.  This app is meant to help provide alerts for your safety. Use common sense to stay safe.";
+
+
+//Terms and Conditions Screen
+"termsTitle"    = "Terms and conditions";
+"termsBtnTitle" = "I agree to the Terms and Conditions";
+
+//Home Cells:-
+"prepare"    = "Prepare for an earthquake";
+"understand" = "Earthquake alert map";
+"view"       = "View recent earthquakes";
+"viewTitle"  = "Recent earthquakes";
+"recover"    = "Recover from an earthquake";
+
+//Home Top Labels:
+"bePrepared" = "GET PREPARED FOR AN EARTHQUAKE";
+"kitReady"   = "ShakeAlertLA sends you notifications when a 4.5 or greater earthquake happens in Los Angeles County, often before you feel shaking. Learn how to get prepared.";
+
+
+"homeTitle"     = "ShakeAlertLA";
+"recoveryTitle" = "Recovery";
+"quakeMapTitle" = "Earthquake alert map";
+"settingsTitle" = "Settings";
+
+//Home Buttons
+"aboutShakeAlert" = "About ShakeAlertLA";
+"termsOfUse" = "Terms of Use";
+"recentEarthquakes" = "Recent earthquakes";
+
+//Tabbar Items:-
+"0" = "Home";
+"1" = "Earthquake alert map";
+"2" = "Recovery";
+"3" = "Setttings";
+
+//Plan List :
+"makePlanTitle" = "Make a plan";
+"makePlanNextVc" = "Plan";
+"buildKitTitle" = "Build a kit";
+"buildKitNextVc" = "Build a kit";
+"secureTitle" = "Secure your place";
+"secureNextVc" = "Secure your place";
+"protectiveTitle" = "Protective action";
+"protectiveNextVc" = "Protective action";
+"findOutMore" = "Find out more on how to prepare";
+"planDesc" = "Get emergency notifications by signing up for NotifyLA, the City of Los Angeles’ official notification system for messages during emergencies and disasters.Text READY to 888-777 or fill in your information on the site at NotifyLA.\n\nTo help your neighborhood get prepared, learn about our Ready Your LA Neighborhood (RYLAN).";
+
+"notifyLaLink" = "https://emergency.lacity.org/notifyla";
+"rylanLink" = "https://emergency.lacity.org/rylan";
+
+"notifyLa" = "NotifyLA.";
+"rylan" = "(RYLAN)";
+
+
+//ABOUT LA List
+"partnersTitle"     = "Partners";
+"partnersNextVc"    = "Partners";
+"disclaimerTitle"   = "Support";
+"disclaimerNextVc"  = "Support";
+"earlyWorkTitle"    = "How does early warning work?";
+"earlyWorkNextVc"   = "How this works";
+"getFromLA"         = "What am I going to get from ShakeAlertLA?";
+"getFromLANextVc"   = "ShakeAlert Info";
+
+
+//15-08-2019
+"tutorialTitle"     = "For a quick demo on the sample alert and key functionalities";
+//END 15-08-2019
+//Recovery List
+"shakingTitle"      = "When shaking stops";
+"shakingNextVc"     = "When shaking stops";
+"shelterTitle"      = "Find a shelter";
+"shelterNextVc"     = "Find a shelter";
+"v_helpTitle"       = "Volunteer to help";
+"v_helpNextVc"      = "Volunteer to help";
+"accessDisasterTitle"    = "Get help";
+"accessDisasterNextVc"   = "Get help";
+
+//Notes Screen :
+"recommendation" = "Recommendations";
+"notes" = "Notes";
+"additionalNotes" = "Additional notes";
+"completed" = "Completed";
+
+//Build A Kit :
+"buildAtHome" = "Build a kit at home, in your car, and at work. Keep at least one week\'s worth of food and medicine on hand for everyone in your family at your home. Rotate food, water, and medications to avoid expired items in your kit. Consider the needs of infants, seniors and those with medical or disability needs. Here\'s a sample of supplies.\nLook below to check off supplies for your kit";
+
+
+"sampleLinkKey" = "sample of supplies.";
+
+"underTheBed" = "\n \nUnder the bed:";
+"sturdyShoes" = " Sturdy shoes tied to underside of the bed with flashlight in one shoe and extra batteries in the other";
+
+"someThingsTo" = "\n \nSome things to include in your kit:\n";
+"eachItemWill" = "(each item will have a checkbox to note completion)";
+
+
+
+//Settings :
+"english" = "English";
+"spanish" = "Spanish";
+"changeLanguage" = "Change Language";
+"appAllows" = "This app lets you to receive timely earthquake warning alerts in the County of Los Angeles.";
+"push" = "Push notifications";
+"phoneSettings" = "Phone Settings";
+"phoneSettingsDetail" = "To get alerts you don’t have to have the app open, but you must set Location Services to \"Always On\".";
+
+"locationSettings" = "Location Settings";
+"locationSettingDetails" = "Location services should be always on. The ShakeAlert system calculates the expected shaking intensity based on the distance between your phone location and the epicenter. An alert will be sent if an earthquake of magnitude 4.5 and weak shaking or greater occurs near your location. When the last anonymous location is updated, the previous location information is overwritten. This can be set when the app is first opened or at any time through Settings (Settings > Privacy > Location Services > ShakeAlertLA > Always).";
+
+//DND
+"DNDTitle" = "Critical Alerts Settings";
+"DNDHelper" = "The ShakeAlertLA app prompts you to enable critical alerts the first time you open the app. You can also enable it from Settings (Settings > Notifications > ShakeAlertLA > Allow Notifications for Sounds and Badges).";
+
+//Alert :
+"alertTitle" = "Earthquake! Earthquake!";
+"alertDesc" = "An earthquake is happening, you may feel weak shaking at your location.";
+"alertBtnCancel" = "Dismiss";
+"alertBtnOk" = "Show on a map";
+
+
+
+"shelterListText" = "If you need help, your home is damaged, or your location is unsafe, go to a shelter. Open shelters for the City of Los Angeles are listed below. If this information is not clear, call 3-1-1 for shelter locations or other non-emergency information. If you do not live in the City of Los Angeles and need a shelter, contact your city government or listen to news reports for where to seek services.";
+
+"refreshed" = "Last refreshed";
+
+//earthquake detail title :
+"details" = "Details";
+
+//view recent Earthquakes
+"label4"   = "below 4.0";
+"label5"   = "greater than 5.0";
+"label4n5" = "4.0 - 4.9";
+
+"magnitude" = "Magnitude";
+"magnitude:" = "Magnitude:";
+"time" = "Time";
+"location" = "Location";
+"latitude" = "Latitude";
+"longitude" = "Longitude";
+"intensity" = "Intensity";
+
+"byTime" = "By Time";
+"byMagnitude" = "By Magnitude";
+
+"clickForDetail" = "Click for details";
+
+"recentEarthQuake" = "Magnitude 3 or greater shown";
+"earthQuakeAlertMap" = "Magnitude 4.5 or greater shown";
+
+

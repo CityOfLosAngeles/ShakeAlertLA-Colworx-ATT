@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:paddingStart="15dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:focusable="false"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/find_out" />
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/image"
+        android:layout_toStartOf="@+id/arrow"
+        android:layout_centerVertical="true"
+        android:textSize="15sp"
+        android:fontFamily="@font/sf_ui_semibold"
+        android:text="When shaking stop"
+        android:textColor="@color/black"
+        android:maxLines="3"
+        android:ellipsize="end"/>
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@mipmap/arrow"
+        android:layout_margin="15dp"
+        android:focusable="false"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"/>
+</RelativeLayout>

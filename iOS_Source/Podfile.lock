@@ -1,0 +1,56 @@
+PODS:
+  - AWSAuthCore (2.6.23):
+    - AWSCore (= 2.6.23)
+  - AWSCore (2.6.23)
+  - AWSMobileClient (2.6.23):
+    - AWSAuthCore (= 2.6.23)
+  - AWSPinpoint (2.6.23):
+    - AWSCore (= 2.6.23)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - GoogleMaps (2.7.0):
+    - GoogleMaps/Maps (= 2.7.0)
+  - GoogleMaps/Base (2.7.0)
+  - GoogleMaps/Maps (2.7.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.7.0):
+    - GoogleMaps/Base (= 2.7.0)
+  - IQKeyboardManager (6.1.1)
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - AWSMobileClient (~> 2.6.13)
+  - AWSPinpoint (~> 2.6.13)
+  - FMDB
+  - GoogleMaps
+  - GooglePlaces
+  - IQKeyboardManager
+  - SVProgressHUD (~> 2.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AWSAuthCore
+    - AWSCore
+    - AWSMobileClient
+    - AWSPinpoint
+    - FMDB
+    - GoogleMaps
+    - GooglePlaces
+    - IQKeyboardManager
+    - SVProgressHUD
+
+SPEC CHECKSUMS:
+  AWSAuthCore: 2db4c4f3db70e5789193b602e0392d25da6aca4e
+  AWSCore: d56f69d7312e652e51c70f3b25e1687a5c2d06ca
+  AWSMobileClient: c94ca9856f99e99a4813ebc7f4c19cecce7f06c8
+  AWSPinpoint: 198ece283bc4b5b7dc8e08dfb3415b6225203e7f
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
+  IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: ac37611b91494b6a18b463ff175d1db390f4b881
+
+COCOAPODS: 1.6.2

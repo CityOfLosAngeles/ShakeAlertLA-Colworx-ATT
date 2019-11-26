@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@drawable/gradient_bg"
+    android:paddingTop="80dp"
+    tools:context=".UserInterface.Fragments.TourSlideFragment">
+
+<!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"/>-->
+
+    <ImageView
+        android:id="@+id/slide"
+        android:layout_width="200dp"
+        android:layout_height="130dp"
+        android:layout_margin="0dp"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/d_onboarding"/>
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/slide"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:textAlignment="center"
+        tools:text="@string/header_a"
+        android:focusable="true"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/header"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:textAlignment="center"
+        tools:text="@string/tour_a"
+        android:focusable="true"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
+    <ImageView
+        android:id="@+id/carosal"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="30dp"
+        android:src="@mipmap/carousal_b"/>
+</RelativeLayout>

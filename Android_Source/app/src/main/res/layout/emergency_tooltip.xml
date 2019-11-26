@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:maxWidth="250dp"
+    android:padding="10dp"
+    tools:context=".UserInterface.Fragments.Emergency_MapFragment">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desc"
+        android:layout_marginTop="5dp"
+        android:textSize="15sp"
+        android:maxLines="2"
+        android:ellipsize="end"/>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/adrs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adrs"
+        android:layout_marginTop="5dp"
+        android:textSize="15sp"
+        android:maxLines="2"
+        android:ellipsize="end"/>
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_marginTop="5dp">-->
+        <TextView
+            android:id="@+id/magnitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Magnitude: 6"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time: 24 Aug, 2018"
+            android:textSize="12sp"
+            android:layout_marginTop="5dp"/>
+    <!--</LinearLayout>-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/click_for_details"
+        android:layout_marginTop="8dp"
+        android:textSize="13sp"
+        android:paddingEnd="10dp"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="viewEnd"
+        android:maxLines="2"
+        android:ellipsize="end"/>
+</LinearLayout>

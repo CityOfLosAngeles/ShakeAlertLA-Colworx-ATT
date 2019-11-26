@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  cityofLA
+
+  Created by Sam Sidd on 21/12/2018.
+  Copyright © 2018 CityOfLa. All rights reserved.
+*/
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Para recibir alertas no tiene que tener la app abierta, pero debe ajustar su Servicios de Localización a \"siempre visible\"";
+"NSLocationWhenInUseUsageDescription" = "Para recibir alertas no tiene que tener la app abierta, pero debe ajustar su Servicios de Localización a \"siempre visible\"";

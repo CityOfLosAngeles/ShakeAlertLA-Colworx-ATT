@@ -1,0 +1,8 @@
+<ImageView
+    android:id="@+id/back"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:src="@mipmap/back"
+    android:contentDescription="@string/go_back"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

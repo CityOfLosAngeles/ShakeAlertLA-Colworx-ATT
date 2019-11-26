@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tool="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".UserInterface.Fragments.SettingsFragment">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="-15dp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/back"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:contentDescription="@string/settings"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="15dp"
+            android:text="@string/settings"
+            android:focusable="true"
+            style="@style/title"/>
+
+        <include
+            layout="@layout/header_padding" />
+    </LinearLayout>
+
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:focusable="false">
+
+            <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="15dp"-->
+            <!--android:text="@string/general"-->
+            <!--android:textColor="@color/grey_600"-->
+            <!--android:textSize="18sp"-->
+            <!--android:textStyle="bold" />-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/change_language"
+                android:contentDescription="@string/change_language"
+                android:focusable="true"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:fontFamily="@font/sf_ui_semibold" />
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/language_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="English"
+                    android:textColor="@color/grey_400"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/language_popup"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="5dp"
+                    android:src="@mipmap/sort"
+                    android:tint="@color/green_500" />
+            </RelativeLayout>
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp">
+                <RadioButton
+                    android:id="@+id/english"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:button="@drawable/ic_lang"
+                    android:paddingStart="15dp"
+                    android:text="@string/english"
+                    android:contentDescription="@string/english" />
+                <RadioButton
+                    android:id="@+id/spanish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:paddingStart="15dp"
+                    android:button="@drawable/ic_lang"
+                    android:textSize="17sp"
+                    android:text="@string/spanish"
+                    android:contentDescription="@string/spanish"/>
+            </RadioGroup>
+            <View
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/grey_300" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/push_notification"
+                android:contentDescription="@string/push_notification"
+                android:layout_marginTop="25dp"
+                android:focusable="true"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:fontFamily="@font/sf_ui_semibold"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="15dp"
+                    android:focusable="true"
+                    android:layout_toStartOf="@+id/notificationSwitch"
+                    android:text="@string/receive_timely_notification_about_earthquakes_in_los_angeles"
+                    android:contentDescription="@string/receive_timely_notification_about_earthquakes_in_los_angeles"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <Switch
+                    android:visibility="gone"
+                    android:id="@+id/notificationSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:checked="true" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/phone_settings"
+                android:contentDescription="@string/phone_settings"
+                android:layout_marginTop="15dp"
+                android:focusable="true"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:fontFamily="@font/sf_ui_semibold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:focusable="true"
+                android:layout_toStartOf="@+id/notificationSwitch"
+                android:text="@string/to_get_alerts_you"
+                android:contentDescription="@string/to_get_alerts_you"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/location_settings"
+                android:contentDescription="@string/location_settings"
+                android:layout_marginTop="15dp"
+                android:focusable="true"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:fontFamily="@font/sf_ui_semibold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="@string/optimal_result"
+                android:contentDescription="@string/optimal_result"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/do_not_disturb_settings"
+                android:contentDescription="@string/location_settings"
+                android:layout_marginTop="15dp"
+                android:focusable="true"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:fontFamily="@font/sf_ui_semibold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="@string/do_not_disturb_settings_descriptin"
+                android:contentDescription="@string/optimal_result"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/imgScreenshotDoNotDisturb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:src="@mipmap/screenshot"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="amazonLibs/aws-java-sdk-core-1.11.407.jar"/>
+	<classpathentry kind="lib" path="amazonLibs/aws-java-sdk-pinpoint-1.11.407.jar"/>
+	<classpathentry kind="lib" path="amazonLibs/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="amazonLibs/commons-logging-1.1.3.jar"/>
+	<classpathentry kind="lib" path="amazonLibs/httpclient-4.5.5.jar"/>
+	<classpathentry kind="lib" path="amazonLibs/httpcore-4.4.9.jar"/>
+	<classpathentry kind="lib" path="amazonLibs/ion-java-1.0.2.jar"/>
+	<classpathentry kind="lib" path="amazonLibs/jackson-annotations-2.6.0.jar"/>
+	<classpathentry kind="lib" path="amazonLibs/jackson-core-2.6.7.jar"/>
+	<classpathentry kind="lib" path="amazonLibs/jackson-databind-2.6.7.1.jar"/>
+	<classpathentry kind="lib" path="amazonLibs/jackson-dataformat-cbor-2.6.7.jar"/>
+	<classpathentry kind="lib" path="amazonLibs/jmespath-java-1.11.407.jar"/>
+	<classpathentry kind="lib" path="amazonLibs/joda-time-2.8.1.jar"/>
+	<classpathentry kind="lib" path="otherLibs/mysql-connector.jar"/>
+	<classpathentry kind="lib" path="otherLibs/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="otherLibs/jts-1.9.jar"/>
+	<classpathentry kind="lib" path="ShakeAlertLibs/activemq-all-5.13.1.jar"/>
+	<classpathentry kind="lib" path="ShakeAlertLibs/ShakeAlertClient.jar"/>
+	<classpathentry kind="lib" path="ShakeAlertLibs/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="ShakeAlertLibs/xml-apis.jar"/>
+	<classpathentry kind="lib" path="otherLibs/gson-2.7.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

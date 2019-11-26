@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/bg"
+        android:orientation="vertical"
+        tools:context=".UserInterface.Activities.BuiltAkit_Activity">
+
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/plancolorPrimary"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/back"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15dp"
+                android:text="@string/build_a_kit"
+                android:contentDescription="@string/build_a_kit"
+                style="@style/title" />
+
+            <include
+                layout="@layout/header_padding" />
+        </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+            android:id="@+id/buildAkitInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="25dp"
+            android:paddingTop="25dp"
+            android:paddingEnd="25dp"
+            android:text="@string/built_a_kit_info"
+            android:hint="Tap to visit website"
+            android:textColor="@color/grey_800"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:paddingStart="20dp"
+            android:text="https://www.ready.gov/buila-a-kit"
+            android:textColor="@color/grey_700"
+            android:textSize="16.5sp"
+            android:fontFamily="@font/sf_ui_medium"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/under_the_bed"
+            android:textColor="@color/grey_800"
+            android:textSize="15sp"/>
+
+        <View
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/grey_100" />
+
+        <com.app.shakealertla.Utils.NestedListView
+            android:id="@+id/builtAkitListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/transparent"
+            android:dividerHeight="0dp"
+            tools:listitem="@layout/kit_item" />
+        </LinearLayout>
+    </ScrollView>
+    </LinearLayout>

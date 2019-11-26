@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ShakeAlertLA</string>
+    <string name="title_activity_maps">Map</string>
+    <string-array name="screens">
+        <item>Home</item>
+        <item>Emergency</item>
+        <item>Recovery</item>
+        <item>Settings</item>
+    </string-array>
+    <string name="be_batter_prepared">PREPÁRATE PARA UN TERREMOTO</string>
+    <string name="get_your_kit_ready">ShakeAlertLA le envía notificaciones cuando se produzca un sismo en el Condado de Los Ángeles de una magnitud de 4.5 o mayor, usualmente antes de que usted sienta la sacudida. Aprenda como prepararse.</string>
+    <string name="prepare_for_an_earthquake">Preparese para un terremoto</string>
+    <string name="understand_earthquake_alerts">Mapa de alerta \nde terremoto</string>
+    <string name="view_recent_earthquakes">Ver terremotos recientes</string>
+    <string name="recover_from_an_earthquake">Recuperese de un terremoto</string>
+    <string name="about_shakealertla">Acerca de ShakeAlertLA</string>
+    <string name="about_shakealertla_info">Acerca de ShakeAlertLA</string>
+    <string name="terms_of_use">Términos de Uso</string>
+    <string name="terms_conditions">Términos y Condiciones</string>
+    <string name="plan">Plan</string>
+    <string name="find_out_more_on_how_to_prepare">Descubra más sobre cómo prepararse</string>
+    <string name="www_earthquakecountry_org">www.earthquakecountry.org</string>
+    <string name="make_a_plan">Haga un plan</string>
+    <string name="recommendations">Recomendaciones</string>
+    <string name="notes">Notas</string>
+    <string name="additional_notes">Notas adicionales</string>
+    <string name="completed">Terminado</string>
+    <string name="build_a_kit">Prepare un kit</string>
+    <string name="built_a_kit_info">Prepare un kit en casa, en su auto y en el trabajo. Tenga a mano por lo menos una semana de alimentos y medicamentos para todos los miembros de su familia en su hogar. Rote los alimentos, el agua y los medicamentos para evitar elementos caducados en su kit. Tenga en cuenta las necesidades de los bebés, los ancianos y personas con necesidades médicas o de discapacidad. Aquí hay una <a href="https://www.ready.gov/build-a-kit">muestra de suministros</a>.
+    </string>
+    <string name="under_the_bed">Vea abajo para verificar los suministros para su kit.\n\n<b>Debajo de la cama: </b>zapatos resistentes atados a la parte inferior de la cama con una linterna en un zapato y baterías adicionales en el otro.\n\n<b>Algunas cosas para incluir en su kit:</b>\n(cada elemento tendrá una casilla de verificación para anotar que se completó).</string>
+    <string name="secure_your_place">Asegure su casa</string>
+    <string name="make_your_home_safer_to_minimize_injury_and_damage_during_earthquake">Make your home safer to minimize injury and damage during earthquake.</string>
+    <string name="proactive">Medidas de Protección</string>
+    <string name="protective_action">protective_action_es</string>
+    <string name="how_early_warning_work">¿Cómo funciona la Advertencia temprana?</string>
+    <string name="how_this_works">Como funciona esto</string>
+    <string name="how_does_early_warning_work">how_does_early_warning_work</string>
+    <string name="recent_earthquakes">Terremotos recientes</string>
+    <string name="recent_earthquakes_desc">Magnitud 3 o superior mostrada</string>
+    <string name="by_time">A tiempo</string>
+    <string name="by_magnitude">Por magnitud</string>
+    <string name="magnitude">Magnitud</string>
+    <string name="time">Hora</string>
+    <string name="location">Ubicación</string>
+    <string name="latitude">Latitud</string>
+    <string name="longitude">Longitud</string>
+    <string name="built_a_kit">Prepare un Kit</string>
+    <string name="partners">Socios</string>
+    <string name="desclaimer">Soporte</string>
+    <string name="using_shakealertla">Using ShakeAlertLA</string>
+    <string name="what_i_get_from_shakealertla">¿Qué voy a conseguir de ShakeAlertLA?</string>
+    <string name="shakealert_info">ShakeAlert información</string>
+    <string name="partner_file">partner_es</string>
+    <string name="disclamer_file">disclaimer_es</string>
+    <string name="using_shake_alert_la_file">using_shake_alert_la_es</string>
+    <string name="how_early_warning_work_file">how_does_early_warning_work_es</string>
+    <string name="what_i_get_from_shakealertla_file">where_am_i_going_to_get_from_shakealert_la_es</string>
+    <string name="terms_of_use_file">terms_of_use_es</string>
+    <string name="when_shaking_stops">Cuando termine de temblar</string>
+    <string name="find_a_shelter">Encontre un albergue</string>
+    <string name="volunteer_to_help">Ofrézcase como voluntario para ayudar</string>
+    <string name="access_disaster_services">Acceso a servicios de desastres</string>
+    <string name="get_help">Consigue ayuda</string>
+    <string name="when_shaking_stops_file">when_shaking_stops_es</string>
+    <string name="volunteer_to_help_file">volunteer_to_help_es</string>
+    <string name="access_disaster_services_file">access_disaster_services_es</string>
+    <string name="if_you_need_help">Si necesita ayuda, su casa está dañada o su ubicación no es segura, vaya a un albergue. Los albergues abiertos para la ciudad de Los Ángeles se enumeran a continuación. Si esta información no está clara, llame al 3–1–1 para ubicar albergues u otra información que no sea de emergencia. Si no vive en la ciudad de Los Ángeles y necesita un albergue, comuníquese con el gobierno de su ciudad o escuche los informes de noticias para saber dónde buscar servicios.</string>
+    <string name="general">General</string>
+    <string name="change_language">Cambiar de Idioma</string>
+    <string name="push_notification">Notificaciones Push</string>
+    <string name="receive_timely_notification_about_earthquakes_in_los_angeles">Este app nos permite recibir alertas oportunas de terremoto en el Condado de Los Angeles.</string>
+    <string name="shakealertla">ShakeAlertLA</string>
+    <string name="title_activity_bottom">BottomActivity</string>
+    <string name="title_home">Página Inicial</string>
+
+    <string name="quake_map">Mapa de alerta de terremoto</string>
+    <string name="recovery">Recuperación</string>
+    <string name="settings">Ajustes</string>
+    <string name="details">Detalles</string>
+    <string name="quakemap">Mapa de alerta de terremoto</string>
+    <string name="quakemap_desc">Magnitude 4.5 o superior mostrada</string>
+    <string name="mmi_is_below_4_0"><![CDATA[< 4.0]]></string>
+    <string name="mmi_is_greater_than_5_0"><![CDATA[> 5.0]]></string>
+    <string name="mmi_is_greater_than_4_0_and_less_then_5_0"><![CDATA[4.0–4.9]]></string>
+    <string name="i_agree_to_the_terms_and_conditions">Estoy de acuerdo con los \ntérminos y condiciones</string>
+    <string name="english">Inglés</string>
+    <string name="spanish">Español</string>
+    <string name="earthquake_earthquake">¡Terremoto! ¡Terremoto!</string>
+    <string name="earthquake_is_happening">Un terremoto está sucediendo, es posible que sientas una sacudida débil en su ubicación.</string>
+    <string name="dismiss">Descartar</string>
+    <string name="view_on_map">Localizar en un mapa</string>
+    <string name="header_a"><b>Bienvenido a ShakeAlertLA!</b></string>
+    <string name="header_b"><b>Preparese antes del temblor</b></string>
+    <string name="header_c"><b>Sólo funciona en Los Ángeles</b></string>
+    <string name="header_d"><b>Esté alerta justo antes del temblor</b></string>
+    <string name="tour_a">\nEl sistema de alerta temprana de terremotos ShakeAlert ™ envía mensajes que indican que un terremoto ha sido detectado y puede afectarle.</string>
+    <string name="tour_b">\nPuede recibir la alerta antes, durante o después del temblor. Tome medidas de protección tan pronto como reciba una alerta o sienta o escuche un terremoto. Agáchese, cúbrase y sujétase.</string>
+    <string name="tour_c">\nLa función de alerta temprana de esta aplicación sólo funciona en el condado de Los Ángeles, California.
+    \nAjustes del teléfono Para recibir alertas no tiene que tener la app abierta, pero debe ajustar su Servicios de Localización a "siempre visible".</string>
+    <string name="tour_d">\nShakeAlert NO es una predicción de que un terremoto ocurrirá. Le Informa que ha comenzado un terremoto y que puede sentir temblores. Esta aplicación está destinada a ayudar a proporcionar alertas para su seguridad. Use el sentido común para mantenerse seguro.</string>
+    <string name="earth_quake_earth_quake_expect_severe_shaking">Expect severe shaking. Drop, cover, hold on. Protect yourself now!</string>
+    <string name="last_refreshed">Última actualización: </string>
+    <string name="intensity">Intensidad</string>
+    <string name="click_for_details">haga clic para detalles</string>
+    <string name="go_back">Volver</string>
+    <string name="phone_settings">Ajustes del teléfono</string>
+    <string name="to_get_alerts_you">Para recibir alertas no tiene que tener la app abierta, pero debe ajustar su Servicios de Localización a "siempre visible".</string>
+    <string name="get_emergency">Obtenga notificaciones de emergencia registrandose con NotifyLA, el sistema oficial de la ciudad de Los Ángeles
+        de mensajes durante una emergencia o desastre. Envíe un mensaje de texto con la palabra LISTO al 888–777 o incluya su informaciónen el sitio
+        de <a href="https://emergency.lacity.org/notifyla">NotifyLA</a>.
+        \n\nPara ayudar a su comunidad a prepararse, informese sobre nuestro
+        Listo tu LA Barrio <a href="https://emergency.lacity.org/rylan">(RYLAN)</a> programa.</string>
+    <string name="magnitude_dot">Magnitud:</string>
+    <string name="loading">Cargando...</string>
+    <string name="location_settings">Ubicación Ajustes</string>
+    <string name="optimal_result">Para resultado óptimo, el \"Servicio de Ubicación\" debe estar \"Siempre Encendido\". ShakeAlert calcula la intensidad anticipada del temblor basada en la distacia entre la ubicación de su teléfono y el epicentro. Una alerta se enviará si se alcanza el umbral prestablecido. Cuando se actualiza la última ubicación anómina, la información de la ubicación previa es sobrescrita.</string>
+    <string name="quick_demo_functionalities">Para una breve demostración de la prueba de alerta y funciones esenciales</string>
+    <string name="do_not_disturb_settings">No Molestar Ajustes</string>
+    <string name="do_not_disturb_settings_descriptin">1. Abre la aplicación Ajustes de tu dispositivo.\n2. Toca Aplicaciones y notificaciones.\n3. Toca la aplicación ShakeAlert LA. Si no la ves, toca Ver todas las aplicaciones o Información de las aplicaciones y toca la aplicación que quieras.\n4. Toca Notificaciones de la aplicación.\nActiva Omitir No molestar.\nNota: Si no ves la opción \"Omitir No molestar\", toca Ajustes adicionales de la aplicación y luego Notificaciones y activa la opción Omitir No molestar.</string>
+</resources>

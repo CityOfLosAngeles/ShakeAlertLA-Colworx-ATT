@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:focusable="true"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/sf_ui_semibold"/>
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desc"
+        android:focusable="true"
+        android:layout_marginTop="5dp"
+        android:textSize="15sp"
+        android:maxLines="2"
+        android:ellipsize="end"/>
+
+</LinearLayout>

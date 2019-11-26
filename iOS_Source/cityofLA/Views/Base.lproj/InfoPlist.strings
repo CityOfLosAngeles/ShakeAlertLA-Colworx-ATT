@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  cityofLA
+
+  Created by Sam Sidd on 21/12/2018.
+  Copyright © 2018 CityOfLa. All rights reserved.
+*/
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "a222sdasd";
+"NSLocationWhenInUseUsageDescription" = "asdas221212dasd";

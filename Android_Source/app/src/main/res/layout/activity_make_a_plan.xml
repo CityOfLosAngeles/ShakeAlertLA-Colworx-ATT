@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@mipmap/bg"
+    tools:context=".UserInterface.Activities.MakeAplanActivity">
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/plancolorPrimary">
+        <include
+            layout="@layout/back"/>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/make_a_plan"
+            android:paddingStart="15dp"
+            style="@style/title"/>
+        <include
+            layout="@layout/header_padding" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/makeaplanListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="0dp"
+        android:divider="@color/transparent"
+        tools:listitem="@layout/makeaplan_list_item"/>
+</LinearLayout>

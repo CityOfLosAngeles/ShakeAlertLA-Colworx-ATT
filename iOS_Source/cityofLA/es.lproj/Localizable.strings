@@ -1,0 +1,170 @@
+/* 
+  Localizable.strings
+  cityofLA
+
+  Created by Sam Sidd on 03/10/2018.
+  Copyright © 2018 CityOfLa. All rights reserved.
+*/
+
+//Onboarding 0 :
+"0title" = "Bienvenido a ShakeAlertLA!";
+"0desc"  = "El sistema de alerta temprana de terremotos ShakeAlert ™ envía mensajes que indican que un terremoto ha sido detectado y puede afectarle.";
+
+//Onboarding 1 :
+"1title" = "Preparese antes del temblor.";
+"1desc"  = "Puede recibir la alerta antes, durante o después del temblor. Tome medidas de protección tan pronto como reciba una alerta o sienta o escuche un terremoto. Agáchese, cúbrase y sujétase.";
+
+//Onboarding 2 :
+"2title" = "Sólo funciona en Los Ángeles";
+"2desc"  = "La función de alerta temprana de esta aplicación sólo funciona en el condado de Los Ángeles, California.\nPara recibir alertas no tiene que tener la app abierta, pero debe ajustar su Servicios de Localización a siempre visible.";
+
+//Onboarding 3 :
+"3title" = "Esté alerta justo antes del temblor.";
+"3desc"  = "ShakeAlert NO es una predicción de que un terremoto ocurrirá. Le Informa que ha comenzado un terremoto y que puede sentir temblores. Esta aplicación está destinada a ayudar a proporcionar alertas para su seguridad. Use el sentido común para mantenerse seguro.\n";
+
+
+//Terms and Conditions Screen
+"termsTitle"    = "Términos y Condiciones";
+"termsBtnTitle" = "Estoy de acuerdo con las condiciones";
+
+//Home Cells:-
+"prepare"    = "Preparese para un terremoto";
+"understand" = "Mapa de alerta de terremoto";
+"view"       = "Vea terremotos recientes";
+"viewTitle"  = "Terremotos recientes";
+"recover"    = "Recuperese de un terremoto";
+
+//Home Top Labels:
+"bePrepared" = "PREPÁRATE PARA UN TERREMOTO";
+"kitReady"   = "ShakeAlertLA le envía notificaciones cuando se produzca un sismo en el Condado de Los Ángeles de una magnitud de 4.5 o mayor, usualmente antes de que usted sienta la sacudida. Aprenda como prepararse.";
+
+"homeTitle"     = "ShakeAlertLA";
+"recoveryTitle" = "Recuperación";
+"quakeMapTitle" = "Mapa de alerta de terremoto";
+"settingsTitle" = "Ajustes";
+
+//Home Buttons
+"aboutShakeAlert" = "Acerca de ShakeAlertLA";
+"termsOfUse" = "Términos de Uso";
+
+//Tabbar Items:-
+"0" = "Página Inicial";
+"1" = "Mapa de alerta de terremoto";
+"2" = "Recuperación";
+"3" = "Ajustes";
+
+
+//Plan List :
+"makePlanTitle" = "Haga un plan";
+"makePlanNextVc" = "Plan";
+"buildKitTitle" = "Prepare un kit";
+"buildKitNextVc" = "Prepare un kit";
+"secureTitle" = "Asegure su casa";
+"secureNextVc" = "Asegure su casa";
+"protectiveTitle" = "Medidas de Protección";
+"protectiveNextVc" = "Medidas de Protección";
+"findOutMore" = "Descubra más sobre cómo prepararse";
+"planDesc" = "Obtenga notificaciones de emergencia registrandose con NotifyLA, el sistema oficial de la ciudad de Los Ángeles de mensajes durante una emergencia o desastre. Envíe un mensaje de texto con la palabra LISTO al 888–777 o incluya su informaciónen el sitio de NotifyLA. \n\n Para ayudar a su comunidad a prepararse, informese sobre nuestro Listo tu LA Barrio (RYLAN) programa.";
+
+"notifyLaLink" = "https://emergency.lacity.org/notifyla";
+"rylanLink" = "https://emergency.lacity.org/rylan";
+
+"notifyLa" = "NotifyLA";
+"rylan" = "(RYLAN)";
+
+//ABOUT LA List
+"aboutTitle" = "Acerca de Shake Alert LA";
+"partnersTitle"     = "Socios";
+"partnersNextVc"    = "Socios";
+"disclaimerTitle"   = "Soporte";
+"disclaimerNextVc"  = "Soporte";
+"earlyWorkTitle"    = "¿Cómo funciona la Advertencia temprana?";
+"earlyWorkNextVc"   = "Como funciona esto";
+"getFromLA"         = "¿Qué voy a conseguir de ShakeAlertLA?";
+"getFromLANextVc"   = "ShakeAlert información";
+
+//15-08-2019
+"tutorialTitle"     = "Para una breve demostración de la prueba de alerta y funciones esenciales";
+//END 15-08-2019
+
+
+//Recovery List
+"shakingTitle"      = "Cuando deje de temblar";
+"shakingNextVc"     = "Cuando deje de temblar";
+"shelterTitle"      = "Encontre un albergue";
+"shelterNextVc"     = "Encontre un albergue";
+"v_helpTitle"       = "Ofrézcase como voluntario para ayudar";
+"v_helpNextVc"      = "Ofrézcase como voluntario para ayudar";
+"accessDisasterTitle"    = "Consigue ayuda";
+"accessDisasterNextVc"   = "Consigue ayuda";
+
+//Notes Screen :
+"recommendation" = "Recomendaciones";
+"notes" = "Notas";
+"additionalNotes" = "Notas adicionales";
+"completed" = "Terminado";
+
+
+//Build A Kit :
+"buildAtHome" ="Prepare un kit en casa, en su auto y en el trabajo. Tenga a mano por lo menos una semana de alimentos y medicamentos para todos los miembros de su familia en su hogar. Rote los alimentos, el agua y los medicamentos para evitar elementos caducados en su kit. Tenga en cuenta las necesidades de los bebés, los ancianos y personas con necesidades médicas o de discapacidad. Aquí hay una muestra de suministros.\n Vea abajo para verificar los suministros para su kit.";
+"sampleLinkKey" = "muestra de suministros.";
+
+"underTheBed" = "\n \nDebajo de la cama: ";
+"sturdyShoes" = " zapatos resistentes atados a la parte inferior de la cama con una linterna en un zapato y baterías adicionales en el otro.";
+
+"someThingsTo" = "\n \nAlgunas cosas para incluir en su kit:\n";
+"eachItemWill" = "(cada elemento tendrá una casilla de verificación para anotar que se completó).";
+
+
+
+
+//Settings :
+"english" = "Inglés";
+"spanish" = "Español";
+"changeLanguage" = "Cambiar de Idioma";
+"appAllows" = "Esta app le permite recibir alertas oportunas de terremoto en el Condado de Los Angeles.";
+"push" = "Notificaciones Push";
+"phoneSettings" = "Ajustes del teléfono";
+"phoneSettingsDetail" = "Para recibir alertas no tiene que tener la app abierta, pero debe ajustar su Servicios de Localización a \"siempre visible\".";
+//15-08-2019
+"locationSettings" = "Ajustes de Ubicación";
+"locationSettingDetails" = "Los Servicios de ubicación deben estar siempre encendidos.  El sistema de ShakeAlert calcula la la intensidad de la agitación esperada basándose en la distancia entre la ubicación de su teléfono y el epicentro.  Se enviará una alerta si un terremoto de magnitud 4.5 o mayor ocurre en su ubicación.  Cuando la última ubicación anónima es actualizada, la ubicaicón previa es sobrescrita.  Esto se puede activar cuando inicia la app por primera vez o en cualquier momento a traves de las Configuraciones.";
+//DND
+"DNDTitle" = "Ajustes de Alertas Críticas";
+"DNDHelper" = "La app de ShakeAlertLA le permite activar las Alertas críticas la primera vez que abre la app.  También puede activarlas a traves de las Configuraciones (Configuraciones > Privacidad > Notificaciones > ShakeAlert > Permitir Sonidos y Globos para las Notificaciones).";
+//END 15-08-2019
+
+
+//Alert :
+"alertTitle" = "¡Terremoto! ¡Terremoto!";
+"alertDesc" = "Un terremoto está sucediendo, es posible que sientas una sacudida débil en su ubicación.";
+"alertBtnCancel" = "Descartar";
+"alertBtnOk" = "Localizar en un mapa";
+
+
+"shelterListText" = "Si necesita ayuda, su casa está dañada o su ubicación no es segura, vaya a un albergue. Los albergues abiertos para la ciudad de Los Ángeles se enumeran a continuación. Si esta información no está clara, llame al 3-1-1 para ubicar los refugios u otra información que no sea de emergencia. Si no vive en la ciudad de Los Ángeles y necesita un albergue, comuníquese con el gobierno de su ciudad o escuche los informes de noticias para saber dónde buscar servicios.";
+"refreshed" = "última actualización";
+
+//earthquake detail title :
+"details" = "Detalles";
+
+//view recent Earthquakes
+"label4"   = "< 4.0";
+"label5"   = "> 5.0";
+"label4n5" = "4.0 - 4.9";
+
+"magnitude" = "Magnitud";
+"magnitude:" = "Magnitud:";
+"time"      = "Hora";
+"location"  = "ubicación";
+"latitude"  = "Latitud";
+"longitude" = "Longitud";
+"intensity" = "Intensidad";
+
+"byTime" = "A tiempo";
+"byMagnitude" = "Por magnitud";
+
+"clickForDetail" = "haga clic para detalles";
+
+"recentEarthQuake" = "Magnitud 3 o superior mostrada";
+"earthQuakeAlertMap" = "Magnitud 4.5 o superior mostrada";

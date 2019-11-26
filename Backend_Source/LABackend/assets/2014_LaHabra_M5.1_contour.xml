@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<event_message alg_vers="1.0.0 2018-02-23" category="test" instance="replay-contour@eew-test" message_type="new" orig_sys="eqinfo2gm" ref_id="0" ref_src="" timestamp="2014-03-29T04:09:46.131Z" version="0">
+
+  <core_info id="2014_LaHabra_M5.1">
+    <mag units="Mw">5.1000</mag>
+    <mag_uncer units="Mw">0.3982</mag_uncer>
+    <lat units="deg">33.9454</lat>
+    <lat_uncer units="deg">0.1283</lat_uncer>
+    <lon units="deg">-117.9237</lon>
+    <lon_uncer units="deg">0.1283</lon_uncer>
+    <depth units="km">8.0000</depth>
+    <depth_uncer units="km">5.0000</depth_uncer>
+    <orig_time units="UTC">2014-03-29T04:09:42.131Z</orig_time>
+    <orig_time_uncer units="sec">2.5177</orig_time_uncer>
+    <likelihood>0.9091</likelihood>
+    <num_stations>0</num_stations>
+  </core_info>
+
+  <contributors>
+    <contributor alg_instance="dm@eew2" alg_name="dm" alg_version="2.0.11 2014-02-03" category="test" event_id="2014_LaHabra_M5.1" version="0"/>
+  </contributors>
+
+  <gm_info>
+    <gmcontour_pred number="4">
+      <contour>
+        <MMI units="">2.0000</MMI>
+        <PGA units="cm/s/s">2.8480</PGA>
+        <PGV units="cm/s">0.2154</PGV>
+        <polygon number="8">34.6679,-117.9237 34.4547,-117.3042 33.9423,-117.0528 33.4330,-117.3115 33.2229,-117.9237 33.4330,-118.5359 33.9423,-118.7946 34.4547,-118.5432 34.6679,-117.9237</polygon>
+      </contour>
+      <contour>
+        <MMI units="">3.0000</MMI>
+        <PGA units="cm/s/s">8.1113</PGA>
+        <PGV units="cm/s">0.6449</PGV>
+        <polygon number="8">34.2892,-117.9237 34.1881,-117.6298 33.9447,-117.5093 33.7020,-117.6315 33.6016,-117.9237 33.7020,-118.2159 33.9447,-118.3381 34.1881,-118.2176 34.2892,-117.9237</polygon>
+      </contour>
+      <contour>
+        <MMI units="">4.0000</MMI>
+        <PGA units="cm/s/s">23.1013</PGA>
+        <PGV units="cm/s">1.9307</PGV>
+        <polygon number="8">34.0806,-117.9237 34.0410,-117.8083 33.9453,-117.7607 33.8497,-117.8086 33.8102,-117.9237 33.8497,-118.0388 33.9453,-118.0867 34.0410,-118.0391 34.0806,-117.9237</polygon>
+      </contour>
+      <contour>
+        <MMI units="">5.0000</MMI>
+        <PGA units="cm/s/s">65.7933</PGA>
+        <PGV units="cm/s">5.7797</PGV>
+        <polygon number="8">33.9873,-117.9237 33.9750,-117.8880 33.9454,-117.8732 33.9158,-117.8880 33.9035,-117.9237 33.9158,-117.9594 33.9454,-117.9742 33.9750,-117.9594 33.9873,-117.9237</polygon>
+      </contour>
+    </gmcontour_pred>
+  </gm_info>
+
+</event_message>
+
+

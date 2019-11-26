@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg"
+    android:orientation="vertical"
+    tools:context=".UserInterface.Activities.PlanActivity">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/plancolorPrimary"
+        android:orientation="vertical">
+
+        <include layout="@layout/back" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingStart="15dp"
+            android:text="@string/plan" />
+
+        <include layout="@layout/header_padding" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/planListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:divider="@color/transparent"
+        android:dividerHeight="0dp"
+        tools:listitem="@layout/recovery_list_item"
+        tools:visibility="gone" />
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="15dp"-->
+        <!--android:layout_below="@+id/planListView"-->
+        <!--android:text=""/>-->
+    <TextView
+        android:id="@+id/getEmergency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:text="@string/get_emergency"
+        android:contentDescription="@string/get_emergency"
+        android:layout_below="@+id/planListView"
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/findMore"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/planListView"
+        android:layout_marginStart="15dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="15dp"
+            android:src="@mipmap/find_out" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toStartOf="@+id/arrow"
+            android:layout_toEndOf="@+id/image"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/find_out_more_on_how_to_prepare"
+                android:textColor="@color/black"
+                android:fontFamily="@font/sf_ui_semibold"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="15dp"
+            android:src="@mipmap/arrow" />
+    </RelativeLayout>
+</RelativeLayout>

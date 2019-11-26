@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg"
+    android:orientation="vertical"
+    tools:context=".UserInterface.Activities.KitDetailsActivity">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/plancolorPrimary"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/back"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingStart="15dp"
+            android:text="Title"
+            android:maxLines="1"
+            android:ellipsize="end"
+            style="@style/title"/>
+
+        <include
+            layout="@layout/header_padding" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/kitDetailsListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/transparent"
+        android:dividerHeight="0dp"
+        tools:listitem="@layout/makeaplan_list_item" />
+</LinearLayout>

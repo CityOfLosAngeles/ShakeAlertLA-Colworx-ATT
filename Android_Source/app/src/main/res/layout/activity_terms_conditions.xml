@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".UserInterface.Activities.TermsConditionActivity">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/ticker"
+            android:layout_width="match_parent"
+            android:layout_height="22dp" />
+
+        <include layout="@layout/back" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            style="@style/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="Title" />
+
+        <include layout="@layout/header_padding" />
+    </LinearLayout>
+
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp">
+
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_above="@+id/layout"
+                android:layout_marginBottom="5dp" />
+
+            <LinearLayout
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/agree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="50dp"
+                    android:background="@drawable/agree_btn_background"
+                    android:minLines="2"
+                    android:paddingStart="35dp"
+                    android:paddingTop="7dp"
+                    android:paddingEnd="35dp"
+                    android:paddingBottom="7dp"
+                    android:text="@string/i_agree_to_the_terms_and_conditions"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    <!--</ScrollView>-->
+    <!--<ScrollView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="vertical">-->
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Find open shelter near you. Prepare by assembling an emergency kit in the event of power outage or evacuation. Know what to do about food and drinking water when your area has been impacted by floods and power outages."-->
+    <!--android:textSize="18sp"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:padding="15dp"/>-->
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:background="@color/grey_300"/>-->
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="There may be aftershocks! Be prepared to drop, cover and hold on again;"-->
+    <!--android:textStyle="bold"-->
+    <!--android:textSize="19sp"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:padding="15dp"/>-->
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="\u2022 Connect with family to let them know you're okay!"-->
+    <!--android:textSize="18sp"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:paddingStart="15dp"-->
+    <!--android:paddingEnd="15dp"-->
+    <!--android:paddingBottom="15dp"/>-->
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="\u2022 Check for the hissing sound or rotten egg smell of gas. Turn the gas and only if it is safe to do so. If you cannot turn the gas off, leave the area immediately.\n To see how to turn off you gas, click here."-->
+    <!--android:textSize="18sp"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:paddingStart="15dp"-->
+    <!--android:paddingEnd="15dp"/>-->
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textSize="18sp"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:paddingStart="15dp"-->
+    <!--android:paddingEnd="15dp"-->
+    <!--android:paddingBottom="15dp"/>-->
+    <!--</LinearLayout>-->
+    <!--</ScrollView>-->
+</LinearLayout>
