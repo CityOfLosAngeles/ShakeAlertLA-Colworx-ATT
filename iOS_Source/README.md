@@ -16,6 +16,12 @@ Helper.m<br />
 aws-configuration.json<br />
 
 
+### Code Structure
+The code uses MVC acrchiture and each class in the code base is categorized in their respective directory. (Model, Views, and Controller)
+
+Helper classes contains common methods and utility functions that are used across the app.
+
+
 #### Third-Party Plugin
 CocoaPods 1.3.1
 <br />
