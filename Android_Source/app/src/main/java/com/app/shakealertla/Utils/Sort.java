@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class Sort {
+    // Colworx : Sort Earthquakes list based on Time
     public static ArrayList byTime(ArrayList<Earthquakes> arrayList){
         Collections.sort(arrayList, new Comparator<Earthquakes>() {
             @Override
@@ -18,6 +19,7 @@ public class Sort {
         return null;
     }
 
+    // Colworx : Sort Earthquakes list based on Magnitude
     public static ArrayList byMagnitude(ArrayList<Earthquakes> arrayList){
         Collections.sort(arrayList, new Comparator<Earthquakes>() {
             @Override

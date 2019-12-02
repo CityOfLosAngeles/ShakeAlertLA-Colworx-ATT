@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class ShelterService {
+    // Colworx : Rest API for get Shelters List
     public static void getSheltersList(final Context context, final ServiceListener<Shelters,VolleyError> listener){
         JSONObject jsonObject = new JSONObject();
         try {
@@ -56,6 +57,7 @@ public class ShelterService {
             e.printStackTrace();
         }
     }
+    // Colworx : Get Current location and return address, city, state, country based on location
     public static String getLocation(Context context, LatLng latLng) {
         Geocoder geocoder;
         List<Address> addresses;

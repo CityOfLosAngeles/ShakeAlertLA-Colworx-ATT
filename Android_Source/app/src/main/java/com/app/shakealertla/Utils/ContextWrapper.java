@@ -8,6 +8,7 @@ import android.os.LocaleList;
 
 import java.util.Locale;
 
+// Colworx : Context wrapper class used for changing language
 public class ContextWrapper extends android.content.ContextWrapper {
 
     public ContextWrapper(Context base) {

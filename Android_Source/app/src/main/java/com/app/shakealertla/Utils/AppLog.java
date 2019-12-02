@@ -5,6 +5,8 @@ import android.util.Log;
 /**
  * Created by Kamran Ahmed on 5/1/2015.
  */
+
+// Colworx : Class for showing Logs
 public class AppLog {
 
     public static int v(String tag, String msg) {

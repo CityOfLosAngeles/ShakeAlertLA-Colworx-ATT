@@ -8,6 +8,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
+// Colworx : JSON Utils class for converting Server response in JSON or Send Request to Server in JSON Format
 public class GsonUtils {
 
     public static <T> JSONObject toJSON(T obj)throws JSONException {

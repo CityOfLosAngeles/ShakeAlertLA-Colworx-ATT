@@ -14,6 +14,8 @@ import java.util.ArrayList;
  */
 public class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
     ArrayList<Fragment> fragments;
+
+    // Colworx : View Pager Adapter used for Tour Activity in start
     public ScreenSlidePagerAdapter(FragmentManager fm, ArrayList<Fragment> fragments) {
         super(fm);
         this.fragments = fragments;

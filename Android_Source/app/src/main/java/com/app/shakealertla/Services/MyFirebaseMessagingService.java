@@ -44,6 +44,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
      * @param remoteMessage Object representing the message received from Firebase Cloud Messaging.
      */
     // [START receive_message]
+
+    // Colworx : When notification received onMessageReceived method will triggered
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         // [START_EXCLUDE]
@@ -141,6 +143,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
      * <p>
      * //     * @param messageBody FCM message body received.
      */
+
+    // Colworx : sendNotification method is for sending Notification after received
     private void sendNotification(Earthquakes earthquakes) {
         String title = earthquakes.title;
         String body = earthquakes.body;
@@ -217,6 +221,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     static final public String COPA_MESSAGE = "com.controlj.copame.backend.COPAService.COPA_MSG";
     static final public String COPA_PAYLOAD = "com.controlj.copame.backend.COPAService.COPA_PAYLOAD";
 
+    // Colworx : Result method which will show data on Notification in App
     public void sendResult(String title, String message, Earthquakes earthquakes) {
         Intent intent = new Intent(COPA_RESULT);
         if (title != null && message != null) {

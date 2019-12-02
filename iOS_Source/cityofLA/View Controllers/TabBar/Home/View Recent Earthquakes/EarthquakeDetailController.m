@@ -8,10 +8,8 @@
 
 #import "EarthquakeDetailController.h"
 #import "Helper.h"
-
-//WASIQ
 #import "TwoTabController.h"
-//END WASIQ
+
 @interface EarthquakeDetailController ()
 
 @end
@@ -38,6 +36,8 @@
     [self setup];
 
 }
+
+//CTI: Setup earthquake payload attributes
 -(void)setup{
     self.titleLbl.text = self.n.title;
     self.magnitude.text = self.n.MagnitudeValue;
@@ -48,12 +48,12 @@
     self.longitude.text = self.n.LongitudeValue;
     
     [Helper drawDropShadowOnView:self.cardView];
-    //WASIQ
+    
     if(_fromQuakeList) {
         [TwoTabController sharedInstance].popedViewController = YES;
     } else {
         [TwoTabController sharedInstance].popedViewController = YES;
     }
-    //END WASIQ
+ 
 }
 @end

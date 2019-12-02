@@ -15,7 +15,7 @@
 - (void)drawRect:(CGRect)rect {
     [super drawRect: rect];
 }
-
+//CTI: Info tip view for push notification on the map view
 -(void)setupWithNotification:(Notification *)n{
     [self.detailBtn setTitle:[Helper localized:@"clickForDetail"] forState:UIControlStateNormal];
     self.n = n;

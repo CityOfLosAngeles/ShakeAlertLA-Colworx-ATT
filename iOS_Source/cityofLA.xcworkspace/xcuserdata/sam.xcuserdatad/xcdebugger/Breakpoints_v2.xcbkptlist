@@ -324,22 +324,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cityofLA/AppDelegate/AppDelegate.m"
-            timestampString = "592820596.6182311"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "-application:didFinishLaunchingWithOptions:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "cityofLA/AppDelegate/AppDelegate.m"
             timestampString = "592820596.61827"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"

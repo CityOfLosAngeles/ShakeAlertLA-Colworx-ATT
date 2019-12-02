@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+// Colworx : Model class used for holds some data which retrieved from Rest API or Local DB and then use Model class data in another classes or adapters
 public class RecentEarthquakes implements Serializable {
     public String LatitudeValue;
     public String LongitudeValue;

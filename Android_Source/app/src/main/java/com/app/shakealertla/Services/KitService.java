@@ -14,6 +14,7 @@ import com.app.shakealertla.Utils.SharedPreferenceManager;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+// Colworx : Class for store and retrieve Data from Local SQLtite database
 public class KitService {
     private static DatabaseAccess databaseAccess = DatabaseAccess.getInstance(ShakeAlertLA.getContext());
     //    SELECT * FROM Kits INNER JOIN Items on Kits.ID = Items.Kit_ID

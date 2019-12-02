@@ -32,6 +32,7 @@ public class Blocks {
 
 	List<Map> segments;
 	
+	//Colworx: This method for generates 101 blocks from boxes_10.json file and return polygon list. 
 	public ArrayList generateBlocks() throws FileNotFoundException, IOException, ParseException {
 		
 		List<Map> PolygonList = new ArrayList<>();
@@ -94,6 +95,8 @@ public class Blocks {
 		return (ArrayList) PolygonList;
 	}
 	
+	
+	//Colworx: This method for make list of block object
 	public List<List> checkGeometryIntersects(List<Map> PolygonList, List<Map>earthquakeList) {
 
 		List<List> mainList = new ArrayList<>();
@@ -150,6 +153,8 @@ public class Blocks {
 
 	}
 	
+	
+	//Colworx: This method checks Coordinates in the blocks and return the block index.
 	public static String checkGeometryContain(List<Map> PolygonList, String LatLong) {
 
 		String index = "0";
@@ -173,6 +178,7 @@ public class Blocks {
 
 	}
 
+	//Colworx: Get List of contours from statis xml file 2014_LaHabra_M5.1_contour.xml
 	public static List<Map> readContour() {
 
 		List<Map> PolygonList = new ArrayList<>();	

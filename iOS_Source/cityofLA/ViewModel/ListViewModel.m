@@ -11,7 +11,7 @@
 #import "DBHelper.h"
 
 @implementation ListViewModel
-
+//CTI: Initialization of List View Models
 -(instancetype)initWithListType:(ListType)listType{
     self = [super init];
     self.listType = listType;
@@ -39,7 +39,7 @@
     return nil;
 }
 
-
+//CTI: Setup pages with HTML contents
 -(NSMutableArray *)getLAItems{    
     ListItem *partners = [[ListItem alloc]initWithTitle:[Helper localized:@"partnersTitle"]
                                                   image:[UIImage imageNamed:@"partners"]
@@ -74,6 +74,8 @@
     //END 15-08-2018
     return @[partners,disclaimer,help,info, tutorial].mutableCopy;
 }
+
+//CTI: Plan pages List Items
 -(NSMutableArray *)getPlanItems{
     ListItem *make_a_plan = [[ListItem alloc]initWithTitle:[Helper localized:@"makePlanTitle"]
                                                   image:[UIImage imageNamed:@"make_a_plan"]
@@ -103,6 +105,8 @@
                                                  nextVcTitle:[Helper localized:@"findOutMore"]];
     return @[make_a_plan,build_a_kit,secure,protective,find_out_more].mutableCopy;
 }
+
+//CTI: Recovery page items with their respective HTML pages
 -(NSMutableArray *)getRecoveryItems{
     ListItem *shaking = [[ListItem alloc]initWithTitle:[Helper localized:@"shakingTitle"]
                                                   image:[UIImage imageNamed:@"shaking"]

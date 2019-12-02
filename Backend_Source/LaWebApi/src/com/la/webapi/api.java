@@ -20,6 +20,7 @@ import com.google.gson.Gson;
 @Path("/")
 public class api {
 
+	//Colworx: This API method use for register device and get block index to add device in segment.
 	@POST
 	@Path("/registerDevice")
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -218,7 +219,7 @@ public class api {
 
 	}
 	
-	
+	//Colworx: This API method use for get all list of campaigns.
 	@GET
 	@Path("/getEvents")
 	@Consumes(MediaType.APPLICATION_JSON)

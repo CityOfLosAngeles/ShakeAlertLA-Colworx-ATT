@@ -30,6 +30,7 @@ public class CreateSegment {
 	
 	AmazonPinpoint client = AmazonPinpointClientBuilder.standard().withRegion(Regions.US_EAST_1).build();
 	
+	//Colworx: This method for generates segments of block.
 	 public SegmentResponse createSegment(String keyName, String index) {
 	    	
 		 	//keyName: BlockIndex

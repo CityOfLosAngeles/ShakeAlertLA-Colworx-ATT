@@ -49,7 +49,7 @@ public class ShakeAlertClient {
     public ShakeAlertClient(String[] args) {
         try {
         	
-        	//For Generate Blocks
+        	//Colworx: This method for generates blocks  
 			List<Map> Blocks = new Blocks().generateBlocks();
 			System.out.println("Total Blocks: "+Blocks.size());
         	

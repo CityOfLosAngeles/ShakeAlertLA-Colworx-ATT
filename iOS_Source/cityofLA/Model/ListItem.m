@@ -23,6 +23,8 @@
     }
     return nil;
 }
+
+//CTI: List items initialization method with required attributes
 -(instancetype)initWithTitle:(NSString *)title
                        image:(UIImage*)image
                       action:(ListItemAction)action

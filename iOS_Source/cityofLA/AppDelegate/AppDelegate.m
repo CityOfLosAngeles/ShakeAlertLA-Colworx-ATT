@@ -48,6 +48,7 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         NSString *language = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
         if([language containsString:@"es"]){
+            //CTI: Set's the default localization on App install.
             [[NSUserDefaults standardUserDefaults]setObject:@"es" forKey:@"lang"];
             [[NSUserDefaults standardUserDefaults] synchronize];
         }
@@ -56,23 +57,14 @@
     
     
 
-//    // Initialize the Amazon Cognito credentials provider
-//
-//    AWSCognitoCredentialsProvider *credentialsProvider = [[AWSCognitoCredentialsProvider alloc]
-//                                                          initWithRegionType:AWSRegionUSEast1
-//                                                          identityPoolId:@"us-east-1:46168d8f-9bb8-46aa-9017-214a709b9d4a"];
-//
-//    AWSServiceConfiguration *configuration = [[AWSServiceConfiguration alloc] initWithRegion:AWSRegionUSEast1 credentialsProvider:credentialsProvider];
 
-//    [AWSServiceManager defaultServiceManager].defaultServiceConfiguration = configuration;
-//
     [[UINavigationBar appearance]setTranslucent:NO];
 //    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init]
 //                                      forBarPosition:UIBarPositionAny
 //                                          barMetrics:UIBarMetricsDefault];
     
     [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
-    
+    //CTI: Enables GMSService for Google Maps
     [GMSServices provideAPIKey:google_maps_api_key];
     [GMSPlacesClient provideAPIKey:google_maps_api_key];
     
@@ -86,6 +78,8 @@
         
         
 //        [[AWSDDLog sharedInstance] setLogLevel:AWSDDLogLevelInfo];
+        
+        //CTI: Setup Pinpoint configuartion.
         self->pinpoint = [AWSPinpoint pinpointWithConfiguration:[AWSPinpointConfiguration defaultPinpointConfigurationWithLaunchOptions:launchOptions]];
         
         
@@ -99,16 +93,11 @@
         
     });
   
-    //LOG EVENT
-//    AWSPinpointEvent *event = [pinpoint.analyticsClient createEventWithEventType:@"CustomEvents"];
-//    [event addAttribute:@"iPhone X" forKey:@"ModelDevice"];
-//    [event addMetric:[NSNumber numberWithInteger:10] forKey:@"RandomNumber"];
-//    [pinpoint.analyticsClient recordEvent:event];
-//    [pinpoint.analyticsClient submitEvents];
-//
 
     return true;
 }
+
+//CTI: This methods decides if Onboarding screens wizard is finished, move to Home screen.
 -(void)IfOnboardedMoveToTabs{
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     BOOL onboarded = [[NSUserDefaults standardUserDefaults]boolForKey:@"onboarded"];
@@ -118,6 +107,7 @@
     }
 }
 
+//CTI: Registers device for remote notifications
 -(void) registerForRemoteNotifications{
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     center.delegate = self;
@@ -131,7 +121,7 @@
 }
 
 
-
+//CTI: Enables the location manager to monitor location changes.
 -(void)setupLocationManager{
     self.manager = [[CLLocationManager alloc]init];
     [self.manager setDelegate:self];
@@ -149,6 +139,8 @@
     [self.manager requestAlwaysAuthorization];
     [self.manager startUpdatingLocation];
 }
+
+//CTI: Registers device token at Pinpoint
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
 
     const char *data = [deviceToken bytes];
@@ -280,7 +272,7 @@
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
     NSLog(@"location getting failed with error : %@",error.localizedDescription);
 }
-
+//CTI: Registers device at the backend, the user is anonymously segmented to grids based on the location
 -(void)registerDevice{
     self.deviceToken = [[NSUserDefaults standardUserDefaults]valueForKey:@"deviceToken"];
     if (self.deviceToken == nil) {
@@ -372,6 +364,9 @@ self.manager.location.coordinate.latitude,self.manager.location.coordinate.longi
                                                 }];
     [dataTask resume];
 }
+
+//CTI: Segments are updated at pinpoint
+
 -(void)updateAWSProfile:(NSString *)code{
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

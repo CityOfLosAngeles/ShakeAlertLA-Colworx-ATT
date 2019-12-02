@@ -15,6 +15,7 @@
 @import GoogleMaps;
 @import GooglePlaces;
 
+//CTI: isTesting 1 points all keys to development environment. 0  is production
 #define isTesting 1
 
 

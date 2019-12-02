@@ -20,6 +20,7 @@ import java.util.Map;
 
 public class RestAPI {
 
+    // Colworx : Rest API for Post URL encoded request
     public static void PostUrlEncodedRequest(String TAG, String apiEndpoint, final JSONObject obj, final ServiceListener<JSONObject, VolleyError> listener) {
         StringRequest objectRequest = new StringRequest(Request.Method.POST,
                 ConfigConstants.API_BASE_URL + apiEndpoint
@@ -54,6 +55,7 @@ public class RestAPI {
         HttpRequestHandler.getInstance().addToRequestQueue(objectRequest,TAG);
     }
 
+    // Colworx : Rest API Get URL Encoded Request
     public static void GetUrlEncodedRequest(String TAG, String apiEndpoint, final ServiceListener<JSONObject, VolleyError> listener) {
         StringRequest objectRequest = new StringRequest(Request.Method.GET,
                 ConfigConstants.API_BASE_URL + apiEndpoint
@@ -76,6 +78,7 @@ public class RestAPI {
         HttpRequestHandler.getInstance().addToRequestQueue(objectRequest,TAG);
     }
 
+    // Colworx : Rest API Post Request
     public static void PostRequest(String TAG, String apiEndpoint, JSONObject jsonObj, final ServiceListener<JSONObject, VolleyError> listener) {
         JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.POST, ConfigConstants.API_BASE_URL + apiEndpoint,
                 jsonObj, new Response.Listener<JSONObject>() {
@@ -99,6 +102,7 @@ public class RestAPI {
         HttpRequestHandler.getInstance().addToRequestQueue(objectRequest,TAG);
     }
 
+    // Colworx : Rest API for Multipart or file attachment
     public static void MultipartPostReq(String TAG, String apiEndpoint, String imagePath, final ServiceListener<JSONObject, VolleyError> listener){
         SimpleMultiPartRequest smr = new SimpleMultiPartRequest(Request.Method.POST, ConfigConstants.API_BASE_URL + apiEndpoint,
                 new Response.Listener<String>() {
@@ -121,6 +125,7 @@ public class RestAPI {
         HttpRequestHandler.getInstance().addToRequestQueue(smr, TAG);
     }
 
+    // Colworx : Rest API Get Request
     public static void GetRequest(String TAG, String apiEndpoint, final ServiceListener<JSONObject, VolleyError> listener){
         JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.GET, ConfigConstants.API_BASE_URL + apiEndpoint,
                 null, new Response.Listener<JSONObject>() {

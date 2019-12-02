@@ -15,6 +15,7 @@ public class HomeTabstPagerAdapter extends FragmentPagerAdapter {
     private Context context;
     private ArrayList<Fragment> fragments;
 
+    // Colworx : View Pager Adapter used for Tabs in Home Screen with Bottom Navigation bar, in Shelter for Map and list tabs and in Recent Earthquakes screen for Map and List tabs
     public HomeTabstPagerAdapter(FragmentManager fm, Context context, ArrayList<Fragment> fragments) {
         super(fm);
         this.context = context;

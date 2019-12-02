@@ -108,6 +108,7 @@ public class EarthquakeDetailsActivity extends BaseActivity {
             return getIntensity_ES(MMI);
     }
 
+    // Colworx : Get Intensity in English based on MMI of Earthquake
     private static String getIntensity_EN(String MMI) {
         String[] intensity = {"Weak","Light","Moderate","Strong","Very Strong","Servere","Violent","Extreme"};
         if((MMI.equals("2.0000")) || (MMI.equals("3.0000"))) {
@@ -130,6 +131,7 @@ public class EarthquakeDetailsActivity extends BaseActivity {
         return "";
     }
 
+    // Colworx : Get Intensity in Spanish based on MMI of Earthquake
     private static String getIntensity_ES(String MMI) {
         String[] intensity = {"Débiles","Ligero","Moderar","Fuerte","Muy fuerte","Grave","Violento","Extremo"};
         if((MMI.equals("2.0000")) || (MMI.equals("3.0000"))) {
@@ -152,6 +154,7 @@ public class EarthquakeDetailsActivity extends BaseActivity {
         return "";
     }
 
+    // Colworx : Convert date into UTC
     public static Date dateToUTC(Date date){
         return new Date(date.getTime() - Calendar.getInstance().getTimeZone().getOffset(date.getTime()));
     }
