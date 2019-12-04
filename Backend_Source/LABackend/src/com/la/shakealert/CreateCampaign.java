@@ -32,6 +32,8 @@ public class CreateCampaign {
 
 	AmazonPinpoint client = AmazonPinpointClientBuilder.standard().withRegion(Regions.US_EAST_1).build();
 
+	
+	//Colworx: This method for send push notification to EN devices.
 	public void createCampaign_EN(HashMap<String, Object> hashMap, String SegmentID) {
 
 		try {
@@ -119,6 +121,7 @@ public class CreateCampaign {
 						.withName("CampaignEN-"+Index)
 						.withMessageConfiguration(messageConfiguration);
 
+				//Colworx: This method is use for create campaign to send push notification on devices.
 				CreateCampaignRequest createCampaignRequest = new CreateCampaignRequest()
 						.withApplicationId(appId).withWriteCampaignRequest(request);
 
@@ -139,6 +142,7 @@ public class CreateCampaign {
 
 				hashMap.put("time", (endTime - startTime));
 				
+				//Colworx: This method is use for add sent campaign details
 				new MySql().insertCampaign(hashMap);
 
 				try {
@@ -185,6 +189,7 @@ public class CreateCampaign {
 
 	}
 
+	//Colworx: This method for send push notification to ES devices.
 	public void createCampaign_ES(HashMap<String, Object> hashMap, String SegmentID) {
 
 		try {
@@ -330,6 +335,7 @@ public class CreateCampaign {
 
 	}
 
+	//Colworx: This method for get Intensity msg in EN from MMI value.
 	private static String getIntensity_EN(String MMI) {
 
 		//		String[] intensity = {"Weak","Light","Moderate","Strong","Very Strong","Servere","Violent","Extreme"};
@@ -371,6 +377,7 @@ public class CreateCampaign {
 
 	}
 
+	//Colworx: This method for get Intensity msg in ES from MMI value.
 	private static String getIntensity_ES(String MMI) {
 
 		String[] intensity = {"Débiles","Ligero","Moderar a Ligero","Fuerte a Moderar","Muy fuerte a Fuerte","Grave a Muy fuerte","Violento a Grave","Extremo a Violento"};

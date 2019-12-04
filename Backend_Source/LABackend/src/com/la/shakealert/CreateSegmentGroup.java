@@ -33,6 +33,7 @@ public class CreateSegmentGroup {
 	
 	AmazonPinpoint client = AmazonPinpointClientBuilder.standard().withRegion(Regions.US_EAST_1).build();
 
+	//Colworx: This method for create one segment from segments list for separate campaign before send the notification to devices. EN
 	public void createSegmentGroupAndLaunchCampaign_EN(ArrayList<SegmentReference> sourceSegments, String Intensity, HashMap<String, Object> hashMap) {
 
 		//ArrayList<SegmentGroup> SegmentGroups = new ArrayList<SegmentGroup>();
@@ -138,6 +139,7 @@ public class CreateSegmentGroup {
 
 	}
 
+	//Colworx: This method for create one segment from segments list for separate campaign before send the notification to devices. ES
 	public void createSegmentGroupAndLaunchCampaign_ES(ArrayList<SegmentReference> sourceSegments, String Intensity, HashMap<String, Object> hashMap) {
 
 		//ArrayList<SegmentGroup> SegmentGroups = new ArrayList<SegmentGroup>();
