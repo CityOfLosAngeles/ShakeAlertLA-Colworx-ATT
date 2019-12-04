@@ -121,6 +121,7 @@ public class RecentEarthquakesActivity extends BaseActivity {
         });
     }
 
+    // Colworx : Call Rest API for get Recent EarthQuakes List
     public static void getRecentEarthQuakeList(final Context context, final String comesFrom, double latitude, double longitude, int radius, final ServiceListener<String, String> listener) {
 
         String endDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
@@ -219,6 +220,7 @@ public class RecentEarthquakesActivity extends BaseActivity {
         }
     }
 
+    // Colworx : Get Country Name based on Location
     public static String getCountryName(Context context, LatLng latLng) {
         Geocoder geocoder;
         List<Address> addresses;

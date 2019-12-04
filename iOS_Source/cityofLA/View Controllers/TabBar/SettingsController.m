@@ -13,6 +13,8 @@
 
 @end
 
+
+//CTI: Settings view of the app, this controller handles Push notification and localization configurations.
 @implementation SettingsController
 -(void)viewWillAppear:(BOOL)animated{
     [self setupViews];

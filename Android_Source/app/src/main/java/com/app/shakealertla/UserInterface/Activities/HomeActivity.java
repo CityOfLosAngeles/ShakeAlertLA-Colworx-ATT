@@ -115,6 +115,7 @@ public class HomeActivity extends BaseActivity {
     public static PinpointManager pinpointManager = null;
     String deviceToken;
 
+    // Colworx : AWS Configuration
     private void initAWS() {
         AWSMobileClient.getInstance().initialize(this, new AWSStartupHandler() {
             @Override
@@ -448,6 +449,10 @@ public class HomeActivity extends BaseActivity {
                 .start(new OnLocationUpdatedListener() {
                     @Override
                     public void onLocationUpdated(Location location) {
+                        // Colworx : Hardcoded Location values (latitude and longitude) when Testing Notification or Register device in LA location
+//                        callback.callback(new LatLng(34.052235, -118.243683));
+
+                        // Colworx : Current Location for Pro or not for testing
                         callback.callback(new LatLng(location.getLatitude(), location.getLongitude()));
                     }
                 });
@@ -500,6 +505,7 @@ public class HomeActivity extends BaseActivity {
 
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
+    // Colworx : Check Location Permission
     private boolean checkLocationPermission() {
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {

@@ -36,6 +36,7 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
+// Colworx : Request Handler class for Rest API
 public class HttpRequestHandler {
 
     private static final String TAG = "HttpRequestHandler";

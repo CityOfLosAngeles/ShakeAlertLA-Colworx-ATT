@@ -15,8 +15,8 @@
 @property GMSCoordinateBounds *bounds;
 -(void)reload;
 
-//    WASIQ
+
 @property float zoomLevel;
 @property BOOL firstLoaded;
-//END WASIQ
+
 @end

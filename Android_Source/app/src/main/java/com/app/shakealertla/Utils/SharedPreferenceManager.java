@@ -12,6 +12,8 @@ import com.app.shakealertla.ShakeAlertLA;
 //import com.app.eatyoulike.EatYouLike;
 //import com.app.eatyoulike.Models.User;
 //
+
+// Colworx : Shared Preference Manager class for String data locally based on Key, Value pairs
 public class SharedPreferenceManager {
     private static String AppConfig = "ShakeAlertConfig";
     private static SharedPreferences.Editor preferences = ShakeAlertLA.getContext().getSharedPreferences(AppConfig, 0).edit();

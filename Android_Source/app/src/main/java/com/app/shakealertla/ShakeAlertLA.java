@@ -46,12 +46,12 @@ import javax.net.ssl.X509TrustManager;
 //import com.twitter.sdk.android.core.TwitterAuthConfig;
 //import io.fabric.sdk.android.Fabric;
 
-
+// Colworx : Main Base class which instantiated before any other class when the process for your application/package is created
 public class ShakeAlertLA extends Application {
 
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
-//    private static final String TWITTER_KEY = "62UstOrcpGR1U2WlMGszbepZB";
-//    private static final String TWITTER_SECRET = "AjPVSiK7wnwifj4Kuz40YdrqZHkGD9fZAJEW4HAIQCF46Ae2NB";
+//    private static final String TWITTER_KEY = "";
+//    private static final String TWITTER_SECRET = "";
 
 
     public static final String TAG = ShakeAlertLA.class.getSimpleName();
@@ -110,6 +110,7 @@ public class ShakeAlertLA extends Application {
     /**
      * Enables https connections
      */
+    // Colworx : Handle SSL Handshake for security purpose
     @SuppressLint("TrulyRandom")
     public void handleSSLHandshake() {
         try {
@@ -134,10 +135,10 @@ public class ShakeAlertLA extends Application {
             HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {
                 @Override
                 public boolean verify(String arg0, SSLSession arg1) {
-                    if (arg0.equalsIgnoreCase("earthquake.usgs.gov") ||
-                            arg0.equalsIgnoreCase("services7.arcgis.com") ||
-                            arg0.equalsIgnoreCase("shakealertlaapi.com") ||
-                            arg0.equalsIgnoreCase("shakealert-la.firebaseio.com")) {
+                    if (arg0.equalsIgnoreCase("") ||
+                            arg0.equalsIgnoreCase("") ||
+                            arg0.equalsIgnoreCase("") ||
+                            arg0.equalsIgnoreCase("")) {
                         return true;
                     } else {
                         return false;

@@ -14,7 +14,7 @@
 @interface HomeController () <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITabBarDelegate>
 
 @end
-
+//CTI: Controller class that manages dashboard view and functions
 @implementation HomeController
 -(void)viewWillAppear:(BOOL)animated{
     [ self.navigationController.navigationBar setHidden:YES];

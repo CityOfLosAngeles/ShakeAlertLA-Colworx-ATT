@@ -12,6 +12,7 @@ import com.app.shakealertla.Utils.SharedPreferenceManager;
 
 import java.util.ArrayList;
 
+// Colworx : Class for store and retrieve Data from Local SQLtite database
 public class PlanService {
     private static DatabaseAccess databaseAccess = DatabaseAccess.getInstance(ShakeAlertLA.getContext());
     private static String TableName = "Plans";

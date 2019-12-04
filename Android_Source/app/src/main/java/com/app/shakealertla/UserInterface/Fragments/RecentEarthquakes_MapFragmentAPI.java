@@ -272,6 +272,7 @@ public class RecentEarthquakes_MapFragmentAPI extends BaseFragment implements On
 
     }
 
+    // Colworx : Call Rest API for get Recent EarthQuakes List
     public void getRecentEarthQuakeList(final String comesFrom, double latitude, double longitude, int radius, final ServiceListener<String, String> listener) {
 
         String endDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
@@ -505,6 +506,7 @@ public class RecentEarthquakes_MapFragmentAPI extends BaseFragment implements On
         }
     }
 
+    // Colworx : Call Rest API for get Recent EarthQuakes List with Async Task Background thread class
     class RecentEarthQuakes extends AsyncTask<Void, Integer, String> {
 
         int radius;
@@ -597,6 +599,7 @@ public class RecentEarthquakes_MapFragmentAPI extends BaseFragment implements On
     }
 */
 
+    // Colworx : Get Distance in KM between two locations
     private double getDistanceInKM(double lat1, double lon1, double lat2, double lon2) {
         double dLat = Math.toRadians(lat2 - lat1);
         double dLon = Math.toRadians(lon2 - lon1);
@@ -607,6 +610,7 @@ public class RecentEarthquakes_MapFragmentAPI extends BaseFragment implements On
         return temp;
     }
 
+    // Colworx : Filter Recent Earthquakes Map List
     public static void filterRecentEarthquakesMap(final Context context, ArrayList<RecentEarthquakes> recentEarthquakes) {
         LatLngBounds.Builder builder = new LatLngBounds.Builder();
         earthquakesArrayList.clear();
@@ -710,6 +714,7 @@ public class RecentEarthquakes_MapFragmentAPI extends BaseFragment implements On
         isCameraMapDrag = true;
     }
 
+    // Colworx : Convert date into UTC
     public static Date dateToUTC(Date date){
         return new Date(date.getTime() - Calendar.getInstance().getTimeZone().getOffset(date.getTime()));
     }

@@ -23,6 +23,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class RecentEarthquakeService {
+    // Colworx : Rest API for Register Device token and location in DB on Server
     public static void RegisterDevice(String deviceToken, double lat, double lon, final ServiceListener<String, String> listener) {
         JSONObject jsonObject = new JSONObject();
         try {
@@ -80,6 +81,7 @@ public class RecentEarthquakeService {
         }
     }
 
+    // Colworx : Rest API for updating device token and segmentID from Earthquake in DB on Server
     public static void setPushRate(String segmentID, final ServiceListener<String,String> listener) {
         JSONObject jsonObject = new JSONObject();
         try {
@@ -128,6 +130,7 @@ public class RecentEarthquakeService {
     private static DatabaseAccess databaseAccess = DatabaseAccess.getInstance(ShakeAlertLA.getContext());
     private static String TableName = "Notifications";
 
+    // Colworx : To get EarthQuakes from Local SQLite Database
     public static ArrayList<Earthquakes> getEarthQuakes() {
         ArrayList<Earthquakes> earthquaksArray = new ArrayList<>();
         SQLiteDatabase database = databaseAccess.open();

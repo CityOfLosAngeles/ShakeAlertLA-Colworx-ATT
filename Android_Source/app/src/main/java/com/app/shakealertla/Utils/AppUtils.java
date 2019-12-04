@@ -44,6 +44,8 @@ import java.util.Locale;
 
 public class AppUtils {
     private static String TAG = AppUtils.class.getSimpleName();
+
+    // Colworx : Get Image in String from Bitmap
     public String getStringImage(Bitmap bmp) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
@@ -79,6 +81,7 @@ public class AppUtils {
 
 
 
+    // Colworx : Check for is Valid Email or not
     public static boolean isValidEmail(CharSequence target) {
         if (TextUtils.isEmpty(target) || target.length() < 10) {
             return false;
@@ -87,12 +90,14 @@ public class AppUtils {
         }
     }
 
+    // Colworx : get File From Uri
     public static File getFileFromUri(Context context, Uri uri) throws URISyntaxException {
         if (getPathFromUri(context,uri)!=null)
             return new File(getPathFromUri(context,uri));
         else return null;
     }
 
+    // Colworx : get Path From Uri
     public static String getPathFromUri(Context context, Uri uri) throws URISyntaxException {
         String selection = null;
         String[] selectionArgs = null;
@@ -143,18 +148,21 @@ public class AppUtils {
         return null;
     }
 
-    public static boolean isExternalStorageDocument(Uri uri) {
-        return "com.android.externalstorage.documents".equals(uri.getAuthority());
-    }
-
     public static boolean isDownloadsDocument(Uri uri) {
         return "com.android.providers.downloads.documents".equals(uri.getAuthority());
     }
 
+    // Colworx : Check for is External Storage Document exists or not
+    public static boolean isExternalStorageDocument(Uri uri) {
+        return "com.android.externalstorage.documents".equals(uri.getAuthority());
+    }
+
+    // Colworx : Check for is is Media Document exists or not
     public static boolean isMediaDocument(Uri uri) {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
     }
 
+    // Colworx : Convert String date and time into Date
     public static Date parseDate(String date, String time) {
 //        27-4-2018 12 : 00
         final String inputFormat = "dd-MM-yyyy HH:mm";
@@ -175,6 +183,7 @@ public class AppUtils {
 //        } else return "";
 //    }
 
+    // Colworx : Date Format
     public static String formatDate(String format, Date date){
 //        String dayOfTheWeek = (String) DateFormat.format("EEEE", date); // Thursday
 //        String day          = (String) DateFormat.format("dd",   date); // 20
@@ -185,6 +194,7 @@ public class AppUtils {
         return (String) DateFormat.format(format, date);
     }
 
+    // Colworx : Get Time in String
     public static String getTime() {
         Calendar now = Calendar.getInstance();
 //        int date = now.get(Calendar.DATE);
@@ -195,6 +205,7 @@ public class AppUtils {
         return hour + ":" + minute + ":" + second;
     }
 
+    // Colworx : Get Date in String
     public static String getDateString() {
         Calendar now = Calendar.getInstance();
         int Date = now.get(Calendar.DATE);
@@ -203,6 +214,7 @@ public class AppUtils {
         return Year + "-" + Month + "-" + Date;
     }
 
+    // Colworx : Get Difference between two dates
     public static String printDifference(Date startDate, Date endDate) {
         //milliseconds
         long different = endDate.getTime() - startDate.getTime();
@@ -236,6 +248,8 @@ public class AppUtils {
     /**
      * Returns the consumer friendly device name
      */
+
+    // Colworx : Get Device Name
     public static String getDeviceName() {
         String manufacturer = Build.MANUFACTURER;
         String model = Build.MODEL;
@@ -245,6 +259,7 @@ public class AppUtils {
         return capitalize(manufacturer) + " " + model;
     }
 
+    // Colworx : For Capitialize text
     private static String capitalize(String str) {
         if (TextUtils.isEmpty(str)) {
             return str;
@@ -272,6 +287,7 @@ public class AppUtils {
      * @param /ipv4  true=return ipv4, false=return ipv6
      * @return  address or empty string
      */
+    // Colworx : Get Network IP Address
     public static String getIPAddress(boolean useIPv4) {
         try {
             List<NetworkInterface> interfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
@@ -301,17 +317,20 @@ public class AppUtils {
         return "";
     }
 
+    // Colworx : Replace Word
     public static String replaceWord(String inputString, String searchFor, String replaceWith){
         if (inputString.indexOf(searchFor) > 0) {
             return inputString.replace(searchFor, replaceWith);
         }else return inputString;
     }
 
+    // Colworx : Get Name from Email
     public static String userNameFromEmail(String email){
         int indexOfAtSign = email.indexOf("@");
         return email.substring(0,indexOfAtSign);
     }
 
+    // Colworx : Distance in KM between two locations
     public static double distanceInKM(double lat1, double lon1, double lat2, double lon2) {
         double theta = lon1 - lon2;
         double dist = Math.sin(deg2rad(lat1))
@@ -325,10 +344,12 @@ public class AppUtils {
         return (dist);
     }
 
+    // Colworx : Convert Degree into Radian
     private static double deg2rad(double deg) {
         return (deg * Math.PI / 180.0);
     }
 
+    // Colworx : Convert Radian into Degree
     private static double rad2deg(double rad) {
         return (rad * 180.0 / Math.PI);
     }

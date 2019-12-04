@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class SortRecentEarthquakeAPI {
+    // Colworx : Sort Earthquakes list based on Time
     public static ArrayList byTime(ArrayList<RecentEarthquakes> arrayList){
         Collections.sort(arrayList, new Comparator<RecentEarthquakes>() {
             @Override
@@ -18,17 +19,7 @@ public class SortRecentEarthquakeAPI {
         return null;
     }
 
-    public static ArrayList<RecentEarthquakes> byTime2(ArrayList<RecentEarthquakes> arrayList){
-        Collections.sort(arrayList, new Comparator<RecentEarthquakes>() {
-            @Override
-            public int compare(RecentEarthquakes a, RecentEarthquakes b) {
-                return Long.compare(a.getTime().getTime(), b.getTime().getTime());//a.getDistance(mLocation).compareTo(b.getName());//change it to miles
-            }
-        });
-        Collections.reverse(arrayList);
-        return arrayList;
-    }
-
+    // Colworx : Sort Earthquakes list based on Magnitude
     public static ArrayList byMagnitude(ArrayList<RecentEarthquakes> arrayList){
         Collections.sort(arrayList, new Comparator<RecentEarthquakes>() {
             @Override

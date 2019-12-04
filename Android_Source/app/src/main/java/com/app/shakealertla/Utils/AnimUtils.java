@@ -7,6 +7,7 @@ import android.view.animation.OvershootInterpolator;
 import com.github.clans.fab.FloatingActionMenu;
 
 public class AnimUtils {
+    // Colworx : Floating menu button Animation in Recent Earthquakes screen
     public static AnimatorSet getFloatingMenuAnimation(FloatingActionMenu floatingActionMenu){
         AnimatorSet set = new AnimatorSet();
 

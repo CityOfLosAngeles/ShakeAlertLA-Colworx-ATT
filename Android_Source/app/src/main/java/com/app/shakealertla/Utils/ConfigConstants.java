@@ -2,10 +2,12 @@ package com.app.shakealertla.Utils;
 
 import java.util.HashMap;
 
+// Colworx : Class for Constants, URLs used in App
 public class ConfigConstants {
 
     public static final String API_BASE_URL = "";
 
+    // Colworx : IN_DEV true for Dev APK and IN_DEV false for Pro APK
     public static final boolean IN_DEV = false; // true = DEV and false = PRO
 
     public static final String PUSH_OPEN_RATE_URL = "";
@@ -20,7 +22,7 @@ public class ConfigConstants {
     public static final String SHELTER_DEV_URL = "";
     public static final String SHELTER_URL = "";
 
-    public static final String LANGUAGE_SPANISH = "";//"es-rUS";
-    public static final String LANGUAGE_ENGLISH = "";//"es-rUS";
+    public static final String LANGUAGE_SPANISH = "";
+    public static final String LANGUAGE_ENGLISH = "";
 
 }
