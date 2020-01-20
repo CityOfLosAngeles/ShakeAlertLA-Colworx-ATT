@@ -285,7 +285,9 @@ public class RecentEarthquakes_ListFragmentAPI extends BaseFragment implements P
         }
     }
 
-    // Colworx : Filter Recent Earthquakes List
+    /**
+     * Colworx : Filter Recent Earthquakes List
+     */
     public static void filterRecentEarthquakesList(ArrayList<RecentEarthquakes> recentEarthquakes) {
         recentEarthquakesArrayList.clear();
         for (RecentEarthquakes activities : recentEarthquakes) {
@@ -295,7 +297,9 @@ public class RecentEarthquakes_ListFragmentAPI extends BaseFragment implements P
         adapter.notifyDataSetChanged();
     }
 
-    // Colworx : Convert date into UTC
+    /**
+     * Colworx : Convert date into UTC
+     */
     public static Date dateToUTC(Date date){
         return new Date(date.getTime() - Calendar.getInstance().getTimeZone().getOffset(date.getTime()));
     }

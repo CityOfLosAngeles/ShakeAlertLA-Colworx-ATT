@@ -20,7 +20,9 @@ import java.util.Map;
 
 public class RestAPI {
 
-    // Colworx : Rest API for Post URL encoded request
+    /**
+     * Colworx : Rest API for Post URL encoded request
+     */
     public static void PostUrlEncodedRequest(String TAG, String apiEndpoint, final JSONObject obj, final ServiceListener<JSONObject, VolleyError> listener) {
         StringRequest objectRequest = new StringRequest(Request.Method.POST,
                 ConfigConstants.API_BASE_URL + apiEndpoint

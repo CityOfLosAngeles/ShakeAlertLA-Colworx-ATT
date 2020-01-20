@@ -45,7 +45,9 @@ import java.util.Locale;
 public class AppUtils {
     private static String TAG = AppUtils.class.getSimpleName();
 
-    // Colworx : Get Image in String from Bitmap
+    /**
+     * Colworx : Get Image in String from Bitmap
+     */
     public String getStringImage(Bitmap bmp) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
@@ -80,8 +82,9 @@ public class AppUtils {
     }
 
 
-
-    // Colworx : Check for is Valid Email or not
+    /**
+     * Colworx : Check for is Valid Email or not
+     */
     public static boolean isValidEmail(CharSequence target) {
         if (TextUtils.isEmpty(target) || target.length() < 10) {
             return false;
@@ -90,14 +93,18 @@ public class AppUtils {
         }
     }
 
-    // Colworx : get File From Uri
+    /**
+     * Colworx : get File From Uri
+     */
     public static File getFileFromUri(Context context, Uri uri) throws URISyntaxException {
         if (getPathFromUri(context,uri)!=null)
             return new File(getPathFromUri(context,uri));
         else return null;
     }
 
-    // Colworx : get Path From Uri
+    /**
+     * Colworx : get Path From Uri
+     */
     public static String getPathFromUri(Context context, Uri uri) throws URISyntaxException {
         String selection = null;
         String[] selectionArgs = null;
@@ -152,17 +159,24 @@ public class AppUtils {
         return "com.android.providers.downloads.documents".equals(uri.getAuthority());
     }
 
-    // Colworx : Check for is External Storage Document exists or not
+    /**
+     * Colworx : Check for is External Storage Document exists or not
+     */
     public static boolean isExternalStorageDocument(Uri uri) {
         return "com.android.externalstorage.documents".equals(uri.getAuthority());
     }
 
-    // Colworx : Check for is is Media Document exists or not
+    /**
+     * Colworx : Check for is is Media Document exists or not
+     */
     public static boolean isMediaDocument(Uri uri) {
         return "com.android.providers.media.documents".equals(uri.getAuthority());
     }
 
-    // Colworx : Convert String date and time into Date
+
+    /**
+     * Colworx : Convert String date and time into Date
+     */
     public static Date parseDate(String date, String time) {
 //        27-4-2018 12 : 00
         final String inputFormat = "dd-MM-yyyy HH:mm";
@@ -183,7 +197,9 @@ public class AppUtils {
 //        } else return "";
 //    }
 
-    // Colworx : Date Format
+    /**
+     * Colworx : Date Format
+     */
     public static String formatDate(String format, Date date){
 //        String dayOfTheWeek = (String) DateFormat.format("EEEE", date); // Thursday
 //        String day          = (String) DateFormat.format("dd",   date); // 20

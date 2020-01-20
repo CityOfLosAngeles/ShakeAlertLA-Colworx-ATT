@@ -1,0 +1,10 @@
+com.app.shakealertla
+com.app.shakealertla.Adapters
+com.app.shakealertla.DatabaseHelper
+com.app.shakealertla.HttpUtils
+com.app.shakealertla.Listener
+com.app.shakealertla.Models
+com.app.shakealertla.Services
+com.app.shakealertla.UserInterface.Activities
+com.app.shakealertla.UserInterface.Fragments
+com.app.shakealertla.Utils

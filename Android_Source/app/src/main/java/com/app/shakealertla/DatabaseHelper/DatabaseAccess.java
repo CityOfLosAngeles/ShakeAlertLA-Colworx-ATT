@@ -9,7 +9,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-// Colworx : Main Database Access class (SQLite Local DB)
+/**
+ * Colworx : Main Database Access class (SQLite Local DB)
+ */
 public class DatabaseAccess {
     private SQLiteOpenHelper openHelper;
     public SQLiteDatabase database;

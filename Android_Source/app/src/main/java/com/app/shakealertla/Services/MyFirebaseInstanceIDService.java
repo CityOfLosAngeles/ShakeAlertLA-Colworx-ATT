@@ -19,8 +19,11 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
     // [START refresh_token]
     @Override
     public void onTokenRefresh() {
-        // Get updated InstanceID token.
-        // Colworx : Below line is for refresh device token and use anywhere directly in code for get refreshed device token
+
+        /**
+         * Get updated InstanceID token.
+         * Colworx : Below line is for refresh device token and use anywhere directly in code for get refreshed device token
+         */
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Log.d(TAG, "Refreshed token: " + refreshedToken);
 

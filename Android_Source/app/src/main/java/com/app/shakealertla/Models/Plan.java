@@ -4,7 +4,9 @@ import com.app.shakealertla.R;
 
 import java.io.Serializable;
 
-// Colworx : Model class used for holds some data which retrieved from Rest API or Local DB and then use Model class data in another classes or adapters
+/**
+ * Colworx : Model class used for holds some data which retrieved from Rest API or Local DB and then use Model class data in another classes or adapters
+ */
 public class Plan implements Serializable{
     public int ID;
     public int Kit_ID;

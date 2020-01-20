@@ -11,7 +11,9 @@ import com.app.shakealertla.UserInterface.Activities.SecureYourPlace_Activity;
 
 import java.util.ArrayList;
 
-// Colworx : Class for store and retrieve Data from Local SQLtite database
+/**
+ * Colworx : Class for store and retrieve Data from Local SQLtite database
+ */
 public class SecureYourPlace_Service {
     private static DatabaseAccess databaseAccess = DatabaseAccess.getInstance(ShakeAlertLA.getContext());
     private static String TableName = "Secure_Place";
