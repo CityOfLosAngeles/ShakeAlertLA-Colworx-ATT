@@ -48,8 +48,9 @@ public class MainClass {
 
 ##### Active MQ listener receives a new Event
 
-* Active MQ listener receives a new Event, the backend checks the MAGNITUDE and MMI values and only read the polygon values from the contour where (Mag >= 4.5 && MMI>= 3.0)
+* When the event received by MQ listener, the backend then checks the MAGNITUDE and MMI values and only read the polygon values from the contour where (Mag >= 4.5 && MMI>= 3.0)
 
+* New Event Payload Example
 ```XML
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <event_message alg_vers="1.1.1 2019-04-17" category="live" instance="eqinfo2gm-contour@eew-uw-prod2" message_type="update" orig_sys="eqinfo2gm" ref_id="0" ref_src="" timestamp="2020-06-25T04:09:15.928Z" version="2">
@@ -107,8 +108,112 @@ public class MainClass {
 </event_message>
 ```
 
+* Backend Code Example
+```java
+@SuppressWarnings("unchecked")
+	public static void runCode(List<Map> Blocks, 
+			Document doc,
+			HashMap<String, Object> hashMap) throws FileNotFoundException, IOException, ParseException {
+
+		//StartTime
+		long startTime = System.currentTimeMillis();
+		UUID uuid = UUID.randomUUID();
+	    String uuidStr = uuid.toString();
+	    System.out.println("Random UUID[1]: " + uuidStr);
+	    hashMap.put("eventID", uuid);
+	    double magValue = Double.parseDouble((String) hashMap.get("MagnitudeValue"));
+	    System.out.println("MagnitudeValue: " + (String) hashMap.get("MagnitudeValue"));	 
+	    
+	    
+		//For Generate Blocks
+		//List<Map> Blocks = new Blocks().generateBlocks();
+		System.out.println("Total Blocks: "+Blocks.size());
+
+		//For Get Earth Quake
+		List<Map> earthquakeList = new Blocks().readContourFromStream(doc); //new Blocks().readContour(); read contour from xml file for testing
+		System.out.println("EarthQuake Contour: " +earthquakeList.size());
+
+		//For Check Intersection
+		List<List> IntersectsList = new Blocks().checkGeometryIntersects(Blocks, earthquakeList);
+		System.out.println("Intersects Count: "+IntersectsList.size());
+		hashMap.put("IntersectsCount", IntersectsList.size());
+
+		 try {
+		    	
+		    	new MySql().insertEvent(hashMap);
+				
+			} catch (Exception e) {
+				
+				// TODO: handle exception
+				System.out.println("event Insert Exception: " + e.getMessage());
+				
+			}
+		
+		int i = 0;
+
+		ArrayList<Object> Polygons = new ArrayList<Object>();
+
+
+		int ps = 0;
+		for (List list : IntersectsList) {
+
+
+			Map<String, Object> item = new HashMap<String, Object>();
+			item = (Map<String, Object>) list.get(ps);
+
+
+			Double MMIValue = Double.parseDouble((String) item.get("MMI"));
+			if(MMIValue >= 3.0 && magValue >= 4.5){
+
+				Polygons.add(item.get("Polygon"));
+
+			}
+
+			ps++;
+
+		}
+
+		//Intersection List
+		for (List list : IntersectsList) {
+
+			Map<String, Object> item = new HashMap<String, Object>();
+			item = (Map<String, Object>) list.get(0);
+			
+			 System.out.println("MMI: " + (String) item.get("MMI"));
+
+			 Double MMIValue = Double.parseDouble((String) item.get("MMI"));
+			if(MMIValue >= 3.0 && magValue >= 4.5){
+
+				hashMap.put("MMI", item.get("MMI"));
+				hashMap.put("Topic", item.get("Topic"));
+				hashMap.put("Polygon", item.get("Polygon"));
+				hashMap.put("Polygons", Polygons);
+				hashMap.put("Colors", getColors(Polygons));
+
+				String MMI = (String) item.get("MMI");
+
+				System.out.println("MMI: "+item.get("MMI"));
+				
+
+				ArrayList<String> withValues_EN = new ArrayList<String>();
+				ArrayList<String> withValues_ES = new ArrayList<String>();
+
+				for (int j = 0; j < list.size(); j++) {
+
+					Map<String, Object> item2 = new HashMap<String, Object>();
+					item2 = (Map<String, Object>) list.get(j);
+
+					
+
+					if(!item2.get("Block-EN").equals("")){
+
+						String BlockIndex = (String) item2.get("Topic");
+```
+##### Polygon Intersection with the Grid
+
 * This Polygon used for the Intersection points
 
+* Polygon Example
 ```xml
 <polygon number="8">38.8550,-122.7722 38.8491,-122.7541 38.8350,-122.7466 38.8209,-122.7541 38.8150,-122.7722 38.8209,-122.7903 38.8350,-122.7978 38.8491,-122.7903 38.8550,-122.7722</polygon>
 ```
