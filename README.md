@@ -32,8 +32,54 @@ In order to provide a simple development user experience, you will need to emula
 #### 4. Setting up database connections
 * Update the connection string in MySQL.java file
 
+```java
+public class MySql {
+
+	public Boolean InsertDevice(String DeviceID, String LatLong, String Index, String Language){
+
+		Boolean resp = false;
+
+		try{
+			
+			Connection con;
+			Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/labackend_pro_db","admin","");
+
+			List<Map> Device = GetDevice(DeviceID);
+			//System.out.println(Device.toString());
+			Statement stmt = con.createStatement();
+```
+
 #### 5. Setting up Blocks path located only in LA	
 * Update the directory path in Block.java file [LABackend/assets/boxes_10.json](https://github.com/Colworx/CityofLA/Backend_Source/LABackend/assets/boxes_10.json)
+
+```java
+public class Blocks {
+
+	List<Map> segments;
+	
+	//Colworx: This method for generates 101 blocks from boxes_10.json file and return polygon list. 
+	public ArrayList generateBlocks() throws FileNotFoundException, IOException, ParseException {
+		
+		List<Map> PolygonList = new ArrayList<>();
+		
+		try {
+			
+			segments = new MySql().getSegments();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			
+			return (ArrayList) PolygonList;
+		}
+		
+		if(segments.size() != 0) {
+			
+			JSONParser parser = new JSONParser();
+			JSONObject jsonObject = (JSONObject) parser.parse(new FileReader(
+					"/Users/Administrator/eclipse-workspace/LABackend/assets/boxes_10.json"));
+
+```
 
 #### 6. Run the server
 * Now right click on Server and click Start, It should be up and running on port 8080 and you could visit default page using URL: http://localhost:8080/
@@ -69,7 +115,13 @@ public class ConfigConstants {
 
 }
 ```
+* For iOS
+```objective c
+public ConfigConstants {
 
+
+}
+```
 
 #### 3. Generate Google Map API Key
 * Go to the Google Cloud Platform Console
@@ -82,8 +134,88 @@ public class ConfigConstants {
 #### 4. Add the API key to your request
 * Place the Google Map API key under the file AppDelegate for iOS and google-services.json for Android
 
+* For Android 
+```json
+{
+  "project_info": {
+    "project_number": "",
+    "firebase_url": "https://shakealert-la-dev.firebaseio.com",
+    "project_id": "shakealert-la-dev",
+    "storage_bucket": "shakealert-la-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "",
+        "android_client_info": {
+          "package_name": ""
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": ""
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
+```
+
+* For iOS 
+```json
+{
+need code
+}
+```
+
 #### 5. AWS Pinpoint Configuration
 * Setup AWS Pinpoint on AWS console and generate awsconfiguration.json file. This file should be placed in the root folder of the application source
 
+For iOS and Android
+```json
+{
+  "UserAgent": "MobileHub/1.0",
+  "Version": "1.0",
+  "CredentialsProvider": {
 
+    "CognitoIdentity": {
+      "Default": {
+        "PoolId": "",
+        "Region": "us-east-1"
+      }
+    }
+  },
+  "IdentityManager": {
+    "Default": {}
+  },
+  "PinpointAnalytics": {
+    "Default": {
+      "AppId": "",
+      "Region": "us-east-1"
+    }
+  },
+  "PinpointTargeting": {
+    "Default": {
+      "Region": "us-east-1"
+    }
+  }
+}
+```
 
