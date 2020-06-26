@@ -14,6 +14,31 @@ While building the UI of the app we consider the WDA (4.5) Accessibility when ch
   * Prepare and Plan – Tilled green
 * Setup wizards helps guide the users and a quick walk through the app
 
+### Data storage
+
+* For Data storage, ShakeAlertLA is using MySQL database on the backend
+* In the database, only grid numbers, events, anonymous device ID and campaign IDs are stored. There is no actual personal information that can be traced to any individual.
+* The data at rest and transmission is secured and encrypted
+* For Example- DeviceID: 6191fe1721ab8210, Grid: EN-54, Location: 34.912, -118.982 Language: EN
+* There is no hard cache or offline mode 
+
+### Server-side logic and Push Notifications
+
+#### 1.	Web Service to Register the Devices into the Grid (Blocks)	
+* We have created a POST web service which is connected to MySQL Database
+* When the user launches the app, it pass the Device Token and location coordinates to this web service for device registration
+* This Endpoint then verify the coordinates and returns the Grid number to the client side app (the app continuously check for significant change in user location to send back the updated coordinates to the server)
+* The data at rest and transmission is secured and encrypted 
+
+#### 2. When ShakeAlert Sends an Alert
+
+##### Obtain the USGS Active MQ Listener
+
+* Interfacing of USGS Listener with our “CityofLA/Backend_Source”
+* For doing this, you will need to send the payload to this class “”
+* When the USGS listener receives a new Event, the backend then checks the MAGNITUDE and MMI values and only read the polygon values from the contour where (Mag >= 4.5 && MMI>= 3.0)
+* This Polygon used for the Intersection points
+
 
 ### Setting up local development environment	
 Before you start, ensure you have the following installed:
