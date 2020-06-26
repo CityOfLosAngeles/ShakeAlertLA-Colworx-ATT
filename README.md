@@ -34,11 +34,84 @@ While building the UI of the app we consider the WDA (4.5) Accessibility when ch
 
 ##### Obtain the USGS Active MQ Listener
 
-* Interfacing of USGS Listener with our “CityofLA/Backend_Source”
-* For doing this, you will need to send the payload to this class “”
-* When the USGS listener receives a new Event, the backend then checks the MAGNITUDE and MMI values and only read the polygon values from the contour where (Mag >= 4.5 && MMI>= 3.0)
+* Interfacing of USGS Listener with our [CityofLA/Backend_Source](https://github.com/Colworx/CityofLA/tree/master/Backend_Source/LABackend)
+* For doing this, send payload to this ShakeAlert Main class
+
+```java
+public class MainClass {	
+
+	@SuppressWarnings("unchecked")
+	public static void runCode(List<Map> Blocks, 
+			Document doc,
+			HashMap<String, Object> hashMap) throws FileNotFoundException, IOException, ParseException {
+```
+
+##### Active MQ listener receives a new Event
+
+* Active MQ listener receives a new Event, the backend checks the MAGNITUDE and MMI values and only read the polygon values from the contour where (Mag >= 4.5 && MMI>= 3.0)
+
+```XML
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<event_message alg_vers="1.1.1 2019-04-17" category="live" instance="eqinfo2gm-contour@eew-uw-prod2" message_type="update" orig_sys="eqinfo2gm" ref_id="0" ref_src="" timestamp="2020-06-25T04:09:15.928Z" version="2">
+
+  <core_info id="6576">
+    <mag units="Mw">3.6514</mag>
+    <mag_uncer units="Mw">0.2665</mag_uncer>
+    <lat units="deg">38.8350</lat>
+    <lat_uncer units="deg">0.0656</lat_uncer>
+    <lon units="deg">-122.7722</lon>
+    <lon_uncer units="deg">0.0656</lon_uncer>
+    <depth units="km">8.0000</depth>
+    <depth_uncer units="km">5.0000</depth_uncer>
+    <orig_time units="UTC">2020-06-25T04:09:07.308Z</orig_time>
+    <orig_time_uncer units="sec">0.8431</orig_time_uncer>
+    <likelihood>0.9653</likelihood>
+    <num_stations>8</num_stations>
+  </core_info>
+
+  <contributors>
+    <contributor alg_instance="epic@eew-uw-prod1" alg_name="epic" alg_version="3.2.0-2019-06-06" category="live" event_id="42679" version="2"/>
+    <contributor alg_instance="epic@eew-uw-prod2" alg_name="epic" alg_version="3.2.0-2019-06-06" category="live" event_id="39318" version="2"/>
+    <contributor alg_instance="epic@eew-bk-prod2" alg_name="epic" alg_version="3.2.0-2019-06-06" category="live" event_id="43748" version="2"/>
+    <contributor alg_instance="epic@eew-nc-prod1" alg_name="epic" alg_version="3.2.0-2019-06-06" category="live" event_id="22584" version="1"/>
+    <contributor alg_instance="epic@eew-nc-prod2" alg_name="epic" alg_version="3.2.0-2019-06-06" category="live" event_id="22346" version="1"/>
+    <contributor alg_instance="epic@eew-bk-prod1" alg_name="epic" alg_version="3.2.0-2019-06-06" category="live" event_id="43650" version="1"/>
+    <contributor alg_instance="epic@eew-ci-prod2" alg_name="epic" alg_version="3.2.0-2019-06-06" category="live" event_id="38824" version="2"/>
+    <contributor alg_instance="epic@eew-ci-prod1" alg_name="epic" alg_version="3.2.0-2019-06-06" category="live" event_id="39494" version="1"/>
+    <contributor alg_instance="sa@eew-uw-prod2.ess.washington.edu" alg_name="sa" alg_version="2.3.23 2020-04-01" category="live" event_id="7174" version="4"/>
+  </contributors>
+
+  <gm_info>
+    <gmcontour_pred number="3">
+      <contour>
+        <MMI units="">2</MMI>
+        <PGA units="cm/s/s">1.3865</PGA>
+        <PGV units="cm/s">0.0615</PGV>
+        <polygon number="8">39.0251,-122.7722 38.9693,-122.5993 38.8347,-122.5281 38.7004,-122.6000 38.6449,-122.7722 38.7004,-122.9444 38.8347,-123.0163 38.9693,-122.9451 39.0251,-122.7722</polygon>
+      </contour>
+      <contour>
+        <MMI units="">3</MMI>
+        <PGA units="cm/s/s">6.1249</PGA>
+        <PGV units="cm/s">0.2947</PGV>
+        <polygon number="8">38.9099,-122.7722 38.8879,-122.7042 38.8350,-122.6761 38.7821,-122.7043 38.7601,-122.7722 38.7821,-122.8401 38.8350,-122.8683 38.8879,-122.8402 38.9099,-122.7722</polygon>
+      </contour>
+      <contour>
+        <MMI units="">4</MMI>
+        <PGA units="cm/s/s">27.0557</PGA>
+        <PGV units="cm/s">1.4114</PGV>
+        <polygon number="8">38.8550,-122.7722 38.8491,-122.7541 38.8350,-122.7466 38.8209,-122.7541 38.8150,-122.7722 38.8209,-122.7903 38.8350,-122.7978 38.8491,-122.7903 38.8550,-122.7722</polygon>
+      </contour>
+    </gmcontour_pred>
+  </gm_info>
+
+</event_message>
+```
+
 * This Polygon used for the Intersection points
 
+```xml
+<polygon number="8">38.8550,-122.7722 38.8491,-122.7541 38.8350,-122.7466 38.8209,-122.7541 38.8150,-122.7722 38.8209,-122.7903 38.8350,-122.7978 38.8491,-122.7903 38.8550,-122.7722</polygon>
+```
 
 ### Setting up local development environment	
 Before you start, ensure you have the following installed:
@@ -58,12 +131,12 @@ Before you start, ensure you have the following installed:
 ### Steps for Backend source deployment	
 In order to provide a simple development user experience, you will need to emulate some of that complexity through the creation steps below.
 
-1.	After cloning the repository, cd to this directory [Backend_Source/LaWebApi](https://github.com/Colworx/CityofLA/Backend_Source/LaWebApi)
-2.	Then, Create a database in PHPMyAdmin and upload the database script file from here [CityofLA/Database/LaWebApi](https://github.com/Colworx/CityofLA/Database) to MySQL, this will create all the tables and relations between the entities
+1.	After cloning the repository, cd to this directory [Backend_Source/LaWebApi](https://github.com/Colworx/CityofLA/tree/master/Backend_Source/LaWebApi)
+2.	Then, Create a database in PHPMyAdmin and upload the database script file from here [CityofLA/Database/LaWebApi](https://github.com/Colworx/CityofLA/tree/master/Database) to MySQL, this will create all the tables and relations between the entities
 
 #### 3. Install and setup Apache Tomcat server 
 *	Download Apache Tomcat v7.0 from this link https://tomcat.apache.org/download-70.cgi 
-*	Open the source [/LaWebApi](https://github.com/Colworx/CityofLA/Backend_Source/LaWebApi) in Eclipse Environment
+*	Open the source [/LaWebApi](https://github.com/Colworx/CityofLA/tree/master/Backend_Source/LaWebApi) in Eclipse Environment
 *	Click on Servers Tab And Create a new server by selecting “Tomcat v7.0 Server”
 *	Select Apache installation Directory and click Finish
 *	Once you have finished the installation, you should see Tomcat v7.0 Server at localhost [Stopped, Republish] under Servers tab. Double click on it verify HTTP ports information. By default HTTP port is 8080.
@@ -90,7 +163,7 @@ public class MySql {
 ```
 
 #### 5. Setting up Blocks path located only in LA	
-* Update the directory path in Block.java file [LABackend/assets/boxes_10.json](https://github.com/Colworx/CityofLA/Backend_Source/LABackend/assets/boxes_10.json)
+* Update the directory path in Block.java file [LABackend/assets/boxes_10.json](https://github.com/Colworx/CityofLA/tree/master/Backend_Source/LABackend/assets/boxes_10.json)
 
 ```java
 public class Blocks {
@@ -126,8 +199,8 @@ public class Blocks {
 ### Steps to Run the app source
 
 #### 1. Load the Sources
-* To run the iOS project, Launch the Xcode and open the source [CityofLA/iOS_Source](https://github.com/Colworx/CityofLA/iOS_Source)
-* For Android,  Launch Android studio and open the source [CityofLA/Android_Source](https://github.com/Colworx/CityofLA/Android_Source)
+* To run the iOS project, Launch the Xcode and open the source [CityofLA/iOS_Source](https://github.com/Colworx/CityofLA/tree/master/iOS_Source)
+* For Android,  Launch Android studio and open the source [CityofLA/Android_Source](https://github.com/Colworx/CityofLA/tree/master/Android_Source)
 
 #### 2. Update API URLs
 * Replace placeholder URLs with real API URLs in the AppDelegate for iOS and ConfigConstants.java for Android
