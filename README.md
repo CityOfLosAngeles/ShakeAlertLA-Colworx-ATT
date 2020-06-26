@@ -1,6 +1,20 @@
 ### About ShakealertLA	
 ShakeAlertLA alerts you that an earthquake has been detected and that you may soon feel shaking. You can also use this app to prepare for an earthquake, get details on recent earthquakes, and find help after an earthquake. This app is brought to you by Mayor Eric Garcetti and the City of Los Angeles, and built on the ShakeAlert system developed by the U.S. Geological Survey.
 
+### Interface design choices
+
+While building the UI of the app we consider the WDA (4.5) Accessibility when choosing app colors and elements, overall the UI of the app is user friendly
+* For iOS, we consider the APPLE Human Interface guidelines and used iOS native controllers. And for Android, Material UI have been used
+* For Earthquake Alerts and Warnings, app using RED color banners 
+* We have used blue color branding for Garcetti Mayor logos 
+* Each section of the app has its own color representation, examples are follows
+  * History Earthquakes - Purple
+  * Earthquakes Alert Map – Red
+  * Recovery – Green
+  * Prepare and Plan – Tilled green
+* Setup wizards helps guide the users and a quick walk through the app
+
+
 ### Setting up local development environment	
 Before you start, ensure you have the following installed:
 *	Xcode 10 or above
