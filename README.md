@@ -3,20 +3,22 @@ ShakeAlertLA alerts you that an earthquake has been detected and that you may so
 
 # Interface design choices
 
-While building the UI of the app we consider the WDA (4.5) Accessibility when choosing app colors and elements, overall the UI of the app is user friendly
-* For iOS, we consider the APPLE Human Interface guidelines and used iOS native controllers. And for Android, Material UI have been used
-* For Earthquake Alerts and Warnings, app using RED color banners 
-* We have used blue color branding for Garcetti Mayor logos 
+The designs of the app are inspired with Google's Material design. The UI and UX is user-friendly and easy to understand. For Accessibility, The colors, contrast, shadows, and layout are designed allowing users of diverse abilities to navigate, understand, and use the UI.
+
+
+* For iOS, Apple Human Interface guideline (AHI) is used with iOS native controls and elements. For Android, Material UI have been used
+* For Earthquake Alerts and Warnings, Red color is used.
+* Garcetti Mayor Blue color is used through-out the app.
 * Each section of the app has its own color representation, examples are follows
   * History Earthquakes - Purple
   * Earthquakes Alert Map – Red
   * Recovery – Green
-  * Prepare and Plan – Tilled green
-* Setup wizards helps guide the users and a quick walk through the app
+  * Prepare and Plan – Teal green
+* Setup wizards helps guide the user with a quick walk through of the app
 
 # Data storage
 
-* For Data storage, ShakeAlertLA is using MySQL database on the backend
+* For Data storage, ShakeAlertLA uses MySQL database on the backend
 * In the database, only grid numbers, events, anonymous device ID and campaign IDs are stored. There is no actual personal information that can be traced to any individual.
 * The data at rest and transmission is secured and encrypted
 * For Example- DeviceID: 6191fe1721ab8210, Grid: EN-54, Location: 34.912, -118.982 Language: EN
@@ -25,17 +27,16 @@ While building the UI of the app we consider the WDA (4.5) Accessibility when ch
 # Server-side logic and Push Notifications
 
 ## 1. Web Service to Register the Devices into the Grid (Blocks)	
-* We have created a POST web service which is connected to MySQL Database
-* When the user launches the app, it pass the Device Token and location coordinates to this web service for device registration
+* An API is used to POST anonymous data with location co-ordinates to the server.
+* When a user launches the app, it passes the Device Token and location coordinates to this web service for device registration
 * This Endpoint then verify the coordinates and returns the Grid number to the client side app (the app continuously check for significant change in user location to send back the updated coordinates to the server)
 * The data at rest and transmission is secured and encrypted 
 
 ## 2. When ShakeAlert Sends an Alert
 
 ### Obtain the USGS Active MQ Listener
-
-* Interfacing of USGS Listener with our [CityofLA/Backend_Source](https://github.com/Colworx/CityofLA/tree/master/Backend_Source/LABackend)
-* For doing this, send payload to this ShakeAlert Main class
+You can request to obtain an account from USGS to receive alerts from the USGS. Details are here https://www.shakealert.org/implementation/partners/ 
+* From the receiver code you can send the message payload to this class as shown below for grid processing. [CityofLA/Backend_Source](https://github.com/Colworx/CityofLA/tree/master/Backend_Source/LABackend)
 
 ```java
 public class MainClass {	
@@ -48,9 +49,9 @@ public class MainClass {
 
 ### Active MQ listener receives a new Event
 
-* When the event received by MQ listener, the backend then checks the MAGNITUDE and MMI values and only read the polygon values from the contour where (Mag >= 4.5 && MMI>= 3.0)
+* When an event is received at MQ listener, the backend then checks the MAGNITUDE and MMI values and only read the polygon values from the contour where (Mag >= 4.5 && MMI>= 3.0)
 
-* New Event Payload Example
+* Below is an example of Event received from USGS.
 ```XML
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <event_message alg_vers="1.1.1 2019-04-17" category="live" instance="eqinfo2gm-contour@eew-uw-prod2" message_type="update" orig_sys="eqinfo2gm" ref_id="0" ref_src="" timestamp="2020-06-25T04:09:15.928Z" version="2">
@@ -108,107 +109,8 @@ public class MainClass {
 </event_message>
 ```
 
-* Backend Code Example
-```java
-@SuppressWarnings("unchecked")
-	public static void runCode(List<Map> Blocks, 
-			Document doc,
-			HashMap<String, Object> hashMap) throws FileNotFoundException, IOException, ParseException {
+* Backend Java code process the message and checks for intersection using polygons from contour data set.
 
-		//StartTime
-		long startTime = System.currentTimeMillis();
-		UUID uuid = UUID.randomUUID();
-	    String uuidStr = uuid.toString();
-	    System.out.println("Random UUID[1]: " + uuidStr);
-	    hashMap.put("eventID", uuid);
-	    double magValue = Double.parseDouble((String) hashMap.get("MagnitudeValue"));
-	    System.out.println("MagnitudeValue: " + (String) hashMap.get("MagnitudeValue"));	 
-	    
-	    
-		//For Generate Blocks
-		//List<Map> Blocks = new Blocks().generateBlocks();
-		System.out.println("Total Blocks: "+Blocks.size());
-
-		//For Get Earth Quake
-		List<Map> earthquakeList = new Blocks().readContourFromStream(doc); //new Blocks().readContour(); read contour from xml file for testing
-		System.out.println("EarthQuake Contour: " +earthquakeList.size());
-
-		//For Check Intersection
-		List<List> IntersectsList = new Blocks().checkGeometryIntersects(Blocks, earthquakeList);
-		System.out.println("Intersects Count: "+IntersectsList.size());
-		hashMap.put("IntersectsCount", IntersectsList.size());
-
-		 try {
-		    	
-		    	new MySql().insertEvent(hashMap);
-				
-			} catch (Exception e) {
-				
-				// TODO: handle exception
-				System.out.println("event Insert Exception: " + e.getMessage());
-				
-			}
-		
-		int i = 0;
-
-		ArrayList<Object> Polygons = new ArrayList<Object>();
-
-
-		int ps = 0;
-		for (List list : IntersectsList) {
-
-
-			Map<String, Object> item = new HashMap<String, Object>();
-			item = (Map<String, Object>) list.get(ps);
-
-
-			Double MMIValue = Double.parseDouble((String) item.get("MMI"));
-			if(MMIValue >= 3.0 && magValue >= 4.5){
-
-				Polygons.add(item.get("Polygon"));
-
-			}
-
-			ps++;
-
-		}
-
-		//Intersection List
-		for (List list : IntersectsList) {
-
-			Map<String, Object> item = new HashMap<String, Object>();
-			item = (Map<String, Object>) list.get(0);
-			
-			 System.out.println("MMI: " + (String) item.get("MMI"));
-
-			 Double MMIValue = Double.parseDouble((String) item.get("MMI"));
-			if(MMIValue >= 3.0 && magValue >= 4.5){
-
-				hashMap.put("MMI", item.get("MMI"));
-				hashMap.put("Topic", item.get("Topic"));
-				hashMap.put("Polygon", item.get("Polygon"));
-				hashMap.put("Polygons", Polygons);
-				hashMap.put("Colors", getColors(Polygons));
-
-				String MMI = (String) item.get("MMI");
-
-				System.out.println("MMI: "+item.get("MMI"));
-				
-
-				ArrayList<String> withValues_EN = new ArrayList<String>();
-				ArrayList<String> withValues_ES = new ArrayList<String>();
-
-				for (int j = 0; j < list.size(); j++) {
-
-					Map<String, Object> item2 = new HashMap<String, Object>();
-					item2 = (Map<String, Object>) list.get(j);
-
-					
-
-					if(!item2.get("Block-EN").equals("")){
-
-						String BlockIndex = (String) item2.get("Topic");
-```
 ### Polygon Intersection with the Grid
 
 * Polygons are used to get the Intersection points
@@ -221,7 +123,7 @@ public class MainClass {
 
 ### Campaign for sending Push Notification
 
-* Using the Intersection points, the backend creates a campaign by grouping the segments of each MMI to send the push notifications on the devices
+* A push campaign is created for each MMI grids having value greater than or equal to 3.
 
 # Setting up local development environment	
 Before you start, ensure you have the following installed:
@@ -339,10 +241,10 @@ public class ConfigConstants {
 ```
 * For iOS
 ```objective c
-public ConfigConstants {
-
-
-}
+//inside registerDevice method of AppDelegate.m
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"<server_address>/registerDevice"]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:30.0];
 ```
 
 ### 3. Generate Google Map API Key
@@ -401,10 +303,9 @@ public ConfigConstants {
 ```
 
 * For iOS 
-```json
-{
-need code
-}
+```objective c
+//in Helper.h
+#define google_maps_api_key @""
 ```
 
 # Messaging Gateway
