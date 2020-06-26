@@ -221,6 +221,8 @@ public class MainClass {
 
 #### Campaign for sending Push Notification
 
+* Using the Intersection points, the backend creates a campaign by grouping the segments of each MMI to send the push notifications on the devices
+
 ### Setting up local development environment	
 Before you start, ensure you have the following installed:
 *	Xcode 10 or above
