@@ -1,7 +1,7 @@
-### About ShakealertLA	
+# About ShakealertLA	
 ShakeAlertLA alerts you that an earthquake has been detected and that you may soon feel shaking. You can also use this app to prepare for an earthquake, get details on recent earthquakes, and find help after an earthquake. This app is brought to you by Mayor Eric Garcetti and the City of Los Angeles, and built on the ShakeAlert system developed by the U.S. Geological Survey.
 
-### Interface design choices
+# Interface design choices
 
 While building the UI of the app we consider the WDA (4.5) Accessibility when choosing app colors and elements, overall the UI of the app is user friendly
 * For iOS, we consider the APPLE Human Interface guidelines and used iOS native controllers. And for Android, Material UI have been used
@@ -14,7 +14,7 @@ While building the UI of the app we consider the WDA (4.5) Accessibility when ch
   * Prepare and Plan – Tilled green
 * Setup wizards helps guide the users and a quick walk through the app
 
-### Data storage
+# Data storage
 
 * For Data storage, ShakeAlertLA is using MySQL database on the backend
 * In the database, only grid numbers, events, anonymous device ID and campaign IDs are stored. There is no actual personal information that can be traced to any individual.
@@ -22,17 +22,17 @@ While building the UI of the app we consider the WDA (4.5) Accessibility when ch
 * For Example- DeviceID: 6191fe1721ab8210, Grid: EN-54, Location: 34.912, -118.982 Language: EN
 * There is no hard cache or offline mode 
 
-### Server-side logic and Push Notifications
+# Server-side logic and Push Notifications
 
-#### 1.	Web Service to Register the Devices into the Grid (Blocks)	
+## 1. Web Service to Register the Devices into the Grid (Blocks)	
 * We have created a POST web service which is connected to MySQL Database
 * When the user launches the app, it pass the Device Token and location coordinates to this web service for device registration
 * This Endpoint then verify the coordinates and returns the Grid number to the client side app (the app continuously check for significant change in user location to send back the updated coordinates to the server)
 * The data at rest and transmission is secured and encrypted 
 
-#### 2. When ShakeAlert Sends an Alert
+## 2. When ShakeAlert Sends an Alert
 
-##### Obtain the USGS Active MQ Listener
+### Obtain the USGS Active MQ Listener
 
 * Interfacing of USGS Listener with our [CityofLA/Backend_Source](https://github.com/Colworx/CityofLA/tree/master/Backend_Source/LABackend)
 * For doing this, send payload to this ShakeAlert Main class
@@ -46,7 +46,7 @@ public class MainClass {
 			HashMap<String, Object> hashMap) throws FileNotFoundException, IOException, ParseException {
 ```
 
-##### Active MQ listener receives a new Event
+### Active MQ listener receives a new Event
 
 * When the event received by MQ listener, the backend then checks the MAGNITUDE and MMI values and only read the polygon values from the contour where (Mag >= 4.5 && MMI>= 3.0)
 
@@ -209,7 +209,7 @@ public class MainClass {
 
 						String BlockIndex = (String) item2.get("Topic");
 ```
-##### Polygon Intersection with the Grid
+### Polygon Intersection with the Grid
 
 * Polygons are used to get the Intersection points
 
@@ -219,11 +219,11 @@ public class MainClass {
 ```
 ![Intersection Image](http://ftp2.colworx.com/partner/LA/Screen%20Shot%202020-06-26%20at%209.07.40%20PM.png)
 
-#### Campaign for sending Push Notification
+### Campaign for sending Push Notification
 
 * Using the Intersection points, the backend creates a campaign by grouping the segments of each MMI to send the push notifications on the devices
 
-### Setting up local development environment	
+# Setting up local development environment	
 Before you start, ensure you have the following installed:
 *	Xcode 10 or above
 *	macOS Mojave or above
@@ -233,25 +233,25 @@ Before you start, ensure you have the following installed:
 *	TomCat Java Server
 *	Eclipse IDE
 
-### Then follow these steps to set up and run your server/application 
+# Then follow these steps to set up and run your server/application 
 
-### Clone the code repository
+## Clone the code repository
 •	git clone https://github.com/Colworx/CityofLA.git	
 
-### Steps for Backend source deployment	
+## Steps for Backend source deployment	
 In order to provide a simple development user experience, you will need to emulate some of that complexity through the creation steps below.
 
 1.	After cloning the repository, cd to this directory [Backend_Source/LaWebApi](https://github.com/Colworx/CityofLA/tree/master/Backend_Source/LaWebApi)
 2.	Then, Create a database in PHPMyAdmin and upload the database script file from here [CityofLA/Database/LaWebApi](https://github.com/Colworx/CityofLA/tree/master/Database) to MySQL, this will create all the tables and relations between the entities
 
-#### 3. Install and setup Apache Tomcat server 
+### 3. Install and setup Apache Tomcat server 
 *	Download Apache Tomcat v7.0 from this link https://tomcat.apache.org/download-70.cgi 
 *	Open the source [/LaWebApi](https://github.com/Colworx/CityofLA/tree/master/Backend_Source/LaWebApi) in Eclipse Environment
 *	Click on Servers Tab And Create a new server by selecting “Tomcat v7.0 Server”
 *	Select Apache installation Directory and click Finish
 *	Once you have finished the installation, you should see Tomcat v7.0 Server at localhost [Stopped, Republish] under Servers tab. Double click on it verify HTTP ports information. By default HTTP port is 8080.
 
-#### 4. Setting up database connections
+### 4. Setting up database connections
 * Update the connection string in MySQL.java file
 
 ```java
@@ -272,7 +272,7 @@ public class MySql {
 			Statement stmt = con.createStatement();
 ```
 
-#### 5. Setting up Blocks path located only in LA	
+### 5. Setting up Blocks path located only in LA	
 * Update the directory path in Block.java file [LABackend/assets/boxes_10.json](https://github.com/Colworx/CityofLA/tree/master/Backend_Source/LABackend/assets/boxes_10.json)
 
 ```java
@@ -303,16 +303,16 @@ public class Blocks {
 
 ```
 
-#### 6. Run the server
+### 6. Run the server
 * Now right click on Server and click Start, It should be up and running on port 8080 and you could visit default page using URL: http://localhost:8080/
 
-### Steps to Run the app source
+# Steps to Run the app source
 
-#### 1. Load the Sources
+### 1. Load the Sources
 * To run the iOS project, Launch the Xcode and open the source [CityofLA/iOS_Source](https://github.com/Colworx/CityofLA/tree/master/iOS_Source)
 * For Android,  Launch Android studio and open the source [CityofLA/Android_Source](https://github.com/Colworx/CityofLA/tree/master/Android_Source)
 
-#### 2. Update API URLs
+### 2. Update API URLs
 * Replace placeholder URLs with real API URLs in the AppDelegate for iOS and ConfigConstants.java for Android
 * For Android 
 ```java
@@ -345,7 +345,7 @@ public ConfigConstants {
 }
 ```
 
-#### 3. Generate Google Map API Key
+### 3. Generate Google Map API Key
 * Go to the Google Cloud Platform Console
 * Click the project drop-down and select or create the project for which you want to add an API key
 * Click the menu button and select APIs & Services > Credentials
@@ -353,7 +353,7 @@ public ConfigConstants {
 * The API key created dialog displays your newly created API key
 * Click Close
 
-#### 4. Add the API key to your request
+### 4. Add the API key to your request
 * Place the Google Map API key under the file AppDelegate for iOS and google-services.json for Android
 
 * For Android 
@@ -404,40 +404,6 @@ public ConfigConstants {
 ```json
 {
 need code
-}
-```
-
-#### 5. AWS Pinpoint Configuration
-* Setup AWS Pinpoint on AWS console and generate awsconfiguration.json file. This file should be placed in the root folder of the application source
-
-For iOS and Android
-```json
-{
-  "UserAgent": "MobileHub/1.0",
-  "Version": "1.0",
-  "CredentialsProvider": {
-
-    "CognitoIdentity": {
-      "Default": {
-        "PoolId": "",
-        "Region": "us-east-1"
-      }
-    }
-  },
-  "IdentityManager": {
-    "Default": {}
-  },
-  "PinpointAnalytics": {
-    "Default": {
-      "AppId": "",
-      "Region": "us-east-1"
-    }
-  },
-  "PinpointTargeting": {
-    "Default": {
-      "Region": "us-east-1"
-    }
-  }
 }
 ```
 
