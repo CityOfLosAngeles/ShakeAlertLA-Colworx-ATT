@@ -211,12 +211,14 @@ public class MainClass {
 ```
 ##### Polygon Intersection with the Grid
 
-* This Polygon used for the Intersection points
+* Polygons are used to get the Intersection points
 
-* Polygon Example
+* Polygon and Intersection Example
 ```xml
 <polygon number="8">38.8550,-122.7722 38.8491,-122.7541 38.8350,-122.7466 38.8209,-122.7541 38.8150,-122.7722 38.8209,-122.7903 38.8350,-122.7978 38.8491,-122.7903 38.8550,-122.7722</polygon>
 ```
+![Intersection Image](http://ftp2.colworx.com/partner/LA/Screen%20Shot%202020-06-26%20at%209.07.40%20PM.png)
+
 
 ### Setting up local development environment	
 Before you start, ensure you have the following installed:
