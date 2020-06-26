@@ -17,12 +17,12 @@ Before you start, ensure you have the following installed:
 ### Steps for Backend source deployment	
 In order to provide a simple development user experience, you will need to emulate some of that complexity through the creation steps below.
 
-1.	After cloning the repository, Cd to this directory Backend_Source/LaWebApi
-2.	Then, Create a database in PHPMyAdmin and upload the database script file from here “CityofLA/Database” to MySQL, this will create all the tables and relations between the entities
+1.	After cloning the repository, cd to this directory [Backend_Source/LaWebApi](https://github.com/Colworx/CityofLA/Backend_Source/LaWebApi)
+2.	Then, Create a database in PHPMyAdmin and upload the database script file from here [CityofLA/Database/LaWebApi](https://github.com/Colworx/CityofLA/Database) to MySQL, this will create all the tables and relations between the entities
 
 #### 3.Install and setup Apache Tomcat server 
 *	Download Apache Tomcat v7.0 from this link https://tomcat.apache.org/download-70.cgi 
-*	Open the source /LaWebApi in Eclipse Environment
+*	Open the source [/LaWebApi](https://github.com/Colworx/CityofLA/Backend_Source/LaWebApi) in Eclipse Environment
 *	Click on Servers Tab And Create a new server by selecting “Tomcat v7.0 Server”
 *	Select Apache installation Directory and click Finish
 *	Once you have finished the installation, you should see Tomcat v7.0 Server at localhost [Stopped, Republish] under Servers tab. Double click on it verify HTTP ports information. By default HTTP port is 8080.
@@ -31,7 +31,7 @@ In order to provide a simple development user experience, you will need to emula
 * Update the connection string in MySQL.java file
 
 #### 5.Setting up Blocks path located only in LA	
-* Update the directory path in Block.java file (LABackend/assets/boxes_10.json)
+* Update the directory path in Block.java file [LABackend/assets/boxes_10.json](https://github.com/Colworx/CityofLA/Backend_Source/LABackend/assets/boxes_10.json)
 
 #### 6.Run the server
 * Now right click on Server and click Start, It should be up and running on port 8080 and you could visit default page using URL: http://localhost:8080/
@@ -39,8 +39,8 @@ In order to provide a simple development user experience, you will need to emula
 ### Steps to Run the app source
 
 #### 1.Load the Sources
-* To run the iOS project, Launch the Xcode and open the source “CityofLA/iOS_Source”
-* For Android,  Launch Android studio and open the source “CityofLA/Android_Source”
+* To run the iOS project, Launch the Xcode and open the source [CityofLA/iOS_Source](https://github.com/Colworx/CityofLA/iOS_Source)
+* For Android,  Launch Android studio and open the source [CityofLA/Android_Source](https://github.com/Colworx/CityofLA/Android_Source)
 
 #### 2.Update API URLs
 * Replace placeholder URLs with real API URLs in the AppDelegate for iOS and ConfigConstants.java for Android
@@ -59,6 +59,5 @@ In order to provide a simple development user experience, you will need to emula
 #### 5.AWS Pinpoint Configuration
 * Setup AWS Pinpoint on AWS console and generate awsconfiguration.json file. This file should be placed in the root folder of the application source
 
-#### 6. Finally run the project on device
 
 
