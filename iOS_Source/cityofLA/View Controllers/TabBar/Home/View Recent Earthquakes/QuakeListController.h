@@ -17,7 +17,7 @@
 @property (strong,nonatomic) IBOutlet UILabel *magnitudeLbl;
 -(void)reload;
 
-
+//Colworx -> 03-04-2019
 @property BOOL apiResponse;
 -(void)scrollToTop;
 @end

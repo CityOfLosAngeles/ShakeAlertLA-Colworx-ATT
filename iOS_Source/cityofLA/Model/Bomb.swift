@@ -10,6 +10,8 @@ import Foundation
 import GoogleMaps;
 import UIKit;
 
+
+//Utility class that is use to form ring animation on Map view
 @objc class Bomb : NSObject {
     
     var title = "asdasdasd";

@@ -57,14 +57,14 @@ NS_ASSUME_NONNULL_BEGIN
                        topic:(NSString *)topic
                           ID:(NSNumber *)ID;
 
-//WASIQ
+//Colworx
 -(instancetype)initWithTitle:(NSString *)title
                          lat:(NSString *)lat
                          lon:(NSString *)lon
                    magnitude:(NSString *)magnitude
                  updatedTime:(NSString*)updatedTime
                        place:(NSString*)place;
-//END WASIQ
+//END Colworx
 -(instancetype)initWithDict:(NSDictionary *)userInfo;
 -(void)getAddress:(void(^)(NSString *address))completionBlock;
 @end

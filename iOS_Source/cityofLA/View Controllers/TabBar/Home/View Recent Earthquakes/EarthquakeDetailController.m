@@ -8,8 +8,10 @@
 
 #import "EarthquakeDetailController.h"
 #import "Helper.h"
-#import "TwoTabController.h"
 
+//Colworx
+#import "TwoTabController.h"
+//END Colworx
 @interface EarthquakeDetailController ()
 
 @end
@@ -36,7 +38,6 @@
     [self setup];
 
 }
-
 //CTI: Setup earthquake payload attributes
 -(void)setup{
     self.titleLbl.text = self.n.title;
@@ -48,12 +49,12 @@
     self.longitude.text = self.n.LongitudeValue;
     
     [Helper drawDropShadowOnView:self.cardView];
-    
+    //Colworx
     if(_fromQuakeList) {
         [TwoTabController sharedInstance].popedViewController = YES;
     } else {
         [TwoTabController sharedInstance].popedViewController = YES;
     }
- 
+    //END Colworx
 }
 @end

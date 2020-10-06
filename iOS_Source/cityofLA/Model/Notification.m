@@ -14,6 +14,8 @@
 #endif
 @implementation Notification
 
+//This a model class, that is use to parse notification payload.
+
 -(instancetype)initWithTitle:(NSString *)title
                         body:(NSString *)body
                          lat:(NSString *)lat
@@ -50,7 +52,7 @@
     return nil;
 }
 
-//WASIQ
+//Colworx
 -(instancetype)initWithTitle:(NSString *)title
                          lat:(NSString *)lat
                          lon:(NSString *)lon
@@ -81,8 +83,10 @@
     return nil;
 }
 
-//END WASIQ
+//END Colworx
 
+
+//Method to reverseGeocode location
 -(void)getAddress:(void(^)(NSString *address))completionBlock{
     __block CLPlacemark* placemark;
     __block NSString *address = nil;
@@ -143,7 +147,7 @@
     return propNames;
 }
 
-
+//MMI intensity level calculation from the payload
 +(NSString*)getIntensity_EN:(NSString *)MMI {
     
     NSArray *intensity = @[@"Weak",@"Light",@"Moderate",@"Strong",@"Very Strong",@"Servere",@"Violent",@"Extreme"];

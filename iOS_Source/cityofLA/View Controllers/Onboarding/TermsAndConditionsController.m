@@ -15,7 +15,6 @@
 @interface TermsAndConditionsController () <UIWebViewDelegate>
 
 @end
-//CTI: Controller class to show T&C
 
 @implementation TermsAndConditionsController
 

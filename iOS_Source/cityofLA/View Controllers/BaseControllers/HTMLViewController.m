@@ -65,7 +65,7 @@
 }
 -(void)openMail:(UIButton *)btn{
     //15-08-2019
-//    NSString *recipients = @"mailto:support@colworx.zendesk.com";
+
     NSString *recipients = @"mailto:early-earthquake-warning@lacity.org";
     //END 15-08-2019
     

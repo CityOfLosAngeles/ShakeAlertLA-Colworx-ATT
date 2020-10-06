@@ -7,11 +7,11 @@
 //
 
 #import "WalkthroughController.h"
-
+//CTI: Controller class to show tutorial wizard on App Launch
 @interface WalkthroughController ()
 
 @end
-//CTI: Controller class to show tutorial wizard on App Launch
+
 @implementation WalkthroughController
 
 - (void)viewDidLoad {

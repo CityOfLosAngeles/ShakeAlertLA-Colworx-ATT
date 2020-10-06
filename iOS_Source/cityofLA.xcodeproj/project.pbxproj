@@ -11,8 +11,6 @@
 		2259B1592113460F00C263C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2259B1572113460F00C263C4 /* Main.storyboard */; };
 		2259B15E2113461300C263C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2259B15C2113461300C263C4 /* LaunchScreen.storyboard */; };
 		2259B1612113461300C263C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2259B1602113461300C263C4 /* main.m */; };
-		2259B1682113462F00C263C4 /* awsconfiguration_devd.json in Resources */ = {isa = PBXBuildFile; fileRef = 2259B1672113462F00C263C4 /* awsconfiguration_devd.json */; };
-		22683D99211862EC00AF8FF1 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 22683D98211862EC00AF8FF1 /* awsconfiguration.json */; };
 		22BF5950228C804D009DFC71 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BF594F228C804D009DFC71 /* Reachability.m */; };
 		6D05D7A921AD2EB90033AB0C /* alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6D05D7A821AD2EB90033AB0C /* alert.mp3 */; };
 		6D05D7AB21AD2F720033AB0C /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D05D7AA21AD2F720033AB0C /* AVKit.framework */; };
@@ -148,9 +146,7 @@
 		2259B15D2113461300C263C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2259B15F2113461300C263C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2259B1602113461300C263C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2259B1672113462F00C263C4 /* awsconfiguration_devd.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration_devd.json; sourceTree = "<group>"; };
 		2259B16921148A2400C263C4 /* cityofLA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cityofLA.entitlements; sourceTree = "<group>"; };
-		22683D98211862EC00AF8FF1 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		22BF594E228C804D009DFC71 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		22BF594F228C804D009DFC71 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		6D05D7A821AD2EB90033AB0C /* alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alert.mp3; sourceTree = "<group>"; };
@@ -437,8 +433,6 @@
 				6DFFD1752164CCE900293517 /* View Controllers */,
 				6D14E61B216655A4006980B2 /* Views */,
 				6DC0B43D2164E0B000B6B86F /* Localizable.strings */,
-				22683D98211862EC00AF8FF1 /* awsconfiguration.json */,
-				2259B1672113462F00C263C4 /* awsconfiguration_devd.json */,
 				2259B15F2113461300C263C4 /* Info.plist */,
 				6D6412B421CCF72F00258349 /* InfoPlist.strings */,
 				6DEBE09821AFE784006825B0 /* 0B-Onboarding.jpg */,
@@ -888,7 +882,6 @@
 				6DCE751D2191BD1400D8896B /* disclaimer_es.html in Resources */,
 				6D0B25D22165E7D200AFCF47 /* Assets.xcassets in Resources */,
 				6DCE751B2191BD1400D8896B /* using_shake_alert_la_es.html in Resources */,
-				2259B1682113462F00C263C4 /* awsconfiguration_devd.json in Resources */,
 				6DCE75172191BD1400D8896B /* partner_es.html in Resources */,
 				6D1DEB82217DF74000DD2756 /* EarthquakeInfo.xib in Resources */,
 				6D14E607216648E3006980B2 /* SF-UI-Display-Semibold.otf in Resources */,
@@ -899,7 +892,6 @@
 				6DCE751E2191BD1400D8896B /* terms and condition_es.html in Resources */,
 				6D14E606216648E3006980B2 /* SF-UI-Display-Heavy.otf in Resources */,
 				6D14E616216648E3006980B2 /* 8E-WhatToGetFromShakeAlertLA.html in Resources */,
-				22683D99211862EC00AF8FF1 /* awsconfiguration.json in Resources */,
 				6D14E612216648E3006980B2 /* volunteer_to_help.html in Resources */,
 				6D14E615216648E3006980B2 /* access_disaster_services.html in Resources */,
 				6DCE751A2191BD1400D8896B /* protective_action_es.html in Resources */,
@@ -1252,12 +1244,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = cityofLA/cityofLA.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = FA4R3D54CZ;
 				INFOPLIST_FILE = cityofLA/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1265,7 +1257,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.ShakeAlertLA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "Cirtical Alert DEV Profile";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "cityofLA/Model/cityofLA-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -1281,19 +1273,19 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = cityofLA/cityofLA.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = FA4R3D54CZ;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = cityofLA/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.ShakeAlertLA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "ShakeAlertLA NEW Production Release AppStore";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "cityofLA/Model/cityofLA-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

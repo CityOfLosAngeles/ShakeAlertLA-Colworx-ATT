@@ -11,6 +11,7 @@
 @interface HomeController : UIViewController
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIImageView *wavesImgView;
+@property (weak, nonatomic) IBOutlet UIImageView *logoMayorImgView;
 @property (strong, nonatomic) IBOutlet UILabel *topLabel;
 @property (strong, nonatomic) IBOutlet UIView *cardView;
 @property (strong, nonatomic) IBOutlet UILabel *bePrepared;

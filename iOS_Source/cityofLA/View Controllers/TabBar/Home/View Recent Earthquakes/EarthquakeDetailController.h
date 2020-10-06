@@ -29,6 +29,6 @@
     
 @property Notification *n;
 
-//WASIQ
+//Colworx
 @property BOOL fromQuakeList;
 @end

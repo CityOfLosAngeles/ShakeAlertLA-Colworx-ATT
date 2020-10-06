@@ -16,7 +16,7 @@
 #define purpleLAColor        [UIColor colorWithRed:136.0/255.0 green:57.0/255.0 blue:143.0/255.0 alpha:1]
 #define purpleLAColorCG        [UIColor colorWithRed:136.0/255.0 green:57.0/255.0 blue:143.0/255.0 alpha:1].CGColor
 #define makePlanColor [UIColor colorWithRed:58.0/255.0 green:124.0/255.0 blue:138.0/255.0 alpha:1]
-
+//Add Google Maps API key here
 #define google_maps_api_key @""
 #define LACoordinates CLLocationCoordinate2DMake(34.052235, -118.243683) 
 
@@ -32,6 +32,8 @@
 @import UIKit;
 @import GoogleMaps;
 @interface Helper : NSObject
+
+//Method declaration and class attributes.
 +(UIViewController *)getViewControllerWithIdentifier:(NSString *)identifier;
 +(void)startOnboarding;
 +(void)animateRootViewController:(UIViewController *)vc;

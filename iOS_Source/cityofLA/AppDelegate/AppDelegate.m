@@ -21,6 +21,8 @@
 #import "MapController.h"
 #import "Notification.h"
 
+
+//AWS Framework Classes for Pinpoint (Push Notification)
 @import AWSMobileClient;
 @import AWSCore;
 @import AWSPinpoint;
@@ -47,8 +49,8 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"appLauchedAlready"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         NSString *language = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
+        //CTI: Set's the default localization on App install.
         if([language containsString:@"es"]){
-            //CTI: Set's the default localization on App install.
             [[NSUserDefaults standardUserDefaults]setObject:@"es" forKey:@"lang"];
             [[NSUserDefaults standardUserDefaults] synchronize];
         }
@@ -57,13 +59,22 @@
     
     
 
+//    // Initialize the Amazon Cognito credentials provider
+//
+//    AWSCognitoCredentialsProvider *credentialsProvider = [[AWSCognitoCredentialsProvider alloc]
+//                                                          initWithRegionType:AWSRegionUSEast1
+//                                                          identityPoolId:@"us-east-1:46168d8f-9bb8-46aa-9017-214a709b9d4a"];
+//
+//    AWSServiceConfiguration *configuration = [[AWSServiceConfiguration alloc] initWithRegion:AWSRegionUSEast1 credentialsProvider:credentialsProvider];
 
+//    [AWSServiceManager defaultServiceManager].defaultServiceConfiguration = configuration;
+//
     [[UINavigationBar appearance]setTranslucent:NO];
 //    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init]
 //                                      forBarPosition:UIBarPositionAny
 //                                          barMetrics:UIBarMetricsDefault];
     
-    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+//    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
     //CTI: Enables GMSService for Google Maps
     [GMSServices provideAPIKey:google_maps_api_key];
     [GMSPlacesClient provideAPIKey:google_maps_api_key];
@@ -76,10 +87,8 @@
 //        [AWSDDLog addLogger:AWSDDTTYLogger.sharedInstance];
         
         
-        
-//        [[AWSDDLog sharedInstance] setLogLevel:AWSDDLogLevelInfo];
-        
         //CTI: Setup Pinpoint configuartion.
+//        [[AWSDDLog sharedInstance] setLogLevel:AWSDDLogLevelInfo];
         self->pinpoint = [AWSPinpoint pinpointWithConfiguration:[AWSPinpointConfiguration defaultPinpointConfigurationWithLaunchOptions:launchOptions]];
         
         
@@ -93,6 +102,13 @@
         
     });
   
+    //LOG EVENT
+//    AWSPinpointEvent *event = [pinpoint.analyticsClient createEventWithEventType:@"CustomEvents"];
+//    [event addAttribute:@"iPhone X" forKey:@"ModelDevice"];
+//    [event addMetric:[NSNumber numberWithInteger:10] forKey:@"RandomNumber"];
+//    [pinpoint.analyticsClient recordEvent:event];
+//    [pinpoint.analyticsClient submitEvents];
+//
 
     return true;
 }
@@ -106,8 +122,8 @@
         self.window.rootViewController = tabBar;
     }
 }
-
 //CTI: Registers device for remote notifications
+
 -(void) registerForRemoteNotifications{
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     center.delegate = self;
@@ -139,8 +155,6 @@
     [self.manager requestAlwaysAuthorization];
     [self.manager startUpdatingLocation];
 }
-
-//CTI: Registers device token at Pinpoint
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
 
     const char *data = [deviceToken bytes];
@@ -150,6 +164,7 @@
     }
     self.deviceToken = [token copy];
     NSLog(@"COLA current device token is %@",self.deviceToken);
+    //CTI: Registers device token at Pinpoint
     [[pinpoint notificationManager] interceptDidRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
     [[NSUserDefaults standardUserDefaults]setObject:self.deviceToken forKey:@"deviceToken"];
     if (self.manager.location != nil) {
@@ -255,7 +270,7 @@
 }
 
 #pragma MARK CLLLocationManager Delegate :
-
+//CTI: Registers device at the backend, the user is anonymously segmented to grids based on the location
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
     NSLog(@"location updated to");
     NSLog(@"%f,%f",locations.firstObject.coordinate.latitude,locations.firstObject.coordinate.longitude);
@@ -272,7 +287,7 @@
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
     NSLog(@"location getting failed with error : %@",error.localizedDescription);
 }
-//CTI: Registers device at the backend, the user is anonymously segmented to grids based on the location
+
 -(void)registerDevice{
     self.deviceToken = [[NSUserDefaults standardUserDefaults]valueForKey:@"deviceToken"];
     if (self.deviceToken == nil) {
@@ -301,23 +316,11 @@
                            };
     
     
-    //76 : 33.837730, -117.907729
-    //79 : 34.490752, -117.947141
-    //95 : 33.721569, -117.731910
-    //41 : 32.831029, -118.371905
-    //80 : 34.748279, -118.003863
-    //7: 34.145803, -118.904742
-    
-//    self.manager.location.coordinate.latitude,self.manager.location.coordinate.longitude
-    //replace static values with this
-    //
-    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"<server_address>/registerDevice"]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:30.0];
     
     if(isTesting){
-//        34.052235, -118.243683
         body = @{
                  @"DeviceID":self.deviceToken,
                  @"LatLong": [NSString stringWithFormat:@"%f,%f",
@@ -365,7 +368,7 @@ self.manager.location.coordinate.latitude,self.manager.location.coordinate.longi
     [dataTask resume];
 }
 
-//CTI: Segments are updated at pinpoint
+//Segment user to grids/blocks based on user location.
 
 -(void)updateAWSProfile:(NSString *)code{
     
@@ -402,7 +405,7 @@ self.manager.location.coordinate.latitude,self.manager.location.coordinate.longi
 
 
 
-// (Optional) Create a function and customize the event recording.
+// (Optional) Create a function and customize  event recording.
 
 -(void) logEvents {
     AWSPinpointAnalyticsClient *pinpointAnalyticsClient = pinpoint.analyticsClient;

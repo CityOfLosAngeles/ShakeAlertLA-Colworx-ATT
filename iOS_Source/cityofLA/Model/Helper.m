@@ -22,6 +22,8 @@
 
 @implementation Helper
 
+
+//Check for Network Reachability
 +(BOOL) isConnectedToNetwork {
     Reachability *reachability =  [Reachability reachabilityForInternetConnection];
     NetworkStatus netStatus = [reachability currentReachabilityStatus];
@@ -44,10 +46,12 @@
     UIViewController *vc = [sb instantiateViewControllerWithIdentifier:identifier];
     return vc;
 }
+
+//Initiate onboarding view controller.
 +(void)startOnboarding{
     OnboardingController *vc = (OnboardingController *)[Helper getViewControllerWithIdentifier:@"onboarding"];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
-    nav.navigationController.navigationBar.hidden = YES;
+//    nav.navigationController.navigationBar.hidden = YES;
     vc.index = 0;
     [Helper animateRootViewController:nav];
 }
@@ -58,10 +62,14 @@
         } completion:nil];
     });
 }
+
+
 +(void)launchHomeController{
     UITabBarController *tabBar = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateInitialViewController];
     [Helper animateRootViewController:tabBar];
 }
+
+//Use to get top most view controller from any screen.
 + (UIViewController*) topMostController{
     UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
     
@@ -131,6 +139,8 @@
     viewController.navigationController.interactivePopGestureRecognizer.delegate = nil;
     [viewController.navigationController pushViewController:htmlVc animated:YES];
 }
+
+
 +(void)pushTwoTabsControllerOnVc:(UIViewController *)viewController
                        withColor:(UIColor*)color
                      withTabType:(TabType)type
@@ -139,7 +149,7 @@
     twoTab.tabType = type;
     twoTab.navColor = color;
     twoTab.title = title;
-    viewController.navigationController.interactivePopGestureRecognizer.delegate = nil;
+		viewController.navigationController.interactivePopGestureRecognizer.delegate = nil;
     [viewController.navigationController pushViewController:twoTab animated:YES];
 }
 +(void)applyAttributesOnVc:(UIViewController *)vc withColor:(UIColor *)color{
@@ -151,6 +161,9 @@
     vc.navigationController.navigationBar.largeTitleTextAttributes = @{NSForegroundColorAttributeName : UIColor.whiteColor,NSFontAttributeName:[UIFont SFHeavyWithSize:32]};
     vc.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : UIColor.whiteColor,NSFontAttributeName:[UIFont SFHeavyWithSize:16]};
     [vc.navigationController.navigationBar setBarTintColor:color];
+		//colworx 6/10/20 Start
+		vc.navigationController.view .backgroundColor = color;
+		//colworx 6/10/20 End
     [Helper multineLineTitle:vc.navigationController];
 }
 +(void)pushListViewControllerWithType:(ListType)listType
@@ -217,6 +230,10 @@
     
     vc.navigationController.navigationBarHidden = NO;
     [vc.navigationController.navigationBar setBarTintColor:color];
+		//colworx 6/10/20 Start
+		vc.navigationController.view .backgroundColor = color;
+		//colworx 6/10/20 End
+
     [vc.navigationController.navigationBar setHidden:NO];
     vc.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_arrow"] style:UIBarButtonItemStylePlain target:vc.navigationController action:@selector(popViewControllerAnimated:)];
     NSString *lang = [[NSUserDefaults standardUserDefaults]valueForKey:@"lang"];
@@ -268,6 +285,7 @@
     NSBundle *bundle = [[NSBundle alloc]initWithPath:path];
     return NSLocalizedStringFromTableInBundle(key, nil, bundle, "");
 }
+
 +(void)pushNotesViewControllerWithPlanItem:(PlanListItem*)item
                                      title:(NSString *)title
                                   navColor:(UIColor *)color
@@ -299,6 +317,7 @@
     GMSCameraUpdate *moveToLA = [GMSCameraUpdate setCamera:[GMSCameraPosition cameraWithTarget:LACoordinates zoom:12]];
     [mapView animateWithCameraUpdate:moveToLA];
 }
+
 #pragma MARK UIVIEWS HELPER METHODS :-
 +(void)drawDropShadowOnCell:(UICollectionViewCell *)cell :(float)shadowSize{
     cell.contentView.layer.cornerRadius = 10;
@@ -386,7 +405,7 @@
     }
 }
 
-#pragma MARK NETWORK REQUESTS :
+#pragma MARK NETWORK REQUESTS TO BRING SHELTERS:
 +(void)findShelterLocationsWithParams:(NSMutableArray *)parameters :(void(^)(BOOL success,id json))completion {
     
     NSString *boundary = @"----WebKitFormBoundary7MA4YWxkTrZu0gW";
@@ -410,10 +429,7 @@
     [body appendFormat:@"--%@--\r\n", boundary];
     NSData *postData = [body dataUsingEncoding:NSUTF8StringEncoding];
     NSString *shelterURL = @"";
-    shelterURL = @"https://services7.arcgis.com/aFfS9FqkIRSo0Ceu/arcgis/rest/services/EQ_Early_Warning_Mass_Care_Locations_Public_View/FeatureServer/0/query";
-    //DEV
-//    shelterURL = @"https://services7.arcgis.com/aFfS9FqkIRSo0Ceu/ArcGIS/rest/services/EQ_Early_Warning_Mass_Care_Locations_(Demo)/FeatureServer/0/query";
-    
+    shelterURL = @"";
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:shelterURL]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:30.0];

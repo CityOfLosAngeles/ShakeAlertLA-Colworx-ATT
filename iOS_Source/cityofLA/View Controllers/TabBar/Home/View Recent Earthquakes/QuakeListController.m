@@ -18,7 +18,7 @@
 
 @implementation QuakeListController{
     TwoTabController *parentVc;
-//    WASIQ
+//    Colworx
     UIRefreshControl *refresh;
 }
 - (void)viewDidLoad {
@@ -30,14 +30,14 @@
     self.label4n5.text = [Helper localized:@"label4n5"];
     self.magnitudeLbl.text = [Helper localized:@"magnitude:"];
     
-
+//    Colworx
     refresh = [[UIRefreshControl alloc]init];
     [refresh addTarget:self action:@selector(refreshList:) forControlEvents:UIControlEventValueChanged];
     [self.collectionView addSubview:refresh];
-
+//    END Colworx
 }
 
-//
+//    Colworx
 -(void)refreshList:(UIRefreshControl *)refresh{
     if (refresh.state == 0) {
         [self.collectionView setBounces:NO];
@@ -58,27 +58,25 @@
     [self.collectionView setContentOffset:CGPointZero animated:YES];
 }
 
-
+//Colworx
 -(void) scrollToTop {
     [self.collectionView setContentOffset:CGPointZero animated:YES];
 //    [collectionView setContentOffset:CGPointZero animated:YES];
 }
-
+//END Colworx
 #pragma MARK UICollectionView Methods:
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    
+    //Colworx
     if ([TwoTabController sharedInstance].boundedAnnotation) {
         return [TwoTabController sharedInstance].boundedAnnotations.count;
     } else {
         return [TwoTabController sharedInstance].notifications.count;
     }
-    
+    //END Colworx
 }
-
-//CTI: collectionview for Recent Earthquake list
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
    __block UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     Notification *n;
@@ -126,14 +124,14 @@
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    //WASIQ
+    //Colworx
     Notification *n;
     if ([TwoTabController sharedInstance].boundedAnnotation) {
         n = [TwoTabController sharedInstance].boundedAnnotations[indexPath.row];
     } else {
         n = [TwoTabController sharedInstance].notifications[indexPath.row];
     }
-    //END WASIQ
+    //END Colworx
     
     EarthquakeDetailController *detailVc = [self.storyboard instantiateViewControllerWithIdentifier:@"earthquakeDetail"];
     detailVc.n = n;

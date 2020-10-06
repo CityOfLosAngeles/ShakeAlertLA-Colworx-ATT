@@ -39,6 +39,7 @@
     return nil;
 }
 
+//Helper Method for Static content
 //CTI: Setup pages with HTML contents
 -(NSMutableArray *)getLAItems{    
     ListItem *partners = [[ListItem alloc]initWithTitle:[Helper localized:@"partnersTitle"]
@@ -74,8 +75,6 @@
     //END 15-08-2018
     return @[partners,disclaimer,help,info, tutorial].mutableCopy;
 }
-
-//CTI: Plan pages List Items
 -(NSMutableArray *)getPlanItems{
     ListItem *make_a_plan = [[ListItem alloc]initWithTitle:[Helper localized:@"makePlanTitle"]
                                                   image:[UIImage imageNamed:@"make_a_plan"]

@@ -18,6 +18,13 @@
 @implementation HomeController
 -(void)viewWillAppear:(BOOL)animated{
     [ self.navigationController.navigationBar setHidden:YES];
+		//colworx 6/10/20 Start
+		self.navigationController.view.backgroundColor = darkBlueColor;
+		self.view.backgroundColor = UIColor.whiteColor;
+		[self.logoMayorImgView setHidden:NO];
+		[self.wavesImgView setHidden:NO];
+		[self.topLabel setHidden:NO];
+		//colworx 6/10/20 End
     [self reloadItems];
 }
 - (void)viewDidLoad {
@@ -74,9 +81,21 @@
 }
 
 - (IBAction)shakeBtn:(UIButton *)sender {
+		//colworx 6/10/20 Start
+	[self.wavesImgView setHidden:YES];
+	[self.logoMayorImgView setHidden:YES];
+	[self.topLabel setHidden:YES];
+	self.view.backgroundColor = darkBlueColor;
+		//colworx 6/10/20 End
     [Helper pushListViewControllerWithType:AboutLA title:[Helper localized:@"aboutShakeAlert"] navColor:darkBlueColor onVc:self];
 }
 - (IBAction)termsBtn:(UIButton *)sender {
+		//colworx 6/10/20 Start
+	[self.wavesImgView setHidden:YES];
+	[self.logoMayorImgView setHidden:YES];
+	[self.topLabel setHidden:YES];
+	self.view.backgroundColor = darkBlueColor;
+		//colworx 6/10/20 End
     [Helper pushHtmlControllerWithFile:@"terms and condition"
                                   onVc:self withColor:darkBlueColor
                         dontHideNavBar:NO
@@ -106,7 +125,16 @@
     return  cell;
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+		//colworx 6/10/20 Start
+	[self.wavesImgView setHidden:YES];
+	[self.logoMayorImgView setHidden:YES];
+	[self.topLabel setHidden:YES];
+		//colworx 6/10/20 End
+
     if (indexPath.row == 0) { // Make A Plan Toggle
+			self.navigationController.view.backgroundColor = makePlanColor;
+			self.view.backgroundColor = makePlanColor;
+
         [Helper pushListViewControllerWithType:Plan
                                          title:[Helper localized:@"makePlanNextVc"]
                                       navColor:makePlanColor
@@ -116,6 +144,9 @@
         [self selectIndex:1];
     }
     if (indexPath.row == 2) {
+			self.navigationController.view.backgroundColor = purpleLAColor;
+			self.view.backgroundColor = purpleLAColor;
+
         [Helper pushTwoTabsControllerOnVc:self
                                 withColor:purpleLAColor
                               withTabType:quakeTabs

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+//CTI: Controller class to show T&C
 @interface TermsAndConditionsController : UIViewController
 @property (weak,nonatomic) IBOutlet UIWebView *webView;
 @property (weak,nonatomic) IBOutlet UIButton *agreedBtn;

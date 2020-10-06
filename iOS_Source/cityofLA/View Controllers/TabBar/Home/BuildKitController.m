@@ -27,7 +27,6 @@
     [self setup];
     
 }
-
 //CTI: This method setup the "Build a kit" items.
 -(void)setup{
     NSMutableAttributedString *build_a_kit = [[NSMutableAttributedString alloc]initWithString:[Helper localized:@"buildAtHome"] attributes:@{NSFontAttributeName : [UIFont SFRegularWithSize:14]}];

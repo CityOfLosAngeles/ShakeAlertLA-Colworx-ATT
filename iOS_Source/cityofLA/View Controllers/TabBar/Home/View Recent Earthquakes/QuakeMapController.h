@@ -15,8 +15,8 @@
 @property GMSCoordinateBounds *bounds;
 -(void)reload;
 
-
+//    Colworx
 @property float zoomLevel;
 @property BOOL firstLoaded;
-
+//END Colworx
 @end

@@ -102,13 +102,13 @@ TwoTabController *twoTabInstance;
         for (UIViewController *vc in self.viewControllers) {
             [vc performSelector:@selector(reload) withObject:nil afterDelay:0];
         }
-//        WASIQ
+//        Colworx
         _boundedAnnotations = [[NSMutableArray alloc] init];
         _radius = 800;
         [self loadRecentEarthQuakes: 800];
         [[self additionalView] setBackgroundColor:purpleLAColor];
         [[self label] setText:[Helper localized:@"recentEarthQuake"]];
-//        END WASIQ
+//        END Colworx
     }
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self listPressed:self.listBtn];
@@ -248,26 +248,26 @@ TwoTabController *twoTabInstance;
 -(IBAction)byTimePressed:(UIButton *)btn{
     [self hideMenu];
     NSSortDescriptor *sorter = [[NSSortDescriptor alloc]initWithKey:@"startTime" ascending:NO];
-    //WASIQ
+    //Colworx
     if (self.boundedAnnotation) {
         self.boundedAnnotations = [self.boundedAnnotations sortedArrayUsingDescriptors:@[sorter]].mutableCopy;
     } else {
         self.notifications = [self.notifications sortedArrayUsingDescriptors:@[sorter]].mutableCopy;
     }
-    //END WASIQ
+    //END Colworx
     [self.viewControllers.firstObject performSelector:@selector(reload) withObject:nil afterDelay:0];
     [self.viewControllers.firstObject performSelector:@selector(scrollToTop) withObject:nil afterDelay:0.2];
 }
 -(IBAction)byMagnitudePressed:(UIButton *)btn{
     [self hideMenu];
     NSSortDescriptor *sorter = [[NSSortDescriptor alloc]initWithKey:@"MagnitudeValue" ascending:NO];
-    //WASIQ
+    //Colworx
     if (self.boundedAnnotation) {
         self.boundedAnnotations = [self.boundedAnnotations sortedArrayUsingDescriptors:@[sorter]].mutableCopy;
     } else {
         self.notifications = [self.notifications sortedArrayUsingDescriptors:@[sorter]].mutableCopy;
     }
-    //END WASIQ
+    //END Colworx
     [self.viewControllers.firstObject performSelector:@selector(reload) withObject:nil afterDelay:0];
     [self.viewControllers.firstObject performSelector:@selector(scrollToTop) withObject:nil afterDelay:0.2];
 }
@@ -278,8 +278,8 @@ TwoTabController *twoTabInstance;
     [self hideMenu];
 }
 
-// 03/April/2019 -> WASIQ
-// Method to get Recent Earthquakes
+// 03/April/2019 -> Colworx
+// Method to get Recent Earthquakes where magnitude is greate than equal to 3
 -(NSArray *) getRecentEarthquakes :(double)radius  :(void(^)( bool success ,  id url))completionBlock {
     NSMutableArray *dates = [[self getPreviousMonthDate] mutableCopy];
     
@@ -291,9 +291,9 @@ TwoTabController *twoTabInstance;
     }
     NSMutableArray *array = [[NSMutableArray alloc] init];
     
-//    NSString *url = [NSString stringWithFormat:@"https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&latitude=34.052235&longitude=-118.243683&maxradiuskm=%.2f&limit=300&minmagnitude=2", radius] ;
+    NSString *url = [NSString stringWithFormat:@"https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&latitude=34.052235&longitude=-118.243683&maxradiuskm=%.2f&limit=300&minmagnitude=2", radius] ;
     
-    NSString *url = [NSString stringWithFormat:@"https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&latitude=34.052235&longitude=-118.243683&maxradiuskm=%.2f&limit=300&minmagnitude=3&orderby=time&starttime=%@", radius, [dates firstObject]];
+//    NSString *url = [NSString stringWithFormat:@""];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
@@ -313,7 +313,7 @@ TwoTabController *twoTabInstance;
                                                            [SVProgressHUD dismiss];
                                                             completionBlock(NO, NULL);
                                                         }
-                                                        NSArray* json = [self parseEarthQuackDetail:jsonData];
+                                                        NSArray* json = [self parseEarthQuakeDetail:jsonData];
                                                         if (json) {
                                                             NSLog(@"Data Fetched -> Recent Earthquakes. %lu", (unsigned long)[json count]);
                                                             [SVProgressHUD dismiss];
@@ -329,7 +329,10 @@ TwoTabController *twoTabInstance;
     return array;
 }
 
--(NSArray *) parseEarthQuackDetail: (NSDictionary *)data {
+#pragma MARK Get and parse view recent earthquake
+
+//Method to parse earthquake detail
+-(NSArray *) parseEarthQuakeDetail: (NSDictionary *)data {
     [self.notifications removeAllObjects];
     NSMutableArray *dataArray = [data objectForKey:@"features"];
     for (NSMutableDictionary *currentEarthQuake in dataArray) {
@@ -352,6 +355,8 @@ TwoTabController *twoTabInstance;
     return self.notifications;
 }
 
+
+//
 -(void) loadRecentEarthQuakes: (double)radius {
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     
@@ -402,5 +407,5 @@ TwoTabController *twoTabInstance;
     
     return dates;
 }
-//END WASIQ
+//END Colworx
 @end

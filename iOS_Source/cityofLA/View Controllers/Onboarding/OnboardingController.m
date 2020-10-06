@@ -5,9 +5,6 @@
 //  Created by Sam Sidd on 03/10/2018.
 //  Copyright © 2018 CityOfLa. All rights reserved.
 //
-
-//CTI: Controller class to show tutorial wizard on App Launch
-
 #import "AppDelegate.h"
 #import "OnboardingController.h"
 #import "Helper.h"

@@ -15,7 +15,7 @@
 @interface ShelterMapController () <GMSMapViewDelegate>
 
 @end
-//CTI: Plots the shelters pin to the mapview.
+
 @implementation ShelterMapController{
     TwoTabController *parentVc;
 }

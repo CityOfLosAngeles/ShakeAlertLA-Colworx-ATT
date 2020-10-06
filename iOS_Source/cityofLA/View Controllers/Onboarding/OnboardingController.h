@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+//CTI: Controller class to show tutorial wizard on App Launch
 @interface OnboardingController : UIViewController
 
 @property NSInteger index;

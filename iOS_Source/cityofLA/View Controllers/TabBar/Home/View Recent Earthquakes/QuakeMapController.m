@@ -12,14 +12,14 @@
 #import "TwoTabController.h"
 #import "Helper.h"
 
-//WASIQ
+//Colworx
 #import "QuakeListController.h"
-//End WASIQ
-//dont rename
+//End Colworx
+
 @interface QuakeMapController () <GMSMapViewDelegate>
 
 @end
-
+//This class is view model controller for View Recent Earthquake.
 @implementation QuakeMapController
 {
     TwoTabController *parentVc;
@@ -58,6 +58,8 @@
     }
     [self.mapView clear];
     _mapView.userInteractionEnabled = YES;
+    
+    //Plot pins on the map
     GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc]init];
     self.markers = [[NSMutableArray alloc]init];
     for (Notification *n in parentVc.notifications) {
@@ -89,7 +91,7 @@
     [parentVc.navigationController pushViewController:detailVc animated:YES];
 }
 
-//WASIQ
+//Colworx
 -(void)mapView:(GMSMapView *)mapView idleAtCameraPosition:(GMSCameraPosition *)position
 {
     
@@ -181,5 +183,5 @@
     parentVc.boundedAnnotation = YES;
     [parentVc.viewControllers.firstObject performSelector:@selector(reload) withObject:nil afterDelay:0];
 }
-//END WASIQ
+//END Colworx
 @end

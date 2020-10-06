@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger,TabType) {
 -(void)loadShelter;
 -(IBAction)mapPressed:(UIButton *)btn;
 
-//WASIQ
+//Colworx
 -(void)loadRecentEarthQuakes: (double)radius;
 @property float radius;
 @property NSMutableArray *boundedAnnotations;
@@ -42,5 +42,5 @@ typedef NS_ENUM(NSUInteger,TabType) {
 @property BOOL boundedAnnotation;
 @property (weak, nonatomic) IBOutlet UIView *additionalView;
 @property (weak, nonatomic) IBOutlet UILabel *label;
-//END WASIQ
+//END Colworx
 @end
