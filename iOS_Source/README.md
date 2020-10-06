@@ -3,17 +3,13 @@ iOS LA Early Earthquake Warning for iOS
 
 version 1.2 build 2.1 <br />
 Deployment Environment <br />
-Xcode 10.0 <br />
-Targeted OS : iOS 11 <br />
-Mac OS : mac OS High Sierra 10.13.6 <br />
+Xcode 11.0 and above <br />
+Targeted OS : iOS 14 <br />
+Mac OS : mac OS High Sierra 10.14.6 <br />
 <br />
 <br />
 ### Elements that should NOT be open sourced
 Files<br />
-
-AppDelegate.m<br />
-Helper.m<br />
-aws-configuration.json<br />
 
 
 ### Code Structure
