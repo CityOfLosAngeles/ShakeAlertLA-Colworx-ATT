@@ -1,4 +1,4 @@
-# LAEEW_iOS
+## ShakeAlertLA_iOS
 iOS LA Early Earthquake Warning for iOS
 
 version 1.2 build 2.1 <br />
@@ -8,9 +8,6 @@ Targeted OS : iOS 14 <br />
 Mac OS : mac OS High Sierra 10.14.6 <br />
 <br />
 <br />
-### Elements that should NOT be open sourced
-Files<br />
-
 
 ### Code Structure
 The code uses MVC acrchiture and each class in the code base is categorized in their respective directory. (Model, Views, and Controller)
