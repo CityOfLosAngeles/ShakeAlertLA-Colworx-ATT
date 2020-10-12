@@ -33,10 +33,6 @@ public class ShelterService {
             jsonObject.put("f", "json");
             jsonObject.put("where", "FCODE LIKE 'Shelter - Activated'");
             jsonObject.put("outSr", "4326");
-//            String oldURL = "https://services7.arcgis.com/aFfS9FqkIRSo0Ceu/ArcGIS/rest/services/EQ_Early_Warning_Mass_Care_Locations_(Demo)/FeatureServer/0/query";
-//            String url = "https://services7.arcgis.com/aFfS9FqkIRSo0Ceu/ArcGIS/rest/services/EQ_Early_Warning_Mass_Care_Locations_(Demo)/FeatureServer/0/query";
-//            String oldUrl2 = "https://services7.arcgis.com/aFfS9FqkIRSo0Ceu/arcgis/rest/services/EQ_Early_Warning_Mass_Care_Locations_Public_View/FeatureServer/0/query"; // For Production
-
             RestAPI.PostUrlEncodedRequest("FindAshelterActivity",
                     ConfigConstants.IN_DEV?ConfigConstants.SHELTER_DEV_URL:ConfigConstants.SHELTER_URL,
                     jsonObject, new ServiceListener<JSONObject, VolleyError>() {
