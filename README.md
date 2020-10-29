@@ -1,7 +1,16 @@
-# About ShakealertLA	
+# ShakeAlertLA
+ShakeAlertLA has been archived. You are free to fork and modify the code for your own use, but development on the open source repository has stopped and issues and pull requests will not be accepted.
+
+_This project is provided as is under the terms of the [Apache 2.0]('./LICENSE') license. The City of Los Angeles is not responsible for any ways in which the software might be used by third parties._
+
+ShakeAlertLA is an application that was developed in partnership with the City of Los Angeles to provide early warning of strong earthquake shaking to the citizens of the Los Angeles area.
+
+The code below was built entirely by AT&T and contractors, the City of LA has no detailed knowledge of how it works and is providing this source code for other organizations who might be interested in implementing similar solutions.
+
+## About ShakealertLA	
 ShakeAlertLA alerts you that an earthquake has been detected and that you may soon feel shaking. You can also use this app to prepare for an earthquake, get details on recent earthquakes, and find help after an earthquake. This app is brought to you by Mayor Eric Garcetti and the City of Los Angeles, and built on the ShakeAlert system developed by the U.S. Geological Survey.
 
-# Interface design choices
+## Interface design choices
 
 The designs of the app are inspired with Google's Material design. The UI and UX is user-friendly and easy to understand. For Accessibility, The colors, contrast, shadows, and layout are designed allowing users of diverse abilities to navigate, understand, and use the UI.
 
@@ -16,7 +25,7 @@ The designs of the app are inspired with Google's Material design. The UI and UX
   * Prepare and Plan – Teal green
 * Setup wizards helps guide the user with a quick walk through of the app
 
-# Data storage
+## Data storage
 
 * For Data storage, ShakeAlertLA uses MySQL database on the backend
 * In the database, only grid numbers, events, anonymous device ID and campaign IDs are stored. There is no actual personal information that can be traced to any individual.
@@ -24,17 +33,17 @@ The designs of the app are inspired with Google's Material design. The UI and UX
 * For Example- DeviceID: 6191fe1721ab8210, Grid: EN-54, Location: 34.912, -118.982 Language: EN
 * There is no hard cache or offline mode 
 
-# Server-side logic and Push Notifications
+## Server-side logic and Push Notifications
 
-## 1. Web Service to Register the Devices into the Grid (Blocks)	
+### 1. Web Service to Register the Devices into the Grid (Blocks)	
 * An API is used to POST anonymous data with location co-ordinates to the server.
 * When a user launches the app, it passes the Device Token and location coordinates to this web service for device registration
 * This Endpoint then verify the coordinates and returns the Grid number to the client side app (the app continuously check for significant change in user location to send back the updated coordinates to the server)
 * The data at rest and transmission is secured and encrypted 
 
-## 2. When ShakeAlert Sends an Alert
+### 2. When ShakeAlert Sends an Alert
 
-### Obtain the USGS Active MQ Listener
+#### Obtain the USGS Active MQ Listener
 You can request to obtain an account from USGS to receive alerts from the USGS. Details are here https://www.shakealert.org/implementation/partners/ 
 * From the receiver code you can send the message payload to this class as shown below for grid processing. [CityofLA/Backend_Source](https://github.com/Colworx/CityofLA/tree/master/Backend_Source/LABackend)
 
@@ -47,7 +56,7 @@ public class MainClass {
 			HashMap<String, Object> hashMap) throws FileNotFoundException, IOException, ParseException {
 ```
 
-### Active MQ listener receives a new Event
+#### Active MQ listener receives a new Event
 
 * When an event is received at MQ listener, the backend then checks the MAGNITUDE and MMI values and only read the polygon values from the contour where (Mag >= 4.5 && MMI>= 3.0)
 
@@ -111,7 +120,7 @@ public class MainClass {
 
 * Backend Java code process the message and checks for intersection using polygons from contour data set.
 
-### Polygon Intersection with the Grid
+#### Polygon Intersection with the Grid
 
 * Polygons are used to get the Intersection points
 
@@ -121,11 +130,11 @@ public class MainClass {
 ```
 ![Intersection Image](http://ftp2.colworx.com/partner/LA/Screen%20Shot%202020-06-26%20at%209.07.40%20PM.png)
 
-### Campaign for sending Push Notification
+#### Campaign for sending Push Notification
 
 * A push campaign is created for each MMI grids having value greater than or equal to 3.
 
-# Setting up local development environment	
+## Setting up local development environment	
 Before you start, ensure you have the following installed:
 *	Xcode 10 or above
 *	macOS Mojave or above
@@ -135,25 +144,25 @@ Before you start, ensure you have the following installed:
 *	TomCat Java Server
 *	Eclipse IDE
 
-# Then follow these steps to set up and run your server/application 
+## Then follow these steps to set up and run your server/application 
 
-## Clone the code repository
+### Clone the code repository
 •	git clone https://github.com/Colworx/CityofLA.git	
 
-## Steps for Backend source deployment	
+### Steps for Backend source deployment	
 In order to provide a simple development user experience, you will need to emulate some of that complexity through the creation steps below.
 
 1.	After cloning the repository, cd to this directory [Backend_Source/LaWebApi](https://github.com/Colworx/CityofLA/tree/master/Backend_Source/LaWebApi)
 2.	Then, Create a database in PHPMyAdmin and upload the database script file from here [CityofLA/Database/LaWebApi](https://github.com/Colworx/CityofLA/tree/master/Database) to MySQL, this will create all the tables and relations between the entities
 
-### 3. Install and setup Apache Tomcat server 
+#### 3. Install and setup Apache Tomcat server 
 *	Download Apache Tomcat v7.0 from this link https://tomcat.apache.org/download-70.cgi 
 *	Open the source [/LaWebApi](https://github.com/Colworx/CityofLA/tree/master/Backend_Source/LaWebApi) in Eclipse Environment
 *	Click on Servers Tab And Create a new server by selecting “Tomcat v7.0 Server”
 *	Select Apache installation Directory and click Finish
 *	Once you have finished the installation, you should see Tomcat v7.0 Server at localhost [Stopped, Republish] under Servers tab. Double click on it verify HTTP ports information. By default HTTP port is 8080.
 
-### 4. Setting up database connections
+#### 4. Setting up database connections
 * Update the connection string in MySQL.java file
 
 ```java
@@ -174,8 +183,8 @@ public class MySql {
 			Statement stmt = con.createStatement();
 ```
 
-### 5. Setting up Blocks path located only in LA	
-* Update the directory path in Block.java file [LABackend/assets/boxes_10.json](https://github.com/Colworx/CityofLA/tree/master/Backend_Source/LABackend/assets/boxes_10.json)
+#### 5. Setting up Blocks path located only in LA	
+* Update the directory path in Block.java file [LABackend/assets/boxes_10.json](https://github.com/cityoflosangeles/ShakeAlertLA-Colworx/tree/master/Backend_Source/LABackend/assets/boxes_10.json)
 
 ```java
 public class Blocks {
@@ -205,16 +214,16 @@ public class Blocks {
 
 ```
 
-### 6. Run the server
+#### 6. Run the server
 * Now right click on Server and click Start, It should be up and running on port 8080 and you could visit default page using URL: http://localhost:8080/
 
-# Steps to Run the app source
+## Steps to Run the app source
 
-### 1. Load the Sources
-* To run the iOS project, Launch the Xcode and open the source [CityofLA/iOS_Source](https://github.com/Colworx/CityofLA/tree/master/iOS_Source)
-* For Android,  Launch Android studio and open the source [CityofLA/Android_Source](https://github.com/Colworx/CityofLA/tree/master/Android_Source)
+#### 1. Load the Sources
+* To run the iOS project, Launch the Xcode and open the source [CityofLA/iOS_Source](https://github.com/CityOfLosAngeles/ShakeAlertLA-Colworx/tree/master/iOS_Source)
+* For Android,  Launch Android studio and open the source [CityofLA/Android_Source](https://github.com/CityOfLosAngeles/ShakeAlertLA-Colworx/tree/master/Android_Source)
 
-### 2. Update API URLs
+#### 2. Update API URLs
 * Replace placeholder URLs with real API URLs in the AppDelegate for iOS and ConfigConstants.java for Android
 * For Android 
 ```java
@@ -247,7 +256,7 @@ NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWit
                                                        timeoutInterval:30.0];
 ```
 
-### 3. Generate Google Map API Key
+#### 3. Generate Google Map API Key
 * Go to the Google Cloud Platform Console
 * Click the project drop-down and select or create the project for which you want to add an API key
 * Click the menu button and select APIs & Services > Credentials
@@ -255,7 +264,7 @@ NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWit
 * The API key created dialog displays your newly created API key
 * Click Close
 
-### 4. Add the API key to your request
+#### 4. Add the API key to your request
 * Place the Google Map API key under the file AppDelegate for iOS and google-services.json for Android
 
 * For Android 
@@ -308,21 +317,12 @@ NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWit
 #define google_maps_api_key @""
 ```
 
-# Messaging Gateway
+## Messaging Gateway
 
 This repository contains the codebase for ShakeAlertLA's messaging gateway. The gateway uses Amazon AWS to send messages from the USGS EEW ActiveMQ message gateway to APNS/GPNS. The Messaging gateway provides Earthquake Early Warning notifications from the USGS for users inside LA County.
 For code issues, please open a github issue. For other issues, email early-earthquake-warning@lacity.org.
 
-# Licensed
 
- Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License
+## Related Projects 
+* [MyShake](https://myshake.berkeley.edu/)
+* [USGS ShakeAlert](https://www.usgs.gov/natural-hazards/earthquake-hazards/shakealert)
