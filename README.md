@@ -1,7 +1,7 @@
 # ShakeAlertLA
 ShakeAlertLA has been archived. You are free to fork and modify the code for your own use, but development on the open source repository has stopped and issues and pull requests will not be accepted.
 
-_This project is provided as is under the terms of the [Apache 2.0]('./LICENSE') license. The City of Los Angeles is not responsible for any ways in which the software might be used by third parties._
+_This project is provided as is under the terms of the [Apache 2.0]('LICENSE') license. The City of Los Angeles is not responsible for any ways in which the software might be used by third parties._
 
 ShakeAlertLA is an application that was developed in partnership with the City of Los Angeles to provide early warning of strong earthquake shaking to the citizens of the Los Angeles area.
 
