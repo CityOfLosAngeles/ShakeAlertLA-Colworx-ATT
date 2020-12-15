@@ -7,6 +7,15 @@ ShakeAlertLA is an application that was developed in partnership with the City o
 
 The code below was built entirely by AT&T and contractors, the City of LA has no detailed knowledge of how it works and is providing this source code for other organizations who might be interested in implementing similar solutions.
 
+The following documentation provides an overview of the ShakeAlertLA application:
+
+
+1. [ShakeAlertLA Open Source Code Review presentation](https://drive.google.com/file/d/1d12d4wDPXvyLe0XyMXjydRonMNZMD0lz/view?usp=sharing)
+2. [Recording of the ShakeAlertLA Open Source Code Review presentation](https://drive.google.com/file/d/1RzGAMU7kazqrx1zKyk-VfHr3SRnJUzs5/view?usp=sharing) with the City of L.A., AT&T and other municipalities about the code 
+3. [Colworx ShakeAlertLA Source Code guide](https://drive.google.com/file/d/1kZMKiicvBHyfzpc-3w9coCvlFp1ZKPnn/view?usp=sharing) provided by the developer
+
+Continue to read this README file for further guidance on how to modify this code for your own development.
+
 ## About ShakealertLA	
 ShakeAlertLA alerts you that an earthquake has been detected and that you may soon feel shaking. You can also use this app to prepare for an earthquake, get details on recent earthquakes, and find help after an earthquake. This app is brought to you by Mayor Eric Garcetti and the City of Los Angeles, and built on the ShakeAlert system developed by the U.S. Geological Survey.
 
