@@ -337,12 +337,19 @@ Measures taken by AT&T to secure the code:
 
 AT&T has undertaken with the concurrence and purview of the City of LA, industry appropriate reviews for security for applications of the nature of ShakeAlertLA including the reviews noted below. 
 
-iOS and Android reviews had no high-risk issues found in the binary, and the four (4) medium risk issues are from either AWS native SDKs or iOS system classes.  Quixxi mobile app security tool was used for the Android scan.  None of the issues reported are directly related to the work product.  The AWS instance was hardened.  AWS has inbound/outbound rules. 
+iOS and Android reviews had no high-risk issues found in the binary, and the four (4) medium risk issues are from either AWS native SDKs or iOS system classes.  Quixxi mobile
+app security tool was used for the Android scan.  None of the issues reported are directly related to the work product.  The AWS instance was hardened.  AWS has
+inbound/outbound rules.  
+
+
+Port scans were completed using using https://www.portcheckers.com/ and https://www.yougetsignal.com/tools/open-ports/.  A Pen Test was completed by AT&T Cybersecurity. The
+test showed no impactful security issues for the work product.  Note that AT&T does not control the USGS environment. 
  
- Port scans were completed using using https://www.portcheckers.com/ and https://www.yougetsignal.com/tools/open-ports/.  A Pen Test was completed by AT&T Cybersecurity. The test showed no impactful security issues for the work product.  Note that AT&T does not control the USGS environment. 
+
+From an Authentication and Authorization perspective, the app has no login.  The information endpoints are wide open and public and no actual real usable data is stored or
+transmitted (there is only encrypted GUID for push notification, language setting, and last anonymous location via lat/long). 
  
-From an Authentication and Authorization perspective, the app has no login.  The information endpoints are wide open and public and no actual real usable data is stored or transmitted (there is only encrypted GUID for push notification, language setting, and last anonymous location via lat/long). 
- 
+
 The solution has been hardened and the transmission encrypted per standard AWS deployment (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security.html).
 
 ## Related Projects 
