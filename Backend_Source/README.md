@@ -3,7 +3,7 @@
 ## About 
 This repository contains the codebase for ShakeAlertLA's messaging gateway. The gateway uses Amazon AWS to send messages from the USGS EEW ActiveMQ message gateway to APNS/GPNS. The Messaging gateway provides Earthquake Early Warning notifications from the [USGS](https://earthquake.usgs.gov/research/earlywarning/) for users inside LA County. 
 
-For code issues, please open a [github issue](https://github.com/CityOfLosAngeles/ShakeAlertLA-messaging-gateway/issues). For other issues, email early-earthquake-warning@lacity.org. To install and setup, follow the guide in the README below. 
+To install and setup, follow the guide in the README below. 
 Backned Messaging Gateway and API
 
 ## Platforms <br />
