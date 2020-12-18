@@ -16,8 +16,6 @@ The following documentation provides an overview of the ShakeAlertLA application
 
 ## Measures taken by AT&T to secure the code
 
-Measures taken by AT&T to secure the code:
-
 AT&T has undertaken with the concurrence and purview of the City of LA, industry appropriate reviews for security for applications of the nature of ShakeAlertLA including the details below. 
 
 iOS Specific:
