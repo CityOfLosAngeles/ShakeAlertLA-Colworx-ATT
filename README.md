@@ -1,7 +1,7 @@
 # ShakeAlertLA
 _ShakeAlertLA has been archived. You are free to fork and modify the code for your own use, but development on the open source repository has stopped and issues and pull requests will not be accepted._
 
-_This project is provided as is under the terms of the [Apache 2.0]('LICENSE') license. The City of Los Angeles is not responsible for any ways in which the software might be used by third parties._
+_This project is provided as is under the terms of the [Apache 2.0](./LICENSE) license. The City of Los Angeles is not responsible for any ways in which the software might be used by third parties._
 
 ShakeAlertLA is an application that was developed in partnership with the City of Los Angeles to provide early warning of strong earthquake shaking to the citizens of the Los Angeles area.
 
@@ -54,7 +54,7 @@ The designs of the app are inspired with Google's Material design. The UI and UX
 
 #### Obtain the USGS Active MQ Listener
 You can request to obtain an account from USGS to receive alerts from the USGS. Details are here https://www.shakealert.org/implementation/partners/ 
-* From the receiver code you can send the message payload to this class as shown below for grid processing. [CityofLA/Backend_Source](https://github.com/Colworx/CityofLA/tree/master/Backend_Source/LABackend)
+* From the receiver code you can send the message payload to this class as shown below for grid processing. [Backend_Source/LABackend](./Backend_Source/LABackend)
 
 ```java
 public class MainClass {	
@@ -156,17 +156,17 @@ Before you start, ensure you have the following installed:
 ## Then follow these steps to set up and run your server/application 
 
 ### Clone the code repository
-•	git clone https://github.com/Colworx/CityofLA.git	
+•	git clone https://github.com/CityOfLosAngeles/ShakeAlertLA-Colworx.git	
 
 ### Steps for Backend source deployment	
 In order to provide a simple development user experience, you will need to emulate some of that complexity through the creation steps below.
 
-1.	After cloning the repository, cd to this directory [Backend_Source/LaWebApi](https://github.com/Colworx/CityofLA/tree/master/Backend_Source/LaWebApi)
-2.	Then, Create a database in PHPMyAdmin and upload the database script file from here [CityofLA/Database/LaWebApi](https://github.com/Colworx/CityofLA/tree/master/Database) to MySQL, this will create all the tables and relations between the entities
+1.	After cloning the repository, cd to this directory [Backend_Source/LaWebApi](./Backend_Source/LaWebApi)
+2.	Then, Create a database in PHPMyAdmin and upload the database script file from here [Backend_Source/LaWebApi](./Backend_Source/LaWebApi) to MySQL, this will create all the tables and relations between the entities
 
 #### 3. Install and setup Apache Tomcat server 
 *	Download Apache Tomcat v7.0 from this link https://tomcat.apache.org/download-70.cgi 
-*	Open the source [/LaWebApi](https://github.com/Colworx/CityofLA/tree/master/Backend_Source/LaWebApi) in Eclipse Environment
+*	Open the source [Backend_Source/LaWebApi](./Backend_Source/LaWebApi) in Eclipse Environment
 *	Click on Servers Tab And Create a new server by selecting “Tomcat v7.0 Server”
 *	Select Apache installation Directory and click Finish
 *	Once you have finished the installation, you should see Tomcat v7.0 Server at localhost [Stopped, Republish] under Servers tab. Double click on it verify HTTP ports information. By default HTTP port is 8080.
@@ -193,7 +193,7 @@ public class MySql {
 ```
 
 #### 5. Setting up Blocks path located only in LA	
-* Update the directory path in Block.java file [LABackend/assets/boxes_10.json](https://github.com/cityoflosangeles/ShakeAlertLA-Colworx/tree/master/Backend_Source/LABackend/assets/boxes_10.json)
+* Update the directory path in Block.java file [LABackend/assets/boxes_10.json](./Backend_Source/LABackend/assets/boxes_10.json)
 
 ```java
 public class Blocks {
@@ -229,8 +229,8 @@ public class Blocks {
 ## Steps to Run the app source
 
 #### 1. Load the Sources
-* To run the iOS project, Launch the Xcode and open the source [CityofLA/iOS_Source](https://github.com/CityOfLosAngeles/ShakeAlertLA-Colworx/tree/master/iOS_Source)
-* For Android,  Launch Android studio and open the source [CityofLA/Android_Source](https://github.com/CityOfLosAngeles/ShakeAlertLA-Colworx/tree/master/Android_Source)
+* To run the iOS project, Launch the Xcode and open the source [iOS_Source](./iOS_Source)
+* For Android,  Launch Android studio and open the source [Android_Source](./Android_Source)
 
 #### 2. Update API URLs
 * Replace placeholder URLs with real API URLs in the AppDelegate for iOS and ConfigConstants.java for Android
