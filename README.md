@@ -156,7 +156,7 @@ Before you start, ensure you have the following installed:
 ## Then follow these steps to set up and run your server/application 
 
 ### Clone the code repository
-•	git clone https://github.com/CityOfLosAngeles/ShakeAlertLA-Colworx.git	
+•	git clone https://github.com/CityOfLosAngeles/ShakeAlertLA-Colworx-ATT.git	
 
 ### Steps for Backend source deployment	
 In order to provide a simple development user experience, you will need to emulate some of that complexity through the creation steps below.
