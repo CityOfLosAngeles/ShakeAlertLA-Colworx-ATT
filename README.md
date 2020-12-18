@@ -14,7 +14,34 @@ The following documentation provides an overview of the ShakeAlertLA application
 2. [Recording of the ShakeAlertLA Open Source Code Review presentation](https://drive.google.com/file/d/1RzGAMU7kazqrx1zKyk-VfHr3SRnJUzs5/view?usp=sharing) with the City of L.A., AT&T and other municipalities about the code 
 3. [Colworx ShakeAlertLA Source Code guide](https://drive.google.com/file/d/1kZMKiicvBHyfzpc-3w9coCvlFp1ZKPnn/view?usp=sharing) provided by the developer
 
-Continue to read this README file for further guidance on how to modify this code for your own development.
+## Measures taken by AT&T to secure the code
+
+Measures taken by AT&T to secure the code:
+
+AT&T has undertaken with the concurrence and purview of the City of LA, industry appropriate reviews for security for applications of the nature of ShakeAlertLA including the details below. 
+
+iOS Specific:
+* ImmuniWeb Scan
+* AWS instance hardened
+
+Android Specific:
+* Quixxi for Android scan
+
+Port scanners:
+* Port Checker Open Port Checker (https://www.portcheckers.com/) and You Get Signal (https://www.yougetsignal.com/tools/open-ports/)
+
+Pen Test:
+* Completed by AT&T Cybersecurity
+* NOTE: AT&T does not control the USGS environment
+
+Authentication/Authorization:
+* The app has no login, the information endpoints are wide open and public and no actual real usable data is stored or transmitted.
+* GUID is encrypted for push notification, language setting, and last anonymous location via lat/long). 
+
+AWS Specific:
+* Hardened the solution and encrypted the transmission per standard AWS deployment (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security.html).
+
+#### Continue to read this README file for further guidance on how to modify this code for your own development.
 
 ## About ShakealertLA	
 ShakeAlertLA alerts you that an earthquake has been detected and that you may soon feel shaking. You can also use this app to prepare for an earthquake, get details on recent earthquakes, and find help after an earthquake. This app is brought to you by Mayor Eric Garcetti and the City of Los Angeles, and built on the ShakeAlert system developed by the U.S. Geological Survey.
@@ -329,33 +356,6 @@ NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWit
 ## Messaging Gateway
 
 This repository contains the codebase for ShakeAlertLA's messaging gateway. The gateway uses Amazon AWS to send messages from the USGS EEW ActiveMQ message gateway to APNS/GPNS. The Messaging gateway provides Earthquake Early Warning notifications from the USGS for users inside LA County.
-
-## Measures taken by AT&T to secure the code
-
-Measures taken by AT&T to secure the code:
-
-AT&T has undertaken with the concurrence and purview of the City of LA, industry appropriate reviews for security for applications of the nature of ShakeAlertLA including the details below. 
-
-iOS Specific:
-* ImmuniWeb Scan
-* AWS instance hardened
-
-Android Specific:
-* Quixxi for Android scan
-
-Port scanners:
-* Port Checker Open Port Checker (https://www.portcheckers.com/) and You Get Signal (https://www.yougetsignal.com/tools/open-ports/)
-
-Pen Test:
-* Completed by AT&T Cybersecurity
-* NOTE: AT&T does not control the USGS environment
-
-Authentication/Authorization:
-* The app has no login, the information endpoints are wide open and public and no actual real usable data is stored or transmitted.
-* GUID is encrypted for push notification, language setting, and last anonymous location via lat/long). 
-
-AWS Specific:
-* Hardened the solution and encrypted the transmission per standard AWS deployment (https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security.html).
 
 
 ## Related Projects 
