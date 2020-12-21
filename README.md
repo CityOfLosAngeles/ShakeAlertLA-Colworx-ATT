@@ -351,6 +351,28 @@ NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWit
 
 This repository contains the codebase for ShakeAlertLA's messaging gateway. The gateway uses Amazon AWS to send messages from the USGS earthquake early warning ActiveMQ message gateway to APNS/GPNS. The messaging gateway provides earthquake early warning notifications from the USGS for users in Los Angeles County.
 
+## Backend updates
+
+The backend source code also uses AWS Pinpoint SDK to send pushes through GCM and APNS server. If you are using a different provider than AWS, de-integrate AWS Pinpoint and make sure to replace the keys in the “sendMessage” method of your push notification provider. Note that "View recent earthquakes" on the main view are populated by prior push notifications, but are limited to events that qualify for the threshold as set by the USGS for the location at which they occurred. However, if the threshold wasn't met for a location in Los Angeles, this would not have resulted in a push notification via ShakeAlertLA. They are captured on this map for clarity and completeness. It is important to note that you  sync your event thresholds with the USGS ShakeAlert decision engine thresholds at a bare minimum.
+
+## Client side integration
+
+### Deintegrate the shelter map layer (which is set to LA County)
+
+You will need to identify a map layer that reflects shelter locations in your area. The one used for ShakeAlertLA links to our map layer of shelters that are activated in real time for an active emergency. Also, not that the ShakeAlertLA ayer is not active unless a real event occurs, so you will need to find a test layer for your area to validate.
+
+### Deintegrate the historical earthquake view
+
+An open USGS API populates historical quakes, but the attributes sent to the API are for Los Angeles specific coordinates, and only request events larger than 2.5 magnitude are shown, as the design intention is to not flood the view with a massive amount of insignificant event data.
+
+### All other views are static and require updating local bundle assets
+
+These views include, but are not limited to, logos, artwork, colors, and branding. You should revise any and all labels and instructions in the codebase if you plan on changing any or all of parameters that describe the current thresholds for events. These would include both magnitude and MMI if you want to raise the limits above the threshold established by USGS (not recommended)> These are manually maintained associations.
+
+### Make A Plan is derived from a local database
+
+You can use this as a reference for your app, but feel free to modify as needed. This information is aggregated from the City of L.A. emergency information, Earthquake Country Alliance, and USGS. Nothing in this plan is stored remotely, and is all part of the local bundle and unique to the device.
+
 
 ## Related Projects 
 * [MyShake](https://myshake.berkeley.edu/)
