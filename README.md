@@ -11,8 +11,7 @@ The following documentation provides an overview of the ShakeAlertLA application
 
 
 1. [ShakeAlertLA Open Source Code Review presentation](https://drive.google.com/file/d/1d12d4wDPXvyLe0XyMXjydRonMNZMD0lz/view?usp=sharing)
-2. [Recording of the ShakeAlertLA Open Source Code Review presentation](https://drive.google.com/file/d/1RzGAMU7kazqrx1zKyk-VfHr3SRnJUzs5/view?usp=sharing) with the City of L.A., AT&T and other municipalities about the code 
-3. [Colworx ShakeAlertLA Source Code guide](https://drive.google.com/file/d/1kZMKiicvBHyfzpc-3w9coCvlFp1ZKPnn/view?usp=sharing) provided by the developer
+2. [Colworx ShakeAlertLA Source Code guide](https://drive.google.com/file/d/1kZMKiicvBHyfzpc-3w9coCvlFp1ZKPnn/view?usp=sharing) provided by the developer
 
 ## Measures taken by AT&T to secure the code
 
