@@ -25,7 +25,7 @@ Android Specific:
 * Quixxi for Android scan
 
 Port scanners:
-* Port Checker Open Port Checker (www.portcheckers.com/) and You Get Signal (www.yougetsignal.com/tools/open-ports/)
+* Port Checker Open Port Checker ([www.portcheckers.com](https://www.portcheckers.com/)) and You Get Signal ([www.yougetsignal.com/tools/open-ports](https://www.yougetsignal.com/tools/open-ports/))
 
 Pen Test:
 * Completed by AT&T Cybersecurity
@@ -36,7 +36,7 @@ Authentication/Authorization:
 * GUID is encrypted for push notification, language setting, and last anonymous location via lat/long. 
 
 AWS Specific:
-* Hardened the solution and encrypted the transmission per standard AWS deployment (docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security.html).
+* Hardened the solution and encrypted the transmission per standard AWS deployment ([docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security.html)).
 
 #### Continue to read this README file for further guidance on how to modify this code for your own development.
 
@@ -74,7 +74,7 @@ The designs of the app are inspired with Google's Material design and user-centr
 ### 2. When ShakeAlert sends an alert
 
 #### Obtain the USGS Active MQ listener
-To create an alert, you must be subscribed to the U.S. Geological Survey (USGS) ShakeAlert message feed. ShakeAlert is managed and operated by the USGS. You can request an account to receive alerts directly and solely from the USGS. Details are here www.shakealert.org/implementation/partners/. This application process can take some time to be approved and requires interaction with the USGS ShakeAlert team, so make plans accordingly.
+To create an alert, you must be subscribed to the U.S. Geological Survey (USGS) ShakeAlert message feed. ShakeAlert is managed and operated by the USGS. You can request an account to receive alerts directly and solely from the USGS. Details are here [www.shakealert.org/implementation/partners](https://www.shakealert.org/implementation/partners/). This application process can take some time to be approved and requires interaction with the USGS ShakeAlert team, so make plans accordingly.
 * From the receiver code you can send the message payload to this class as shown below for grid processing. [Backend_Source/LABackend](./Backend_Source/LABackend)
 
 ```java
@@ -185,7 +185,7 @@ In order to provide a simple development user experience, you will need to emula
 2.	Then, create a database in PHPMyAdmin and upload the database script file from here [Backend_Source/LaWebApi](./Backend_Source/LaWebApi) to MySQL, this will create all the tables and relations between the entities.
 
 #### 3. Install and setup Apache Tomcat server 
-*	Download Apache Tomcat v7.0 from this link tomcat.apache.org/download-70.cgi.
+*	Download Apache Tomcat v7.0 from this link [tomcat.apache.org/download-70.cgi](https://tomcat.apache.org/download-70.cgi).
 *	Open the source [Backend_Source/LaWebApi](./Backend_Source/LaWebApi) in the Eclipse environment.
 *	Click on the Servers tab and create a new server by selecting “Tomcat v7.0 Server.”
 *	Select the Apache installation directory and click Finish.
